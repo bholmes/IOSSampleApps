@@ -17,13 +17,12 @@ namespace avTouchCSApp
 		uint						_numLights;
 		float						_level, _peakLevel;
 		LevelMeterColorThreshold []	_colorThresholds;
-		uint						_numColorThresholds;
 		bool						_vertical;
 		bool						_variableLightIntensity;
 		
-		float                     _scaleFactor;
-		int           _backingWidth;
-		int           _backingHeight;
+		float                     	_scaleFactor;
+		int           				_backingWidth;
+		int           				_backingHeight;
 		
 		[Export ("initWithFrame:")]
 		public GLLevelMeter (RectangleF frame) : base (frame)
@@ -41,7 +40,6 @@ namespace avTouchCSApp
 		{
 			_level = 0f;
 			_numLights = 0;
-			_numColorThresholds = 3;
 			_variableLightIntensity = true;
 			    
 			_colorThresholds = new LevelMeterColorThreshold[3];
@@ -66,11 +64,6 @@ namespace avTouchCSApp
 
 		}
 		
-		bool _createFramebuffer ()
-		{			
-			return true;	
-		}
-		
 		void _setupView ()
 		{
 			// Craete a new context if needed
@@ -90,21 +83,17 @@ namespace avTouchCSApp
 			
 			// Clears the view with black
 			GL.ClearColor (0.0f, 0.0f, 0.0f, 1.0f);
+			
+			GL.Color4(1.0f,1.0f,1.0f,0.5f);	
+			GL.BlendFunc(All.SrcAlpha, All.One);
+			
+			GL.Enable (All.Blend);		
+			GL.Disable (All.DepthTest);
 
 		}
 		
 		public override void Draw (RectangleF a_rect)
 		{
-			_backingWidth = (int)this.Bounds.Width;
-			_backingHeight = (int)this.Bounds.Height;
-			// Sets up matrices and transforms for OpenGL ES
-			GL.Viewport(0, 0, _backingWidth, _backingHeight);
-			GL.MatrixMode(All.Projection);
-			GL.LoadIdentity();
-			GL.Ortho(0, _backingWidth, 0, _backingHeight, -1.0f, 1.0f);
-			GL.MatrixMode(All.Modelview);
-			
-			
 			// Set the back color to black
 			GL.ClearColor (0.0f, 0.0f, 0.0f, 1.0f);
 			
@@ -134,7 +123,7 @@ namespace avTouchCSApp
 				int i;
 				float currentTop = 0f;
 				
-				for (i=0; i<_numColorThresholds; i++)
+				for (i=0; i<_colorThresholds.Length; i++)
 				{
 					LevelMeterColorThreshold thisThresh = _colorThresholds[i];
 					float val = Math.Min (thisThresh.maxValue, _level);
@@ -179,15 +168,20 @@ namespace avTouchCSApp
 				float lightMinVal = 0f;
 				float insetAmount, lightVSpace;
 				lightVSpace = bds.Height / (float)_numLights;
-				if (lightVSpace < 4f) insetAmount = 0f;
-				else if (lightVSpace < 8f) insetAmount = 0.5f;
-				else insetAmount = 1f;
+				
+				if (lightVSpace < 4f) 
+					insetAmount = 0f;
+				else if (lightVSpace < 8f) 
+					insetAmount = 0.5f;
+				else 
+					insetAmount = 1f;
 				
 				int peakLight = -1;
 				if (_peakLevel > 0f)
 				{
 					peakLight = (int)(_peakLevel * _numLights);
-					if (peakLight >= _numLights) peakLight = (int)(_numLights - 1);
+					if (peakLight >= _numLights) 
+						peakLight = (int)(_numLights - 1);
 				}
 				
 				for (light_i=0; light_i<_numLights; light_i++)
@@ -210,11 +204,12 @@ namespace avTouchCSApp
 					
 					lightColor = _colorThresholds[0].color;
 					int color_i;
-					for (color_i=0; color_i<(_numColorThresholds-1); color_i++)
+					for (color_i=0; color_i<(_colorThresholds.Length-1); color_i++)
 					{
 						LevelMeterColorThreshold thisThresh = _colorThresholds[color_i];
 						LevelMeterColorThreshold nextThresh = _colorThresholds[color_i + 1];
-						if (thisThresh.maxValue <= lightMaxVal) lightColor = nextThresh.color;
+						if (thisThresh.maxValue <= lightMaxVal) 
+							lightColor = nextThresh.color;
 					}	
 					
 					lightRect = new RectangleF(
@@ -235,34 +230,28 @@ namespace avTouchCSApp
 					GL.VertexPointer(2, All.Float, 0, vertices);
 					GL.EnableClientState (All.VertexArray);
 					
-					GL.Color4(1f, 0f, 0f, 1f);
-					
-					if (lightIntensity == 1f)
+					if (lightIntensity > .7f)
 					{
-						//[lightColor set];
 						CGColor clr = lightColor.CGColor;
 						if (clr.NumberOfComponents != 4) 
 							goto bail;
+						
 						float []  rgba;
 						rgba = clr.Components;
-						GL.Color4 (rgba[0], rgba[1], rgba[2], rgba[3]);
+						GL.Color4 (rgba[0], rgba[1], rgba[2], .7f);
 						GL.DrawArrays(All.TriangleStrip, 0, 4);
 					} else if (lightIntensity > 0f) {
-						//CGColorRef clr = CGColorCreateCopyWithAlpha([lightColor CGColor], lightIntensity);
-						//CGContextSetFillColorWithColor(cxt, clr);
 						CGColor clr = lightColor.CGColor;
 						if (clr.NumberOfComponents != 4) 
 							goto bail;
+						
 						float []  rgba;
 						rgba = clr.Components;
 						GL.Color4(rgba[0], rgba[1], rgba[2], lightIntensity);
 						GL.DrawArrays(All.TriangleStrip, 0, 4);
-						//CGColorRelease(clr);
 					}
 					
 					lightMinVal = lightMaxVal;
-
-					
 				}
 			}
 			

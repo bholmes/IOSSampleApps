@@ -18,7 +18,7 @@ namespace avTouchCSApp
 		const float kMinDBvalue = -80.0f;
 
 		AVAudioPlayer				_player;
-		List<int>					_channelNumbers = new List<int> ();
+		int					     	_channelNumbers;
 		List<LevelMeterItf>			_subLevelMeters = new List<LevelMeterItf> ();
 		MeterTable					_meterTable;
 		CADisplayLink				_updateTimer;
@@ -32,9 +32,7 @@ namespace avTouchCSApp
 		public CALevelMeter (RectangleF frame) : base (frame)
 		{
 			_showsPeaks = true;
-			//_channelNumbers = NSArray.FromObjects (new object[] {} [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:0], nil];
-			_channelNumbers = new List<int> ();
-			_channelNumbers.Add (0);
+			_channelNumbers = 1;
 			_vertical = (this.Frame.Width < this.Frame.Height) ? true : false; // NO;
 			_useGL = true;
 			_meterTable = new MeterTable(kMinDBvalue);
@@ -46,9 +44,7 @@ namespace avTouchCSApp
 		public CALevelMeter (NSCoder coder) : base (coder)
 		{
 			_showsPeaks = true;
-			//_channelNumbers = NSArray.FromObjects (new object[] {} [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:0], nil];
-			_channelNumbers = new List<int> ();
-			_channelNumbers.Add (0);
+			_channelNumbers = 1;
 			_vertical = (this.Frame.Width < this.Frame.Height) ? true : false; // NO;
 			_useGL = true;
 			_meterTable = new MeterTable(kMinDBvalue);
@@ -79,7 +75,6 @@ namespace avTouchCSApp
 			}
 			
 			List <LevelMeterItf> meters_build = new List<LevelMeterItf> ();
-			//NSMutableArray *meters_build = [[NSMutableArray alloc] initWithCapacity:[_channelNumbers count]];
 			
 			RectangleF totalRect;
 			
@@ -88,15 +83,15 @@ namespace avTouchCSApp
 			else  
 				totalRect = new RectangleF (0f, 0f, this.Frame.Width, this.Frame.Height + 2f);
 			
-			for (i=0; i<_channelNumbers.Count; i++)
+			for (i=0; i<_channelNumbers; i++)
 			{
 				RectangleF fr;
 				
 				if (_vertical) {
 					fr = new RectangleF (
-									totalRect.X + (((float)i / (float)_channelNumbers.Count) * totalRect.Width), 
+									totalRect.X + (((float)i / (float)_channelNumbers) * totalRect.Width), 
 									totalRect.Y, 
-									(1f / (float)_channelNumbers.Count) * totalRect.Width - 2f, 
+									(1f / (float)_channelNumbers) * totalRect.Width - 2f, 
 									totalRect.Height
 									);
 				} 
@@ -104,9 +99,9 @@ namespace avTouchCSApp
 				{
 					fr = new RectangleF(
 									totalRect.X, 
-									totalRect.Y + (((float)i / (float)_channelNumbers.Count) * totalRect.Height), 
+									totalRect.Y + (((float)i / (float)_channelNumbers) * totalRect.Height), 
 									totalRect.Width, 
-									(1f / (float)_channelNumbers.Count) * totalRect.Height - 2f
+									(1f / (float)_channelNumbers) * totalRect.Height - 2f
 									);
 				}
 				
@@ -173,14 +168,11 @@ namespace avTouchCSApp
 			else
 			{
 				_player.UpdateMeters ();
-				for (int i=0; i<_channelNumbers.Count; i++)
+				for (int i=0; i<_channelNumbers; i++)
 				{
-					int channelIdx = _channelNumbers [i];
-					LevelMeterItf channelView = _subLevelMeters[channelIdx];
+					LevelMeterItf channelView = _subLevelMeters[i];
 					
-					if (channelIdx >= _channelNumbers.Count) 
-						goto bail;
-					if (channelIdx > 127) 
+					if (i > 127) 
 						goto bail;
 					
 					channelView.Level = _meterTable.ValueAt (_player.AveragePower ((uint)i));
@@ -252,12 +244,9 @@ namespace avTouchCSApp
 				{
 					_player.MeteringEnabled = true;
 					// now check the number of channels in the new queue, we will need to reallocate if this has changed
-					if (_player.NumberOfChannels != _channelNumbers.Count)
+					if (_player.NumberOfChannels != _channelNumbers)
 					{
-						if (_player.NumberOfChannels < 2)
-							_channelNumbers = new List<int> (new int[] {0});
-						else
-							_channelNumbers = new List<int> (new int[] {0,1});
+						_channelNumbers = (int)_player.NumberOfChannels;
 						layoutSubLevelMeters ();
 					}
 				} 

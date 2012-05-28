@@ -38,7 +38,6 @@ namespace avTouchCSApp
 		uint						_numLights;
 		float						_level, _peakLevel;
 		LevelMeterColorThreshold []	_colorThresholds;
-		uint						_numColorThresholds;
 		bool						_vertical;
 		bool						_variableLightIntensity;
 		UIColor						_bgColor;
@@ -60,7 +59,6 @@ namespace avTouchCSApp
 		{
 			_level = 0f;
 			_numLights = 0;
-			_numColorThresholds = 3;
 			_variableLightIntensity = true;
 			_bgColor = UIColor.FromRGBA (0, 0, 0, 0.6f);
 			_borderColor = UIColor.FromRGBA (0, 0, 0, 1f);
@@ -110,7 +108,7 @@ namespace avTouchCSApp
 					cxt.FillRect (bds);
 				}
 				
-				for (i=0; i<_numColorThresholds; i++)
+				for (i=0; i<_colorThresholds.Length; i++)
 				{
 					LevelMeterColorThreshold thisThresh = _colorThresholds[i];
 					float val = Math.Min (thisThresh.maxValue, _level);
@@ -176,7 +174,7 @@ namespace avTouchCSApp
 					
 					lightColor = _colorThresholds[0].color;
 					int color_i;
-					for (color_i=0; color_i<(_numColorThresholds-1); color_i++)
+					for (color_i=0; color_i<(_colorThresholds.Length-1); color_i++)
 					{
 						LevelMeterColorThreshold thisThresh = _colorThresholds[color_i];
 						LevelMeterColorThreshold nextThresh = _colorThresholds[color_i + 1];
