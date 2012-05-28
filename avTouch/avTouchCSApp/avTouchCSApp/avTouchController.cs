@@ -49,8 +49,8 @@ namespace avTouchCSApp
 			progressBar.MinValue = 0.0f;	
 			
 			// Load the the sample file, use mono or stero sample
-			NSUrl fileURL = NSUrl.FromFilename (NSBundle.MainBundle.PathForResource ("sample" , @"m4a"));
-			//NSUrl fileURL = NSUrl.FromFilename (NSBundle.MainBundle.PathForResource ("sample2ch" , @"m4a"));
+			//NSUrl fileURL = NSUrl.FromFilename (NSBundle.MainBundle.PathForResource ("sample" , @"m4a"));
+			NSUrl fileURL = NSUrl.FromFilename (NSBundle.MainBundle.PathForResource ("sample2ch" , @"m4a"));
 		
 			this.player = AVAudioPlayer.FromUrl (fileURL);
 			if (this.player != null)
@@ -65,6 +65,7 @@ namespace avTouchCSApp
 				this.updateViewForPlayerState (this.player);
 				player.NumberOfLoops = 1;
 				player.WeakDelegate = this;
+				player.PrepareToPlay ();
 			}
 			
 			AudioSession.Initialize();
@@ -76,6 +77,8 @@ namespace avTouchCSApp
 
 			NSError setCategoryError;
 			AVAudioSession.SharedInstance ().SetCategory (new NSString (AVAudioSession.CategoryPlayback.ToString ()), out setCategoryError);
+			AVAudioSession.SharedInstance ().SetActive (true, out setCategoryError);
+			UIApplication.SharedApplication.BeginReceivingRemoteControlEvents ();
 			
 			if (setCategoryError != null)
 				Console.WriteLine (@"Error setting category! {0}", setCategoryError);
@@ -203,13 +206,13 @@ namespace avTouchCSApp
 			if (p.Playing)
 			{
 				this.playButton.SetImage ((p.Playing) ? pauseBtnBG : playBtnBG, UIControlState.Normal);
-				//[lvlMeter_in setPlayer:p];
+				lvlMeter_in.Player = p;
 				updateTimer = NSTimer.CreateScheduledTimer (.01, this, new Selector ("updateCurrentTime"), p, true);
 			}
 			else
 			{
 				this.playButton.SetImage ((p.Playing) ? pauseBtnBG : playBtnBG, UIControlState.Normal);
-				//[lvlMeter_in setPlayer:nil];
+				lvlMeter_in.Player = null;
 				updateTimer = null;
 			}
 			

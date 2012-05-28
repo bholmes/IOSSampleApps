@@ -36,7 +36,7 @@ namespace avTouchCSApp
 			}
 		}
 		
-		float ValueAt(float inDecibels)
+		public float ValueAt(float inDecibels)
 		{
 			if (inDecibels < mMinDecibels) return  0f;
 			if (inDecibels >= 0f) return 1f;

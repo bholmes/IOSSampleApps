@@ -42,7 +42,28 @@ namespace avTouchCSApp
 		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
 		{
 			// Return true for supported orientations
-			return (toInterfaceOrientation != UIInterfaceOrientation.PortraitUpsideDown);
+			return (toInterfaceOrientation == UIInterfaceOrientation.Portrait);
+		}
+		
+		public override void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+		}
+		
+		public override void ViewWillDisappear (bool animated)
+		{
+			base.ViewWillDisappear (animated);
+		}
+		
+		public override bool CanBecomeFirstResponder {
+			get {
+				return true;
+			}
+		}
+		
+		public override void RemoteControlReceived (UIEvent theEvent)
+		{
+			base.RemoteControlReceived (theEvent);
 		}
 	}
 }

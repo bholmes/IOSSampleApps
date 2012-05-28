@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="OpenTK" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -96,6 +97,8 @@
     </Compile>
     <Compile Include="CALevelMeter.cs" />
     <Compile Include="MeterTable.cs" />
+    <Compile Include="LevelMeter.cs" />
+    <Compile Include="GLLevelMeter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
