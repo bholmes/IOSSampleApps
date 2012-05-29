@@ -7,32 +7,6 @@ using MonoTouch.CoreGraphics;
 
 namespace avTouchCSApp
 {
-	public struct LevelMeterColorThreshold
-	{
-		public float			maxValue; 	// A value from 0 - 1. The maximum value shown in this color
-		public UIColor			color; 		// A UIColor to be used for this value range
-	}
-	
-	public interface LevelMeterItf 
-	{
-		uint NumLights {
-			get; set;
-		}
-
-		float Level {
-			get;set;
-		}
-
-		float PeakLevel {
-			get;set;
-		}
-
-		bool Vertical {
-			get;set;
-		}	
-	}
-	
-	
 	public class LevelMeter : UIView, LevelMeterItf
 	{
 		uint						_numLights;
@@ -40,6 +14,7 @@ namespace avTouchCSApp
 		LevelMeterColorThreshold []	_colorThresholds;
 		bool						_vertical;
 		bool						_variableLightIntensity;
+		float 						_maxIntensity = 1f;
 		UIColor						_bgColor;
 		UIColor	 					_borderColor;
 		
@@ -120,7 +95,8 @@ namespace avTouchCSApp
 											 (bds.Height) * (val - currentTop)
 											 );
 					
-					thisThresh.color.SetColor ();
+					CGColor clr = new CGColor (thisThresh.color.CGColor, _maxIntensity); 
+					cxt.SetFillColor (clr);
 					cxt.FillRect(rect);
 					
 					if (_level < thisThresh.maxValue) 
@@ -163,13 +139,15 @@ namespace avTouchCSApp
 					
 					if (light_i == peakLight)
 					{
-						lightIntensity = 1f;
+						lightIntensity = _maxIntensity;
 					} 
 					else
 					{
 						lightIntensity = (_level - lightMinVal) / (lightMaxVal - lightMinVal);
-						lightIntensity = LEVELMETER_CLAMP(0f, lightIntensity, 1f);
-						if ((!_variableLightIntensity) && (lightIntensity > 0f)) lightIntensity = 1f;
+						lightIntensity = LEVELMETER_CLAMP(0f, lightIntensity, _maxIntensity);
+						
+						if ((!_variableLightIntensity) && (lightIntensity > 0f)) 
+							lightIntensity = _maxIntensity;
 					}
 					
 					lightColor = _colorThresholds[0].color;
@@ -229,15 +207,6 @@ namespace avTouchCSApp
 			return x < min ? min : (x > max ? max : x);
 		}
 
-		public uint NumLights {
-			get {
-				return _numLights;
-			}
-			set {
-				_numLights = value;
-			}
-		}
-
 		public float Level {
 			get {
 				return _level;
@@ -263,6 +232,15 @@ namespace avTouchCSApp
 			set {
 				_vertical = value;
 			}
+		}
+
+		public void LoadProperties (AppProperties appProperties)
+		{
+			this._maxIntensity = appProperties.meterIntensity;
+			this._numLights = (uint)appProperties.numLights;
+			this._variableLightIntensity = appProperties.variableLightIntensity;
+			
+			this.SetNeedsDisplay ();
 		}
 	}
 }

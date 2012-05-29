@@ -80,6 +80,7 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="OpenTK" />
+    <Reference Include="MonoTouch.Dialog-1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -99,6 +100,10 @@
     <Compile Include="MeterTable.cs" />
     <Compile Include="LevelMeter.cs" />
     <Compile Include="GLLevelMeter.cs" />
+    <Compile Include="AppProperties.cs" />
+    <Compile Include="EditPropertiesController.cs" />
+    <Compile Include="LevelMeterItf.cs" />
+    <Compile Include="LevelMeterColorThreshold.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

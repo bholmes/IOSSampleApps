@@ -49,24 +49,9 @@ namespace avTouchCSApp
 			progressBar.MinValue = 0.0f;	
 			
 			// Load the the sample file, use mono or stero sample
-			//NSUrl fileURL = NSUrl.FromFilename (NSBundle.MainBundle.PathForResource ("sample" , @"m4a"));
-			NSUrl fileURL = NSUrl.FromFilename (NSBundle.MainBundle.PathForResource ("sample2ch" , @"m4a"));
+			NSUrl fileURL = NSUrl.FromFilename (NSBundle.MainBundle.PathForResource ("sample" , @"m4a"));
 		
-			this.player = AVAudioPlayer.FromUrl (fileURL);
-			if (this.player != null)
-			{
-				StringBuilder tmp = new StringBuilder ();
-				tmp.AppendFormat ("{0} ({1} ch.)",  
-				                  new System.IO.FileInfo (this.player.Url.RelativePath).Name, 
-				                  player.NumberOfChannels);
-				fileName.Text = tmp.ToString ();
-				
-				this.updateViewForPlayerInfo (this.player);
-				this.updateViewForPlayerState (this.player);
-				player.NumberOfLoops = 1;
-				player.WeakDelegate = this;
-				player.PrepareToPlay ();
-			}
+			CreateNewPlayer ( fileURL);
 			
 			AudioSession.Initialize();
 			
@@ -85,12 +70,50 @@ namespace avTouchCSApp
 
 			AudioSession.AddListener (AudioSessionProperty.AudioRouteChange, RouteChangeListener);
 		}
+		
+		public void LoadProperties (AppProperties appProperties)
+		{
+			if (this.player != null)
+			{
+				NSUrl fileURL;
+			
+				if (appProperties.playerFileId == 0)
+					fileURL = NSUrl.FromFilename (NSBundle.MainBundle.PathForResource ("sample" , @"m4a"));
+				else
+					fileURL = NSUrl.FromFilename (NSBundle.MainBundle.PathForResource ("sample2ch" , @"m4a"));
+				
+				if (fileURL.Path != this.player.Url.Path)
+				{
+					pausePlaybackForPlayer (this.player);
+					
+					CreateNewPlayer (fileURL);
+				}
+			}
+			
+			
+			this.lvlMeter_in.LoadProperties (appProperties);	
+		}
 
 		void pausePlaybackForPlayer (AVAudioPlayer p)
 		{
 			player.Pause ();
 			this.updateViewForPlayerState (p);
 		}	
+		
+		void CreateNewPlayer (NSUrl fileURL)
+		{
+			this.player = AVAudioPlayer.FromUrl (fileURL);
+			if (this.player != null) {
+				StringBuilder tmp = new StringBuilder ();
+				tmp.AppendFormat ("{0} ({1} ch.)", new System.IO.FileInfo (this.player.Url.RelativePath).Name, player.NumberOfChannels);
+				fileName.Text = tmp.ToString ();
+				this.updateViewForPlayerInfo (this.player);
+				this.updateViewForPlayerState (this.player);
+				player.NumberOfLoops = 1;
+				player.WeakDelegate = this;
+				player.PrepareToPlay ();
+			}
+		}
 		
 		void startPlaybackForPlayer (AVAudioPlayer p)
 		{
@@ -313,7 +336,6 @@ namespace avTouchCSApp
 				}
 			}
 		}
-		
 	}
 }
 

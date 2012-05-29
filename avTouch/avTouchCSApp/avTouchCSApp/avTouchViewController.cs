@@ -3,11 +3,16 @@ using System.Drawing;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.Dialog;
+using System.Collections.Generic;
 
 namespace avTouchCSApp
 {
 	public partial class avTouchViewController : UIViewController
 	{
+		private UIBarButtonItem _editButton;
+		AppProperties _appProperties = new AppProperties ();
+		
 		public avTouchViewController () : base ("avTouchViewController", null)
 		{
 		}
@@ -24,7 +29,34 @@ namespace avTouchCSApp
 		{
 			base.ViewDidLoad ();
 			
-			// Perform any additional setup after loading the view, typically from a nib.
+			if (this.NavigationController != null)
+			{
+				this.NavigationController.NavigationBar.BarStyle = UIBarStyle.Black;
+				_editButton = new UIBarButtonItem ("Edit", UIBarButtonItemStyle.Bordered, editButtonClicked);
+				this.NavigationItem.RightBarButtonItem = _editButton;
+				this.NavigationController.WeakDelegate = this;
+			}
+			
+			controller.LoadProperties (_appProperties);
+		}
+		
+		EditPropertiesController _editPropertiesCtrl;
+		
+		void editButtonClicked (object sender, EventArgs e)
+		{
+			_editPropertiesCtrl = new EditPropertiesController (_appProperties);	
+			this.NavigationController.PushViewController (_editPropertiesCtrl, true);
+		}
+		
+		[Export ("navigationController:willShowViewController:animated:")]
+		public void WillShowViewController (UINavigationController navigationController, UIViewController viewController, bool animated)
+		{
+			if (viewController is avTouchViewController && _editPropertiesCtrl != null)
+			{
+				Console.WriteLine (_editPropertiesCtrl.Properties);
+				controller.LoadProperties (_editPropertiesCtrl.Properties);
+				_editPropertiesCtrl = null;
+			}
 		}
 		
 		public override void ViewDidUnload ()

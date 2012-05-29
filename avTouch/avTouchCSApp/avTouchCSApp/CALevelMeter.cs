@@ -17,6 +17,7 @@ namespace avTouchCSApp
 		const float kLevelFalloffPerSec = .8f;
 		const float kMinDBvalue = -80.0f;
 
+		AppProperties 				_appProperties;
 		AVAudioPlayer				_player;
 		int					     	_channelNumbers;
 		List<LevelMeterItf>			_subLevelMeters = new List<LevelMeterItf> ();
@@ -50,6 +51,14 @@ namespace avTouchCSApp
 			_meterTable = new MeterTable(kMinDBvalue);
 			this.layoutSubLevelMeters ();
 			this.registerForBackgroundNotifications ();	
+		}
+		
+		public void LoadProperties (AppProperties appProperties)
+		{
+			_appProperties = appProperties;
+			this._useGL = _appProperties.meterTypeId == 0;
+			this._showsPeaks = _appProperties.showPeaks;
+			this.layoutSubLevelMeters ();
 		}
 
 		void registerForBackgroundNotifications ()
@@ -112,7 +121,9 @@ namespace avTouchCSApp
 				else 
 					newMeter = new LevelMeter (fr);
 				
-				newMeter.NumLights = 30;
+				if (this._appProperties != null)
+					newMeter.LoadProperties (this._appProperties);
+				
 				newMeter.Vertical = this._vertical;
 				meters_build.Add (newMeter);
 				this.AddSubview (newMeter as UIView);

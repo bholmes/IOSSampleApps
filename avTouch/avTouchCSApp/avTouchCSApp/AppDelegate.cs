@@ -13,6 +13,7 @@ namespace avTouchCSApp
 		UIWindow window;
 		
 		avTouchViewController _ctrl;
+		UINavigationController _nav;
 
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
@@ -20,8 +21,8 @@ namespace avTouchCSApp
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 			
 			_ctrl = new avTouchViewController ();
-			window.RootViewController = _ctrl;
-			
+			_nav = new UINavigationController (_ctrl);
+			window.RootViewController = _nav;
 			
 			window.MakeKeyAndVisible ();
 			

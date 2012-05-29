@@ -19,6 +19,7 @@ namespace avTouchCSApp
 		LevelMeterColorThreshold []	_colorThresholds;
 		bool						_vertical;
 		bool						_variableLightIntensity;
+		float 						_maxIntensity = 1f;
 		
 		float                     	_scaleFactor;
 		int           				_backingWidth;
@@ -147,7 +148,7 @@ namespace avTouchCSApp
 						goto bail;
 					float [] rgba;
 					rgba = clr.Components;
-					GL.Color4 (rgba[0], rgba[1], rgba[2], rgba[3]);
+					GL.Color4 (rgba[0], rgba[1], rgba[2], _maxIntensity);
 					
 					
 					GL.VertexPointer(2, All.Float, 0, vertices);
@@ -193,13 +194,13 @@ namespace avTouchCSApp
 					
 					if (light_i == peakLight)
 					{
-						lightIntensity = 1;
+						lightIntensity = _maxIntensity;
 					} 
 					else
 					{
 						lightIntensity = (_level - lightMinVal) / (lightMaxVal - lightMinVal);
-						lightIntensity = LevelMeter.LEVELMETER_CLAMP(0f, lightIntensity, 1f);
-						if ((!_variableLightIntensity) && (lightIntensity > 0f)) lightIntensity = 1f;
+						lightIntensity = LevelMeter.LEVELMETER_CLAMP(0f, lightIntensity, _maxIntensity);
+						if ((!_variableLightIntensity) && (lightIntensity > 0f)) lightIntensity = _maxIntensity;
 					}
 					
 					lightColor = _colorThresholds[0].color;
@@ -230,7 +231,7 @@ namespace avTouchCSApp
 					GL.VertexPointer(2, All.Float, 0, vertices);
 					GL.EnableClientState (All.VertexArray);
 					
-					if (lightIntensity > .7f)
+					if (lightIntensity == 1f)
 					{
 						CGColor clr = lightColor.CGColor;
 						if (clr.NumberOfComponents != 4) 
@@ -238,7 +239,7 @@ namespace avTouchCSApp
 						
 						float []  rgba;
 						rgba = clr.Components;
-						GL.Color4 (rgba[0], rgba[1], rgba[2], .7f);
+						GL.Color4 (rgba[0], rgba[1], rgba[2], 1f);
 						GL.DrawArrays(All.TriangleStrip, 0, 4);
 					} else if (lightIntensity > 0f) {
 						CGColor clr = lightColor.CGColor;
@@ -262,15 +263,6 @@ namespace avTouchCSApp
 		}
 
 		#region LevelMeterItf implementation
-		public uint NumLights {
-			get {
-				return _numLights;
-			}
-			set {
-				_numLights = value;
-			}
-		}
-
 		public float Level {
 			get {
 				return _level;
@@ -297,6 +289,16 @@ namespace avTouchCSApp
 				_vertical = value;
 			}
 		}
+		
+		public void LoadProperties (AppProperties appProperties)
+		{
+			this._maxIntensity = appProperties.meterIntensity;
+			this._numLights = (uint)appProperties.numLights;
+			this._variableLightIntensity = appProperties.variableLightIntensity;
+			
+			this.SetNeedsDisplay ();
+		}
+		
 		#endregion
 	}
 }
