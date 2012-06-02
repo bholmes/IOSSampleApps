@@ -54,11 +54,6 @@ namespace avTouchCSApp
 			CreateNewPlayer ( fileURL);
 			
 			AudioSession.Initialize();
-			
-			AVAudioSession.SharedInstance ().OutputChannelsChanged += delegate(object sender, AVChannelsEventArgs e) {
-				Console.WriteLine ();
-			};
-
 
 			NSError setCategoryError;
 			AVAudioSession.SharedInstance ().SetCategory (new NSString (AVAudioSession.CategoryPlayback.ToString ()), out setCategoryError);
