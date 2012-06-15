@@ -13,6 +13,10 @@
 		7919A94B158AB99400D6C660 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7919A949158AB99400D6C660 /* InfoPlist.strings */; };
 		7919A94D158AB99400D6C660 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7919A94C158AB99400D6C660 /* main.m */; };
 		7919A951158AB99500D6C660 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7919A950158AB99500D6C660 /* AppDelegate.m */; };
+		7919A959158ABA3400D6C660 /* TopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7919A958158ABA3400D6C660 /* TopMenu.m */; };
+		7919A95C158ABDB900D6C660 /* GLPerformanceCube.m in Sources */ = {isa = PBXBuildFile; fileRef = 7919A95B158ABDB900D6C660 /* GLPerformanceCube.m */; };
+		7919A95E158AC6F000D6C660 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A95D158AC6F000D6C660 /* GLKit.framework */; };
+		7919A960158AD17800D6C660 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A95F158AD17800D6C660 /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +24,18 @@
 		7919A940158AB99400D6C660 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7919A942158AB99400D6C660 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7919A944158AB99400D6C660 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7919A948158AB99400D6C660 /* CPerformanceTesting-Info.plist */ = {isa = PBXFileReference; path = "CPerformanceTesting-Info.plist"; sourceTree = "<group>"; };
+		7919A948158AB99400D6C660 /* CPerformanceTesting-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CPerformanceTesting-Info.plist"; sourceTree = "<group>"; };
 		7919A94A158AB99400D6C660 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7919A94C158AB99400D6C660 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7919A94E158AB99400D6C660 /* CPerformanceTesting-Prefix.pch */ = {isa = PBXFileReference; path = "CPerformanceTesting-Prefix.pch"; sourceTree = "<group>"; };
-		7919A94F158AB99400D6C660 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		7919A94E158AB99400D6C660 /* CPerformanceTesting-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CPerformanceTesting-Prefix.pch"; sourceTree = "<group>"; };
+		7919A94F158AB99400D6C660 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7919A950158AB99500D6C660 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7919A957158ABA3400D6C660 /* TopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopMenu.h; sourceTree = "<group>"; };
+		7919A958158ABA3400D6C660 /* TopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopMenu.m; sourceTree = "<group>"; };
+		7919A95A158ABDB900D6C660 /* GLPerformanceCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLPerformanceCube.h; sourceTree = "<group>"; };
+		7919A95B158ABDB900D6C660 /* GLPerformanceCube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLPerformanceCube.m; sourceTree = "<group>"; };
+		7919A95D158AC6F000D6C660 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		7919A95F158AD17800D6C660 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7919A960158AD17800D6C660 /* OpenGLES.framework in Frameworks */,
+				7919A95E158AC6F000D6C660 /* GLKit.framework in Frameworks */,
 				7919A941158AB99400D6C660 /* UIKit.framework in Frameworks */,
 				7919A943158AB99400D6C660 /* Foundation.framework in Frameworks */,
 				7919A945158AB99400D6C660 /* CoreGraphics.framework in Frameworks */,
@@ -45,6 +57,8 @@
 		7919A931158AB99400D6C660 = {
 			isa = PBXGroup;
 			children = (
+				7919A95F158AD17800D6C660 /* OpenGLES.framework */,
+				7919A95D158AC6F000D6C660 /* GLKit.framework */,
 				7919A946158AB99400D6C660 /* CPerformanceTesting */,
 				7919A93F158AB99400D6C660 /* Frameworks */,
 				7919A93D158AB99400D6C660 /* Products */,
@@ -72,9 +86,13 @@
 		7919A946158AB99400D6C660 /* CPerformanceTesting */ = {
 			isa = PBXGroup;
 			children = (
+				7919A947158AB99400D6C660 /* Supporting Files */,
 				7919A94F158AB99400D6C660 /* AppDelegate.h */,
 				7919A950158AB99500D6C660 /* AppDelegate.m */,
-				7919A947158AB99400D6C660 /* Supporting Files */,
+				7919A957158ABA3400D6C660 /* TopMenu.h */,
+				7919A958158ABA3400D6C660 /* TopMenu.m */,
+				7919A95A158ABDB900D6C660 /* GLPerformanceCube.h */,
+				7919A95B158ABDB900D6C660 /* GLPerformanceCube.m */,
 			);
 			path = CPerformanceTesting;
 			sourceTree = "<group>";
@@ -154,6 +172,8 @@
 			files = (
 				7919A94D158AB99400D6C660 /* main.m in Sources */,
 				7919A951158AB99500D6C660 /* AppDelegate.m in Sources */,
+				7919A959158ABA3400D6C660 /* TopMenu.m in Sources */,
+				7919A95C158ABDB900D6C660 /* GLPerformanceCube.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

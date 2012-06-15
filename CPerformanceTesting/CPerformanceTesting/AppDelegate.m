@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TopMenu.h"
 
 @implementation AppDelegate
 
@@ -15,8 +16,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+    TopMenu* menu = [[TopMenu alloc]init];
+    
+    UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:menu];
+    nav.navigationBar.barStyle = UIBarStyleBlack;
+    self.window.rootViewController = nav;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

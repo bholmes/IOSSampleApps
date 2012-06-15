@@ -10,4 +10,6 @@
 
 @interface TopMenu : UITableViewController
 
+- (id)init;
+
 @end

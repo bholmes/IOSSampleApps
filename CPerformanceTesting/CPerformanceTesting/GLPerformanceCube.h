@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GLKit/GLKit.h>
 
-@interface GLPerformanceCube : UIViewController
+@interface GLPerformanceCube : UIViewController <GLKViewDelegate>
 
 @end
