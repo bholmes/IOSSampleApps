@@ -9,6 +9,7 @@
 #import "GLPerformanceCube.h"
 #import <GLKit/GLKit.h>
 #import <OpenGLES/EAGL.h>
+#include <sys/time.h>
 
 @interface GLPerformanceCube ()
 {
@@ -108,12 +109,40 @@
                                    
 -(IBAction)testButtonClicked:(id)sender
 {
-                                       
+    struct timeval startTime, endTime;
+    gettimeofday(&startTime, NULL); 
+    int count = 0;
+    long elapsed_seconds, elapsed_useconds;
+    
+    elapsed_seconds = 0;
+    
+    while (elapsed_seconds < 10)
+    {
+        _modelMatrix = GLKMatrix4Multiply(GLKMatrix4MakeYRotation(0.05f), _modelMatrix);
+        [self.glview display];
+        count++;
+        gettimeofday(&endTime, NULL);
+        
+        elapsed_seconds  = endTime.tv_sec  - startTime.tv_sec;
+    }
+    
+    elapsed_useconds = endTime.tv_usec - startTime.tv_usec;
+    double totalTime = ((double)elapsed_seconds) + (((double)elapsed_useconds)/1000000);
+    double fps = ((double)count)/totalTime;
+    self.fpLabel.text = [NSString stringWithFormat:@"fps = %g", fps];
+    //self.fpsLabel.text = [NSString stringWithFormat:@"%g fps", fps];
 }
      
 -(IBAction)HandleNumTrisStepperChanged:(id)sender
 {
-        
+    int value = (int)self.numTrisStepper.value;
+    if (value == 0)
+        value = 1;
+    else
+        value *= 10;
+    
+    [self createBuffers: value];
+    [self.glview display];
 }
 
 - (void) setupGLView
@@ -139,7 +168,7 @@
     _modelMatrix = GLKMatrix4Identity;
     self.effect.transform.modelviewMatrix = _modelMatrix;
     
-    [self createBuffers:2];
+    [self createBuffers:1];
 }
 
 - (void)viewDidLayoutSubviews
@@ -272,7 +301,7 @@ void transformFace (float* base1, GLKMatrix4 trans, float* target1, int length, 
     free (normals);
     
     if (self.numTrisLabel)
-        self.numTrisLabel.text = [NSString stringWithFormat:@"triangles = ", ((_triangles) / 3)];
+        self.numTrisLabel.text = [NSString stringWithFormat:@"triangles = %d", ((_triangles) / 3)];
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect

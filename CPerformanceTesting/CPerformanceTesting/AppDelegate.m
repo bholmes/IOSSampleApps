@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TopMenu.h"
+#import "TestFlight.h"
 
 @implementation AppDelegate
 
@@ -15,6 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //[TestFlight setDeviceIdentifier:UIDevice.currentDevice.uniqueIdentifier];
+    //[TestFlight takeOff:@"token removed"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     TopMenu* menu = [[TopMenu alloc]init];
