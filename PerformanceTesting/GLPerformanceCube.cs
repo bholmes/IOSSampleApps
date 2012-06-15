@@ -80,8 +80,6 @@ namespace PerformanceTesting
 		
 		void _setupGLView ()
 		{
-			base.ViewDidLoad ();
-			
 			// Craete a new context if needed
 			if (EAGLContext.CurrentContext == null)
 				EAGLContext.SetCurrentContext (new EAGLContext (EAGLRenderingAPI.OpenGLES2));
@@ -288,8 +286,6 @@ namespace PerformanceTesting
 			float framesPerSecond = frameCount / ((float)currentTime.Subtract (startTime).TotalSeconds);
 			
 			_fpLabel.Text = "fps = " + framesPerSecond;
-			
-			//MonoTouch.TestFlight.TestFlight.SubmitFeedback (_fpLabel.Text);
 		}
 		
 		public void RotateXY (float x, float y)
@@ -313,8 +309,7 @@ namespace PerformanceTesting
 		public override void TouchesBegan (NSSet touches, UIEvent evt)
 		{
 			base.TouchesBegan (touches, evt);
-			
-			base.TouchesBegan (touches, evt);
+
 			UITouch touch = touches.AnyObject as UITouch;
 			_previousLocation = touch.LocationInView (touch.View);
 		}
