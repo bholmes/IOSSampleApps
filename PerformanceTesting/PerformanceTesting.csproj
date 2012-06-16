@@ -101,6 +101,10 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="TopMenuTable.cs" />
     <Compile Include="GLPerformanceCube.cs" />
+    <Compile Include="GLCubeResult.cs" />
+    <Compile Include="GLCubeResults.cs" />
+    <Compile Include="ResultData.cs" />
+    <Compile Include="GLCubeResultViewController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

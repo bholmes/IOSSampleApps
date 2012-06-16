@@ -286,6 +286,9 @@ namespace PerformanceTesting
 			float framesPerSecond = frameCount / ((float)currentTime.Subtract (startTime).TotalSeconds);
 			
 			_fpLabel.Text = "fps = " + framesPerSecond;
+			
+			ResultData.Results.GLCubeResults.Add 
+				(new GLCubeResult (_triangles/3, framesPerSecond));
 		}
 		
 		public void RotateXY (float x, float y)

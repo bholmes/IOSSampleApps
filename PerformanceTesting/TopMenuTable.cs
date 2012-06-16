@@ -21,7 +21,13 @@ namespace PerformanceTesting
 		[Export ("tableView:numberOfRowsInSection:")]
 		public int RowsInSection (UITableView tableview, int section)
 		{
-			return 1;	
+			switch (section)
+			{
+			case 0:
+				return 2;
+			default:
+				return 0;
+			}
 		}
 	
 		[Export ("tableView:cellForRowAtIndexPath:")]
@@ -30,15 +36,44 @@ namespace PerformanceTesting
 			UITableViewCell ret = tableView.DequeueReusableCell ("RootItem1");
 	        if (ret == null) {
 				ret = new UITableViewCell (UITableViewCellStyle.Default, "RootItem1");
+				ret.SelectionStyle = UITableViewCellSelectionStyle.None;
 	        }
-			ret.TextLabel.Text = "GL Performance Cube";
+			if (indexPath.Section == 0)
+			{
+				switch (indexPath.Row)
+				{
+				case 0 :
+					ret.TextLabel.Text = "GL Performance Cube";
+					break;
+				case 1 :
+					ret.TextLabel.Text = "Local GL Results";
+					break;
+				default:
+					break;
+				}
+			}
 			return ret;
 		}
 
 		[Export ("tableView:didSelectRowAtIndexPath:")]
 		public void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
-			this.NavigationController.PushViewController (new GLPerformanceCube (), true);
+			if (indexPath.Section == 0)
+			{
+				switch (indexPath.Row)
+				{
+				case 0 :
+					this.NavigationController.PushViewController (new GLPerformanceCube (), true);
+					break;
+				case 1 :
+					this.NavigationController.PushViewController 
+						(new GLCubeResultViewController (ResultData.Results.GLCubeResults), true);
+					break;
+				default:
+					break;
+				}
+			}
+			
 		}
 	}
 }
