@@ -18,6 +18,8 @@
 				<string>M-Icon 3 114.png</string>
 				<string>Default.png</string>
 				<string>Default@2x.png</string>
+				<string>M-Icon 3 72.png</string>
+				<string>M-Icon 3 144.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
@@ -50,6 +52,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

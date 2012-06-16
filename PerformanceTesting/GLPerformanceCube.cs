@@ -40,7 +40,8 @@ namespace PerformanceTesting
 			_view.AddSubview (_numTrisLabel);
 			
 			_numTrisStepper = new UIStepper (rect);
-			_numTrisStepper.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin;
+			_numTrisStepper.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | 
+				UIViewAutoresizing.FlexibleLeftMargin;
 			_numTrisStepper.MinimumValue = 0;
 			rect.X = rect.Width - _numTrisStepper.Bounds.Width;
 			_numTrisStepper.Frame = rect;
@@ -115,7 +116,14 @@ namespace PerformanceTesting
 			float aspect = _view.Bounds.Height / _view.Bounds.Width;
 			float worldBounds = 2;
 			GL.Viewport (0, 0, (int)this.View.Bounds.Width, (int)this.View.Bounds.Height);
-			_effect.Transform.ProjectionMatrix = Matrix4.CreateOrthographicOffCenter (-worldBounds, worldBounds, -worldBounds * aspect, worldBounds * aspect, -worldBounds, worldBounds);
+			if (aspect > 1.0f)
+				_effect.Transform.ProjectionMatrix = Matrix4.CreateOrthographicOffCenter (-worldBounds, worldBounds, -worldBounds * aspect, worldBounds * aspect, -worldBounds, worldBounds);
+			else
+			{
+				aspect = 1.0f / aspect;
+				_effect.Transform.ProjectionMatrix = Matrix4.CreateOrthographicOffCenter (-worldBounds * aspect, worldBounds * aspect, -worldBounds, worldBounds, -worldBounds, worldBounds);
+			}
+			this._view.Display ();
 		}
 		
 		uint [] _vertexBuffers;
@@ -238,6 +246,9 @@ namespace PerformanceTesting
 		[Export ("glkView:drawInRect:")]
 		public void glkViewDrawInRect (GLKView view, RectangleF rect)
 		{
+			if (_vertexBuffers == null)
+				return;
+			
 			GL.ClearColor (0.0f, 0.0f, 0.0f, 1.0f);
 			
 			// Clear all old bits
@@ -328,6 +339,11 @@ namespace PerformanceTesting
 			_previousLocation = currentPoint;
 			
 			_view.Display ();
+		}
+		
+		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
+		{
+			return true;
 		}
 	}
 }

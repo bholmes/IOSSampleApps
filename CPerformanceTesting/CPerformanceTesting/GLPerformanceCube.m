@@ -76,7 +76,8 @@
     [self.view addSubview:self.numTrisLabel];
     
     self.numTrisStepper = [[UIStepper alloc]initWithFrame:rect];
-    self.numTrisStepper.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    self.numTrisStepper.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
+                                            UIViewAutoresizingFlexibleLeftMargin;
     self.numTrisStepper.minimumValue = 0;    
     rect.origin.x = rect.size.width - self.numTrisStepper.bounds.size.width;
     
@@ -104,7 +105,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (YES);
 }
                                    
 -(IBAction)testButtonClicked:(id)sender
@@ -164,8 +165,8 @@
     
     [self sizeGLView];
     
-    //_modelMatrix = GLKMatrix4Rotate(GLKMatrix4Identity, M_PI / 5.0f, 1, 0, 0);
-    _modelMatrix = GLKMatrix4Identity;
+    _modelMatrix = GLKMatrix4Rotate(GLKMatrix4Identity, M_PI / 5.0f, 1, 0, 0);
+    //_modelMatrix = GLKMatrix4Identity;
     self.effect.transform.modelviewMatrix = _modelMatrix;
     
     [self createBuffers:1];
@@ -183,8 +184,20 @@
     float aspect = self.glview.bounds.size.height / self.glview.bounds.size.width;
     float worldBounds = 2;
     glViewport (0, 0, (int)self.glview.bounds.size.width, (int)self.glview.bounds.size.height);
-    self.effect.transform.projectionMatrix = 
-        GLKMatrix4MakeOrtho (-worldBounds, worldBounds, -worldBounds * aspect, worldBounds * aspect, -worldBounds, worldBounds);
+    
+    if (aspect > 1.0f)
+    {
+        self.effect.transform.projectionMatrix = 
+            GLKMatrix4MakeOrtho (-worldBounds, worldBounds, -worldBounds * aspect, worldBounds * aspect, -worldBounds, worldBounds);
+    }
+    else 
+    {
+        aspect = 1.0f / aspect;
+        self.effect.transform.projectionMatrix = 
+            GLKMatrix4MakeOrtho (-worldBounds * aspect, worldBounds * aspect, -worldBounds, worldBounds, -worldBounds, worldBounds);
+    }
+    
+    [self.glview display];
 }
 
 void fillNormals (float* normals, float x, float y, float z, int index, int length)
@@ -306,6 +319,9 @@ void transformFace (float* base1, GLKMatrix4 trans, float* target1, int length, 
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
+    if (!_vertexBuffers)
+        return;
+    
     glClearColor (0.0f, 0.0f, 0.0f, 1.0f);
     
     // Clear all old bits

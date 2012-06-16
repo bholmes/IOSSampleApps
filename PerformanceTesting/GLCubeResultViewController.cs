@@ -110,6 +110,11 @@ namespace PerformanceTesting
 			_glResults.RemoveAt (sourceIndexPath.Row);
 			_glResults.Insert (destinationIndexPath.Row, result);
 		}
+		
+		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
+		{
+			return true;
+		}
 	}
 }
 

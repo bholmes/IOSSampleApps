@@ -75,6 +75,11 @@ namespace PerformanceTesting
 			}
 			
 		}
+		
+		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
+		{
+			return true;
+		}
 	}
 }
 
