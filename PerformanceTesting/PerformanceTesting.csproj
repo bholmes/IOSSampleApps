@@ -23,6 +23,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchProfiling>true</MtouchProfiling>
     <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -102,4 +103,17 @@
     <Compile Include="GLPerformanceCube.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\M-Icon 3 57.png" />
+    <Content Include="Icons\M-Icon 3 72.png" />
+    <Content Include="Icons\M-Icon 3 114.png" />
+    <Content Include="Icons\M-Icon 3 144.png" />
+    <Content Include="Icons\M-Splash 320.png" />
+    <Content Include="Icons\M-Splash 640.png" />
+    <Content Include="Default.png" />
+    <Content Include="Default%402x.png" />
+  </ItemGroup>
 </Project>
