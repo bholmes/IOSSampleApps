@@ -85,6 +85,8 @@ namespace PerformanceTesting
 		
 		public static string OwnerName {get;set;}
 		
+		public static int DatabaseId {get;set;}
+		
 		[DllImport (MonoTouch.Constants.SystemLibrary, EntryPoint="sysctlbyname")]
 		private static extern int sysctlbyname ([MarshalAs (UnmanagedType.LPStr)]string name,
 		                                        IntPtr oldp, ref IntPtr oldlenp, IntPtr newp, 

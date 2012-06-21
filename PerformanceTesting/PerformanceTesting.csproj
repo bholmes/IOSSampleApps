@@ -93,9 +93,18 @@
     <Reference Include="TestFlight">
       <HintPath>..\..\xamarin\monotouch-bindings\TestFlight\binding\TestFlight.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Services" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="Web References\PerformanceTestingWebService\Service.xsd" />
+    <None Include="Web References\PerformanceTestingWebService\Service1.xsd" />
+    <None Include="Web References\PerformanceTestingWebService\Service.wsdl" />
+    <None Include="Web References\PerformanceTestingWebService\Service2.xsd" />
+    <None Include="Web References\PerformanceTestingWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -109,6 +118,9 @@
     <Compile Include="DeviceInfoViewController.cs" />
     <Compile Include="DeviceInfo.cs" />
     <Compile Include="TextEditCell.cs" />
+    <Compile Include="Web References\PerformanceTestingWebService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -123,5 +135,15 @@
     <Content Include="Icons\M-Splash 640.png" />
     <Content Include="Default.png" />
     <Content Include="Default%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PerformanceTestingWebService</RelPath>
+      <UpdateFromURL>http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?wsdl</UpdateFromURL>
+    </WebReferenceUrl>
   </ItemGroup>
 </Project>

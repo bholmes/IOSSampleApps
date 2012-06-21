@@ -2,6 +2,7 @@ using System;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 using System.Drawing;
+using PerformanceTesting.PerformanceTestingWebService;
 
 namespace PerformanceTesting
 {
@@ -24,6 +25,24 @@ namespace PerformanceTesting
 		
 		void registerButtonClicked (object sender, EventArgs e)
 		{
+			FullDeviceInfo deviceInfo = new FullDeviceInfo ();
+			
+			deviceInfo.ModelName = DeviceInfo.ModelName;
+			deviceInfo.ModelName = DeviceInfo.ModelName;
+			deviceInfo.UIIdion = DeviceInfo.UIIdion;
+			deviceInfo.SpecificHWVersion = DeviceInfo.SpecificHWVersion;
+			deviceInfo.OSName = DeviceInfo.OSName;
+			deviceInfo.OSVersion = DeviceInfo.OSVersion;
+			deviceInfo.UniqueId = DeviceInfo.UniqueId;
+			deviceInfo.SystemName = DeviceInfo.DeviceName;
+			deviceInfo.OwnerName = DeviceInfo.OwnerName;
+			
+			PerformanceTestingDataService service = new PerformanceTestingDataService ();
+			
+			service.BeginAddDevice (deviceInfo, (result) => {
+				Console.WriteLine ("Done");
+				DeviceInfo.DatabaseId = service.EndAddDevice (result);
+			} , null);
 			
 		}
 		
