@@ -31,7 +31,7 @@ namespace PerformanceTesting
 			switch (section)
 			{
 			case 0:
-				return 2;
+				return 3;
 			case 1:
 				return 1;
 			default:
@@ -57,6 +57,9 @@ namespace PerformanceTesting
 				case 1 :
 					ret.TextLabel.Text = "Local GL Results";
 					break;
+				case 2 :
+					ret.TextLabel.Text = "Remote GL Results";
+					break;
 				default:
 					break;
 				}
@@ -81,6 +84,10 @@ namespace PerformanceTesting
 				case 1 :
 					this.NavigationController.PushViewController 
 						(new GLCubeResultViewController (ResultData.Results.GLCubeResults), true);
+					break;
+				case 2 :
+					this.NavigationController.PushViewController 
+						(GLCubeResultViewController.FromRemoteResults (), true);
 					break;
 				default:
 					break;

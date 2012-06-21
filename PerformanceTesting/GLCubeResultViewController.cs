@@ -10,10 +10,44 @@ namespace PerformanceTesting
 	public class GLCubeResultViewController : UITableViewController
 	{
 		GLCubeResults _glResults;
+		object _glResultsLock = new object ();
+		bool _isRemote = false;
+		
+		public static GLCubeResultViewController FromRemoteResults ()
+		{
+			GLCubeResultViewController ret = new GLCubeResultViewController ();
+			ret._isRemote = true;
+			
+			PerformanceTestingDataService service = new PerformanceTestingDataService ();
+			
+			service.BeginGetPerformanceCubeResults ((result) => {
+				PerformanceCubeResult [] results = service.EndGetPerformanceCubeResults (result);
+				
+				lock (ret._glResultsLock)
+				{
+					foreach (PerformanceCubeResult res in results)
+					{
+						ret._glResults.Add (new GLCubeResult (res.NumberOfTriangles,res.FramesPerSecond));	
+					}
+				}
+				
+				ret.InvokeOnMainThread (()=> {
+					ret.TableView.ReloadData ();
+				});
+				
+			}, null);
+			
+			return ret;
+		}
 		
 		public GLCubeResultViewController (GLCubeResults glResults) : base (UITableViewStyle.Grouped)
 		{
 			_glResults = glResults;
+		}
+		
+		private GLCubeResultViewController () : base (UITableViewStyle.Grouped)
+		{
+			_glResults = new GLCubeResults ();
 		}
 		
 		public override void ViewDidLoad ()
@@ -21,13 +55,16 @@ namespace PerformanceTesting
 			base.ViewDidLoad ();
 			this.TableView.WeakDataSource = this;
 			
-			UIBarButtonItem editButton = new UIBarButtonItem 
-				("Edit", UIBarButtonItemStyle.Plain, editButtonClicked);
-			UIBarButtonItem postButton = new UIBarButtonItem 
-				("Post", UIBarButtonItemStyle.Plain, postButtonClicked);
-			
-			this.NavigationItem.SetRightBarButtonItems (
-				new UIBarButtonItem[] {editButton, postButton}, false);
+			if (!_isRemote)
+			{
+				UIBarButtonItem editButton = new UIBarButtonItem 
+					("Edit", UIBarButtonItemStyle.Plain, editButtonClicked);
+				UIBarButtonItem postButton = new UIBarButtonItem 
+					("Post", UIBarButtonItemStyle.Plain, postButtonClicked);
+				
+				this.NavigationItem.SetRightBarButtonItems (
+					new UIBarButtonItem[] {editButton, postButton}, false);
+			}
 		}
 		
 		void postButtonClicked (object sender, EventArgs e)
@@ -74,7 +111,10 @@ namespace PerformanceTesting
 		[Export ("tableView:numberOfRowsInSection:")]
 		public int RowsInSection (UITableView tableview, int section)
 		{
-			return _glResults.Count;
+			lock (_glResultsLock)
+			{
+				return _glResults.Count;
+			}
 		}
 	
 		[Export ("tableView:cellForRowAtIndexPath:")]
@@ -85,7 +125,12 @@ namespace PerformanceTesting
 				ret = new UITableViewCell (UITableViewCellStyle.Value1, "GLCubeResultRow");
 	        }
 			
-			GLCubeResult result = _glResults[indexPath.Row];
+			GLCubeResult result;
+			
+			lock (_glResultsLock)
+			{
+				result = _glResults[indexPath.Row];
+			}
 			
 			ret.SelectionStyle = UITableViewCellSelectionStyle.None;
 			ret.TextLabel.Text = result.NumberOfTriangles + " triangles";
