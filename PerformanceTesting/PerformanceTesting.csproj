@@ -49,6 +49,7 @@
     <CodesignProvision>01705AA0-611D-43FC-BDA6-58B31F5035D0</CodesignProvision>
     <IpaPackageName />
     <MtouchI18n />
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -105,6 +106,9 @@
     <Compile Include="GLCubeResults.cs" />
     <Compile Include="ResultData.cs" />
     <Compile Include="GLCubeResultViewController.cs" />
+    <Compile Include="DeviceInfoViewController.cs" />
+    <Compile Include="DeviceInfo.cs" />
+    <Compile Include="TextEditCell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

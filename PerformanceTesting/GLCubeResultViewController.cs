@@ -9,7 +9,7 @@ namespace PerformanceTesting
 	{
 		GLCubeResults _glResults;
 		
-		public GLCubeResultViewController (GLCubeResults glResults) : base (UITableViewStyle.Plain)
+		public GLCubeResultViewController (GLCubeResults glResults) : base (UITableViewStyle.Grouped)
 		{
 			_glResults = glResults;
 		}
@@ -53,7 +53,7 @@ namespace PerformanceTesting
 		{
 			UITableViewCell ret = tableView.DequeueReusableCell ("GLCubeResultRow");
 	        if (ret == null) {
-				ret = new UITableViewCell (UITableViewCellStyle.Subtitle, "GLCubeResultRow");
+				ret = new UITableViewCell (UITableViewCellStyle.Value1, "GLCubeResultRow");
 	        }
 			
 			GLCubeResult result = _glResults[indexPath.Row];

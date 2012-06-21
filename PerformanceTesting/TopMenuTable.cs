@@ -18,6 +18,13 @@ namespace PerformanceTesting
 			this.TableView.WeakDataSource = this;
 		}	
 		
+		[Export ("numberOfSectionsInTableView:")]
+		public virtual int NumberOfSections (UITableView tableView)
+		{
+			return 2;
+		}
+
+		
 		[Export ("tableView:numberOfRowsInSection:")]
 		public int RowsInSection (UITableView tableview, int section)
 		{
@@ -25,6 +32,8 @@ namespace PerformanceTesting
 			{
 			case 0:
 				return 2;
+			case 1:
+				return 1;
 			default:
 				return 0;
 			}
@@ -52,6 +61,10 @@ namespace PerformanceTesting
 					break;
 				}
 			}
+			else if (indexPath.Section == 1)
+			{
+				ret.TextLabel.Text = "View Device Info";	
+			}
 			return ret;
 		}
 
@@ -72,6 +85,10 @@ namespace PerformanceTesting
 				default:
 					break;
 				}
+			}
+			else if (indexPath.Section == 1)
+			{
+				this.NavigationController.PushViewController (new DeviceInfoViewController (), true);	
 			}
 			
 		}
