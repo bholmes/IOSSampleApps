@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" name="PerformanceTestingDataService" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:tns="http://tempuri.org/Imports" targetNamespace="http://tempuri.org/Imports" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xs:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebApp" />
+    </xs:schema>
+  </types>
+  <message name="IPerformanceTestingDataService_AddDevice_InputMessage">
+    <part name="parameters" element="tns:AddDevice" />
+  </message>
+  <message name="IPerformanceTestingDataService_AddDevice_OutputMessage">
+    <part name="parameters" element="tns:AddDeviceResponse" />
+  </message>
+  <message name="IPerformanceTestingDataService_FindDeviceInfo_InputMessage">
+    <part name="parameters" element="tns:FindDeviceInfo" />
+  </message>
+  <message name="IPerformanceTestingDataService_FindDeviceInfo_OutputMessage">
+    <part name="parameters" element="tns:FindDeviceInfoResponse" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetDeviceList_InputMessage">
+    <part name="parameters" element="tns:GetDeviceList" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetDeviceList_OutputMessage">
+    <part name="parameters" element="tns:GetDeviceListResponse" />
+  </message>
+  <message name="IPerformanceTestingDataService_AddPerformanceCubeResult_InputMessage">
+    <part name="parameters" element="tns:AddPerformanceCubeResult" />
+  </message>
+  <message name="IPerformanceTestingDataService_AddPerformanceCubeResult_OutputMessage">
+    <part name="parameters" element="tns:AddPerformanceCubeResultResponse" />
+  </message>
+  <message name="IPerformanceTestingDataService_AddPerformanceCubeResults_InputMessage">
+    <part name="parameters" element="tns:AddPerformanceCubeResults" />
+  </message>
+  <message name="IPerformanceTestingDataService_AddPerformanceCubeResults_OutputMessage">
+    <part name="parameters" element="tns:AddPerformanceCubeResultsResponse" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceCubeResults_InputMessage">
+    <part name="parameters" element="tns:GetPerformanceCubeResults" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceCubeResults_OutputMessage">
+    <part name="parameters" element="tns:GetPerformanceCubeResultsResponse" />
+  </message>
+  <portType name="IPerformanceTestingDataService">
+    <operation name="AddDevice">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddDevice" message="tns:IPerformanceTestingDataService_AddDevice_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddDeviceResponse" message="tns:IPerformanceTestingDataService_AddDevice_OutputMessage" />
+    </operation>
+    <operation name="FindDeviceInfo">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindDeviceInfo" message="tns:IPerformanceTestingDataService_FindDeviceInfo_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindDeviceInfoResponse" message="tns:IPerformanceTestingDataService_FindDeviceInfo_OutputMessage" />
+    </operation>
+    <operation name="GetDeviceList">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetDeviceList" message="tns:IPerformanceTestingDataService_GetDeviceList_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetDeviceListResponse" message="tns:IPerformanceTestingDataService_GetDeviceList_OutputMessage" />
+    </operation>
+    <operation name="AddPerformanceCubeResult">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResult" message="tns:IPerformanceTestingDataService_AddPerformanceCubeResult_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResultResponse" message="tns:IPerformanceTestingDataService_AddPerformanceCubeResult_OutputMessage" />
+    </operation>
+    <operation name="AddPerformanceCubeResults">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResults" message="tns:IPerformanceTestingDataService_AddPerformanceCubeResults_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResultsResponse" message="tns:IPerformanceTestingDataService_AddPerformanceCubeResults_OutputMessage" />
+    </operation>
+    <operation name="GetPerformanceCubeResults">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResults" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResults_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsResponse" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResults_OutputMessage" />
+    </operation>
+  </portType>
+  <binding name="BasicHttpBinding_IPerformanceTestingDataService" type="tns:IPerformanceTestingDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="AddDevice">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/AddDevice" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FindDeviceInfo">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/FindDeviceInfo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDeviceList">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetDeviceList" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddPerformanceCubeResult">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResult" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddPerformanceCubeResults">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResults" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPerformanceCubeResults">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResults" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PerformanceTestingDataService">
+    <port name="BasicHttpBinding_IPerformanceTestingDataService" binding="tns:BasicHttpBinding_IPerformanceTestingDataService">
+      <soap:address location="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc/basic" />
+    </port>
+  </service>
+</definitions>

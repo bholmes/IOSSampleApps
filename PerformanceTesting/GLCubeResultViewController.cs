@@ -2,6 +2,8 @@ using System;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 using System.Text;
+using PerformanceTesting.PerformanceTestingWebService;
+using System.Collections.Generic;
 
 namespace PerformanceTesting
 {
@@ -9,7 +11,7 @@ namespace PerformanceTesting
 	{
 		GLCubeResults _glResults;
 		
-		public GLCubeResultViewController (GLCubeResults glResults) : base (UITableViewStyle.Plain)
+		public GLCubeResultViewController (GLCubeResults glResults) : base (UITableViewStyle.Grouped)
 		{
 			_glResults = glResults;
 		}
@@ -21,9 +23,36 @@ namespace PerformanceTesting
 			
 			UIBarButtonItem editButton = new UIBarButtonItem 
 				("Edit", UIBarButtonItemStyle.Plain, editButtonClicked);
-			this.NavigationItem.RightBarButtonItem = editButton;
+			UIBarButtonItem postButton = new UIBarButtonItem 
+				("Post", UIBarButtonItemStyle.Plain, postButtonClicked);
+			
+			this.NavigationItem.SetRightBarButtonItems (
+				new UIBarButtonItem[] {editButton, postButton}, false);
 		}
-				 
+		
+		void postButtonClicked (object sender, EventArgs e)
+		{
+			List<PerformanceCubeResult> results = new List<PerformanceCubeResult>(_glResults.Count);
+			PerformanceTestingDataService service = new PerformanceTestingDataService ();
+			
+			for (int i=0; i<_glResults.Count; i++)
+			{
+				PerformanceCubeResult result = new PerformanceCubeResult ();
+				result.DeviceDatabaseId = DeviceInfo.DatabaseId;
+				result.DeviceDatabaseIdSpecified = true;
+				result.NumberOfTriangles = _glResults[i].NumberOfTriangles;
+				result.NumberOfTrianglesSpecified = true;
+				result.FramesPerSecond = _glResults[i].FramesPerSecond;
+				result.FramesPerSecondSpecified = true;
+				results.Add (result);
+			}
+			
+			service.BeginAddPerformanceCubeResults (
+					results.ToArray (), (addResult) => {
+					Console.WriteLine ("Done");
+				}, null);
+		}
+		
 		void editButtonClicked (object sender, EventArgs e)
 		{
 			this.SetEditing (!this.Editing, true);
@@ -53,7 +82,7 @@ namespace PerformanceTesting
 		{
 			UITableViewCell ret = tableView.DequeueReusableCell ("GLCubeResultRow");
 	        if (ret == null) {
-				ret = new UITableViewCell (UITableViewCellStyle.Subtitle, "GLCubeResultRow");
+				ret = new UITableViewCell (UITableViewCellStyle.Value1, "GLCubeResultRow");
 	        }
 			
 			GLCubeResult result = _glResults[indexPath.Row];
