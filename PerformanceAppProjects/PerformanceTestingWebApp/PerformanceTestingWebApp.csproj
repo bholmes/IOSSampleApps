@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DeviceInfo.cs" />
     <Compile Include="IPerformanceTestingDataService.cs" />
+    <Compile Include="PerformanceCubeResult.cs" />
     <Compile Include="PerformanceTestingDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

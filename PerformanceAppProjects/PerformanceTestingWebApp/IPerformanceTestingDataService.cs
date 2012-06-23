@@ -13,6 +13,18 @@ namespace PerformanceTestingWebApp
         int AddDevice(FullDeviceInfo deviceInfo);
 
         [OperationContract]
+        DeviceInfo FindDeviceInfo(int databaseId);
+
+        [OperationContract]
         List<DeviceInfo> GetDeviceList();
+
+        [OperationContract]
+        int AddPerformanceCubeResult(PerformanceCubeResult result);
+
+        [OperationContract]
+        void AddPerformanceCubeResults(List <PerformanceCubeResult> results);
+
+        [OperationContract]
+        List<PerformanceCubeResult> GetPerformanceCubeResults();
     }
 }

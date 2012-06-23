@@ -19,6 +19,8 @@ namespace PerformanceTestingWebApp
             this.OSVersion = fullDI.OSVersion;
         }
 
+        public DeviceInfo() { }
+
         [DataMember]
         public int DatabaseId { get; set; }
         
