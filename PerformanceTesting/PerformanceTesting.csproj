@@ -125,6 +125,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Icons\" />
+    <Folder Include="Soap\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\M-Icon 3 57.png" />
