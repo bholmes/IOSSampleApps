@@ -38,6 +38,10 @@
 		7933CAE5159751A200195C19 /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CADA159751A200195C19 /* USAdditions.m */; };
 		7933CAE6159751A200195C19 /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CADC159751A200195C19 /* USGlobals.m */; };
 		7933CAE7159751A200195C19 /* xs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CADE159751A200195C19 /* xs.m */; };
+		7933CAEA15976A7B00195C19 /* GLCubeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAE915976A7A00195C19 /* GLCubeResult.m */; };
+		7933CAED1597939200195C19 /* GLCubeResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAEC1597939100195C19 /* GLCubeResults.m */; };
+		7933CAF01597986200195C19 /* GLCubeResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAEF1597986100195C19 /* GLCubeResultViewController.m */; };
+		7933CAF31597A1A900195C19 /* ResultData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAF21597A1A800195C19 /* ResultData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +95,14 @@
 		7933CADC159751A200195C19 /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USGlobals.m; path = Soap/USGlobals.m; sourceTree = "<group>"; };
 		7933CADD159751A200195C19 /* xs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xs.h; path = Soap/xs.h; sourceTree = "<group>"; };
 		7933CADE159751A200195C19 /* xs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xs.m; path = Soap/xs.m; sourceTree = "<group>"; };
+		7933CAE815976A7A00195C19 /* GLCubeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCubeResult.h; sourceTree = "<group>"; };
+		7933CAE915976A7A00195C19 /* GLCubeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCubeResult.m; sourceTree = "<group>"; };
+		7933CAEB1597939100195C19 /* GLCubeResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCubeResults.h; sourceTree = "<group>"; };
+		7933CAEC1597939100195C19 /* GLCubeResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCubeResults.m; sourceTree = "<group>"; };
+		7933CAEE1597986100195C19 /* GLCubeResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCubeResultViewController.h; sourceTree = "<group>"; };
+		7933CAEF1597986100195C19 /* GLCubeResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCubeResultViewController.m; sourceTree = "<group>"; };
+		7933CAF11597A1A800195C19 /* ResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultData.h; sourceTree = "<group>"; };
+		7933CAF21597A1A800195C19 /* ResultData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +188,14 @@
 				7933C8E515958F4500195C19 /* DeviceInfoViewController.m */,
 				7933C8E715960D4800195C19 /* TextEditCell.h */,
 				7933C8E815960D4800195C19 /* TextEditCell.m */,
+				7933CAE815976A7A00195C19 /* GLCubeResult.h */,
+				7933CAE915976A7A00195C19 /* GLCubeResult.m */,
+				7933CAEB1597939100195C19 /* GLCubeResults.h */,
+				7933CAEC1597939100195C19 /* GLCubeResults.m */,
+				7933CAEE1597986100195C19 /* GLCubeResultViewController.h */,
+				7933CAEF1597986100195C19 /* GLCubeResultViewController.m */,
+				7933CAF11597A1A800195C19 /* ResultData.h */,
+				7933CAF21597A1A800195C19 /* ResultData.m */,
 			);
 			path = CPerformanceTesting;
 			sourceTree = "<group>";
@@ -300,6 +320,10 @@
 				7933CAE5159751A200195C19 /* USAdditions.m in Sources */,
 				7933CAE6159751A200195C19 /* USGlobals.m in Sources */,
 				7933CAE7159751A200195C19 /* xs.m in Sources */,
+				7933CAEA15976A7B00195C19 /* GLCubeResult.m in Sources */,
+				7933CAED1597939200195C19 /* GLCubeResults.m in Sources */,
+				7933CAF01597986200195C19 /* GLCubeResultViewController.m in Sources */,
+				7933CAF31597A1A900195C19 /* ResultData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

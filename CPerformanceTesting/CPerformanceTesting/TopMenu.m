@@ -9,6 +9,8 @@
 #import "TopMenu.h"
 #import "GLPerformanceCube.h"
 #import "DeviceInfoViewController.h"
+#import "GLCubeResultViewController.h"
+#import "ResultData.h"
 
 @interface TopMenu ()
 
@@ -60,8 +62,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 1;
+    if (section == 0)
+    {
+        return 3;
+    }
+    else if (section == 1)
+    {
+        return 1;
+    }
+
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -154,9 +164,19 @@
                 break;
             }
             case 1 :
+            {
+                GLCubeResultViewController* newGLResultsCtrl = 
+                [[GLCubeResultViewController alloc]initWithResults:[ResultData results].glCubeResults];
+                [self.navigationController pushViewController:newGLResultsCtrl animated: YES];
+                break;
+            }
                 break;
             case 2 :
+            {
+                GLCubeResultViewController* newGLResultsCtrl = [GLCubeResultViewController fromRemoteResults];
+                [self.navigationController pushViewController:newGLResultsCtrl animated: YES];
                 break;
+            }
             default:
                 break;
         }

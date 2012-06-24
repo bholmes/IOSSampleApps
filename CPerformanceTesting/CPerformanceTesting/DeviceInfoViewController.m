@@ -50,8 +50,7 @@
 -(IBAction)registerButtonClicked:(id)sender
 {
     BasicHttpBinding_IPerformanceTestingDataServiceBinding* binding = 
-    [[PerformanceTestingDataServiceSvc BasicHttpBinding_IPerformanceTestingDataServiceBinding]
-     initWithAddress:@"http://apps.slapholmesproductions.com/PerformanceTesting/Service.svc/basic"];
+    [PerformanceTestingDataServiceSvc BasicHttpBinding_IPerformanceTestingDataServiceBinding];
     binding.logXMLInOut = NO;
     
     PerformanceTestingDataServiceSvc_AddDevice* params = [[PerformanceTestingDataServiceSvc_AddDevice alloc]init];
@@ -66,7 +65,6 @@
     params.deviceInfo.SystemName = [DeviceInfo current].deviceName;
     params.deviceInfo.OwnerName = [DeviceInfo current].ownerName;    
     
-    [binding AddDeviceUsingParameters:params];
     [binding AddDeviceAsyncUsingParameters:params delegate:self];
 }
 
