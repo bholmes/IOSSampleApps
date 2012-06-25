@@ -112,6 +112,47 @@ namespace PerformanceTestingWebApp
             return null;
         }
 
+        public FullDeviceInfo FindFullDeviceInfo(string uniqueId)
+        {
+            System.Data.Odbc.OdbcConnection conn = createSQLConnection();
+            try
+            {
+                string selectQuery = string.Format("SELECT * FROM  `PerformanceAppDeviceInfo` WHERE  `UniqueId` =  '{0}'", uniqueId);
+                conn.Open();
+                System.Data.Odbc.OdbcCommand selectCommand = new System.Data.Odbc.OdbcCommand(selectQuery, conn);
+                try
+                {
+                    System.Data.Odbc.OdbcDataReader reader = selectCommand.ExecuteReader();
+
+                    if (!reader.Read())
+                        return null;
+
+                    return new FullDeviceInfo ()
+                    {
+                        DatabaseId =  Convert.ToInt32 (reader["DatabaseId"]),
+                        ModelName = reader["ModelName"].ToString(),
+                        OSName = reader["OSName"].ToString(),
+                        OSVersion = reader["OSVersion"].ToString(),
+                        SpecificHWVersion = reader["SpecificHWVersion"].ToString(),
+                        UIIdion = reader["UIIdion"].ToString(),
+                        SystemName = reader["SystemName"].ToString(),
+                        OwnerName = reader["OwnerName"].ToString (),
+                        UniqueId = uniqueId,
+                    };
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return null;
+        }
+
         public List<DeviceInfo> GetDeviceList()
         {
             // SELECT `DatabaseId`, `ModelName`, `UIIdion`, `SpecificHWVersion`, `OSName`, `OSVersion` FROM `PerformanceAppDeviceInfo`
@@ -162,21 +203,44 @@ namespace PerformanceTestingWebApp
             System.Data.Odbc.OdbcTransaction transaction = null;
             try
             {
-                string myInsertQuery =
-                    string.Format("INSERT INTO `billholmes54`.`PerformanceGLCubeResults` (`id`, `DBDeviceId`, `NumberTriangles`, `FramesPerSecond`) VALUES (NULL, '{0}', '{1}', '{2}');",
-                    result.DeviceDatabaseId, result.NumberOfTriangles, result.FramesPerSecond);
+                string mySelectQuery =
+                    string.Format("SELECT  `id` ,  `FramesPerSecond` FROM  `PerformanceGLCubeResults` WHERE  `DBDeviceId` ={0} AND  `NumberTriangles` ={1}",
+                    result.DeviceDatabaseId, result.NumberOfTriangles);
 
                 conn.Open();
-                transaction = conn.BeginTransaction();
 
-                System.Data.Odbc.OdbcCommand myCommand = new System.Data.Odbc.OdbcCommand(myInsertQuery, conn, transaction);
-                myCommand.ExecuteNonQuery();
+                System.Data.Odbc.OdbcCommand mySelectCommand = new System.Data.Odbc.OdbcCommand(mySelectQuery, conn);
+                System.Data.Odbc.OdbcDataReader reader = mySelectCommand.ExecuteReader();
 
-                myCommand.CommandText = "select last_insert_id();";
-                databaseId = Convert.ToInt32(myCommand.ExecuteScalar());
+                if (reader.Read())
+                {
+                    System.Data.Odbc.OdbcCommand myUpdateCommand = new System.Data.Odbc.OdbcCommand(mySelectQuery, conn);
+                    databaseId = Convert.ToInt32(reader["id"]);
 
-                transaction.Commit();
-                
+                    string myUpdateQuery = string.Format("UPDATE  `billholmes54`.`PerformanceGLCubeResults` SET  `FramesPerSecond` =  '{1}' WHERE  `PerformanceGLCubeResults`.`id` ={0} AND  `PerformanceGLCubeResults`.`FramesPerSecond` >{1} LIMIT 1 ;",
+                        databaseId, result.FramesPerSecond);
+
+                    myUpdateCommand.CommandText = myUpdateQuery;
+                    myUpdateCommand.ExecuteNonQuery();
+                }
+
+                else
+                {
+                    transaction = conn.BeginTransaction();
+                    System.Data.Odbc.OdbcCommand myInsertCommand = new System.Data.Odbc.OdbcCommand(mySelectQuery, conn, transaction);
+
+                    string myInsertQuery =
+                        string.Format("INSERT INTO `billholmes54`.`PerformanceGLCubeResults` (`id`, `DBDeviceId`, `NumberTriangles`, `FramesPerSecond`) VALUES (NULL, '{0}', '{1}', '{2}');",
+                        result.DeviceDatabaseId, result.NumberOfTriangles, result.FramesPerSecond);
+
+                    myInsertCommand.CommandText = myInsertQuery;
+                    myInsertCommand.ExecuteNonQuery();
+
+                    myInsertCommand.CommandText = "select last_insert_id();";
+                    databaseId = Convert.ToInt32(myInsertCommand.ExecuteScalar());
+
+                    transaction.Commit();
+                }
             }
             catch (Exception)
             {
@@ -244,10 +308,46 @@ namespace PerformanceTestingWebApp
         {
             System.Data.Odbc.OdbcConnection conn = new System.Data.Odbc.OdbcConnection();
 #error need password
-            conn.ConnectionString = "DRIVER={MySQL ODBC 3.51 Driver}; SERVER=billholmes54.db.9465659.hostedresource.com; PORT=3306; DATABASE=billholmes54; USER=billholmes54; PASSWORD=need password; OPTION=0;";
+            conn.ConnectionString = "DRIVER={MySQL ODBC 3.51 Driver}; SERVER=billholmes54.db.9465659.hostedresource.com; PORT=3306; DATABASE=billholmes54; USER=billholmes54; PASSWORD=removed; OPTION=0;";
             return conn;
         }
 
+        public PerformanceCubeResult FindPerformanceCubeResult(int databaseId)
+        {
+            System.Data.Odbc.OdbcConnection conn = createSQLConnection();
+            try
+            {
+                string selectQuery = string.Format("SELECT * FROM  `PerformanceGLCubeResults` WHERE  `id` ={0}",
+                    databaseId);
+                conn.Open();
+                System.Data.Odbc.OdbcCommand selectCommand = new System.Data.Odbc.OdbcCommand(selectQuery, conn);
+                try
+                {
+                    System.Data.Odbc.OdbcDataReader reader = selectCommand.ExecuteReader();
+
+                    if (!reader.Read())
+                        return null;
+
+                    return new PerformanceCubeResult()
+                    {
+                        DatabaseId = databaseId,
+                        DeviceDatabaseId = Convert.ToInt32(reader["DBDeviceId"]),
+                        NumberOfTriangles = Convert.ToInt32(reader["NumberTriangles"]),
+                        FramesPerSecond = Convert.ToDouble(reader["FramesPerSecond"])
+                    };
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return null;
+        }
 
         // used to reset all the tables for this service
         private void clearAllTables()

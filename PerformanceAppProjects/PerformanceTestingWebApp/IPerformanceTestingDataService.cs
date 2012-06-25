@@ -16,6 +16,9 @@ namespace PerformanceTestingWebApp
         DeviceInfo FindDeviceInfo(int databaseId);
 
         [OperationContract]
+        FullDeviceInfo FindFullDeviceInfo(string uniqueId);
+
+        [OperationContract]
         List<DeviceInfo> GetDeviceList();
 
         [OperationContract]
@@ -26,5 +29,8 @@ namespace PerformanceTestingWebApp
 
         [OperationContract]
         List<PerformanceCubeResult> GetPerformanceCubeResults();
+
+        [OperationContract]
+        PerformanceCubeResult FindPerformanceCubeResult(int id);
     }
 }
