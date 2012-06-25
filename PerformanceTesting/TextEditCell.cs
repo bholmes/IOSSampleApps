@@ -10,7 +10,7 @@ namespace PerformanceTesting
 	{
 		UITextField _textField;
 		
-		public TextEditCell (string resuseIdentifier) : base (UITableViewCellStyle.Value1, "resuseIdentifier")
+		public TextEditCell (string resuseIdentifier) : base (UITableViewCellStyle.Value1, resuseIdentifier)
 		{
 			this.SelectionStyle = UITableViewCellSelectionStyle.None;
 			
@@ -29,8 +29,7 @@ namespace PerformanceTesting
 	        _textField.WeakDelegate = this;
 			_textField.AutoresizingMask = UIViewAutoresizing.All;
 	
-	        //_textField.ClearButtonMode = UITextFieldViewMode.WhileEditing; // no clear 'x' button to the right
-			_textField.ClearButtonMode = UITextFieldViewMode.Never; // no clear 'x' button to the right
+	        _textField.ClearButtonMode = UITextFieldViewMode.Never; // no clear 'x' button to the right
 			_textField.Enabled= true;
 			_textField.Font = this.DetailTextLabel.Font;
 			
@@ -49,12 +48,9 @@ namespace PerformanceTesting
 			rect.Width = this.Bounds.Width - (rect.X + x);
 			rect.Y = 10; rect.Height = 30;
 			
-			//rect.X += 150; rect.Width -= 150;
 			_textField.Frame = rect;
 			_textField.Font = this.DetailTextLabel.Font;
 			_textField.TextColor = this.DetailTextLabel.TextColor;
-			//_textField.BackgroundColor = UIColor.Black;
-			//this.TextLabel.BackgroundColor = UIColor.Black;
 		}	
 
 		public UITextField TextField 

@@ -8,6 +8,9 @@
 
 #import "TopMenu.h"
 #import "GLPerformanceCube.h"
+#import "DeviceInfoViewController.h"
+#import "GLCubeResultViewController.h"
+#import "ResultData.h"
 
 @interface TopMenu ()
 
@@ -54,13 +57,21 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 1;
+    if (section == 0)
+    {
+        return 3;
+    }
+    else if (section == 1)
+    {
+        return 1;
+    }
+
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,8 +83,27 @@
     {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    cell.textLabel.text = @"GL Performance Cube";
+    if (indexPath.section == 0)
+    {
+        switch (indexPath.row)
+        {
+            case 0 :
+                cell.textLabel.Text = @"GL Performance Cube";
+                break;
+            case 1 :
+                cell.textLabel.Text = @"Local GL Results";
+                break;
+            case 2 :
+                cell.textLabel.Text = @"Remote GL Results";
+                break;
+            default:
+                break;
+        }
+    }
+    else if (indexPath.section == 1)
+    {
+        cell.textLabel.text = @"View Device Info";	
+    }
     
     return cell;
 }
@@ -121,16 +151,43 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    GLPerformanceCube* newGLCtrl = [[GLPerformanceCube alloc]init];
     
-    [self.navigationController pushViewController:newGLCtrl animated: YES];
+    
+    if (indexPath.section == 0)
+    {
+        switch (indexPath.row)
+        {
+            case 0 :
+            {
+                GLPerformanceCube* newGLCtrl = [[GLPerformanceCube alloc]init];
+                [self.navigationController pushViewController:newGLCtrl animated: YES];
+                break;
+            }
+            case 1 :
+            {
+                GLCubeResultViewController* newGLResultsCtrl = 
+                [[GLCubeResultViewController alloc]initWithResults:[ResultData results].glCubeResults];
+                [self.navigationController pushViewController:newGLResultsCtrl animated: YES];
+                break;
+            }
+                break;
+            case 2 :
+            {
+                GLCubeResultViewController* newGLResultsCtrl = [GLCubeResultViewController fromRemoteResults];
+                [self.navigationController pushViewController:newGLResultsCtrl animated: YES];
+                break;
+            }
+            default:
+                break;
+        }
+    }
+    else if (indexPath.section == 1)
+    {
+        //this.NavigationController.PushViewController (new DeviceInfoViewController (), true);
+        
+        DeviceInfoViewController* newCtrl = [[DeviceInfoViewController alloc]init];
+        [self.navigationController pushViewController:newCtrl animated: YES];
+    }
 }
 
 @end

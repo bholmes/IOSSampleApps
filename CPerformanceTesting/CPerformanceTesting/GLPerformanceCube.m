@@ -7,6 +7,7 @@
 //
 
 #import "GLPerformanceCube.h"
+#import "ResultData.h"
 #import <GLKit/GLKit.h>
 #import <OpenGLES/EAGL.h>
 #include <sys/time.h>
@@ -130,8 +131,11 @@
     elapsed_useconds = endTime.tv_usec - startTime.tv_usec;
     double totalTime = ((double)elapsed_seconds) + (((double)elapsed_useconds)/1000000);
     double fps = ((double)count)/totalTime;
-    self.fpLabel.text = [NSString stringWithFormat:@"fps = %g", fps];
-    //self.fpsLabel.text = [NSString stringWithFormat:@"%g fps", fps];
+    self.fpLabel.text = [NSString stringWithFormat:@"fps = %.2f", fps];
+    
+    [[ResultData results].glCubeResults addResult:[[GLCubeResult alloc]
+                                initWithNumberOfTriangles:_triangles/3 framesPerSecond:fps]];
+
 }
      
 -(IBAction)HandleNumTrisStepperChanged:(id)sender

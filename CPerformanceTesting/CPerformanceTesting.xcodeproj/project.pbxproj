@@ -25,6 +25,23 @@
 		7919A960158AD17800D6C660 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A95F158AD17800D6C660 /* OpenGLES.framework */; };
 		7919A965158B8C7B00D6C660 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A964158B8C7B00D6C660 /* libz.dylib */; };
 		7919A967158BA0B500D6C660 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A966158BA0B500D6C660 /* libTestFlight.a */; };
+		7933C8E215957CFC00195C19 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933C8E115957CFC00195C19 /* DeviceInfo.m */; };
+		7933C8E615958F4500195C19 /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933C8E515958F4500195C19 /* DeviceInfoViewController.m */; };
+		7933C8E915960D4800195C19 /* TextEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933C8E815960D4800195C19 /* TextEditCell.m */; };
+		7933C93F15961AA800195C19 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7933C93E15961AA800195C19 /* SystemConfiguration.framework */; };
+		7933CADF159751A200195C19 /* ns1.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CACE159751A200195C19 /* ns1.m */; };
+		7933CAE0159751A200195C19 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAD0159751A200195C19 /* NSDate+ISO8601Parsing.m */; };
+		7933CAE1159751A200195C19 /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAD2159751A200195C19 /* NSDate+ISO8601Unparsing.m */; };
+		7933CAE2159751A200195C19 /* PerformanceTestingDataServiceSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAD4159751A200195C19 /* PerformanceTestingDataServiceSvc.m */; };
+		7933CAE3159751A200195C19 /* tns1.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAD6159751A200195C19 /* tns1.m */; };
+		7933CAE4159751A200195C19 /* tns2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAD8159751A200195C19 /* tns2.m */; };
+		7933CAE5159751A200195C19 /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CADA159751A200195C19 /* USAdditions.m */; };
+		7933CAE6159751A200195C19 /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CADC159751A200195C19 /* USGlobals.m */; };
+		7933CAE7159751A200195C19 /* xs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CADE159751A200195C19 /* xs.m */; };
+		7933CAEA15976A7B00195C19 /* GLCubeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAE915976A7A00195C19 /* GLCubeResult.m */; };
+		7933CAED1597939200195C19 /* GLCubeResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAEC1597939100195C19 /* GLCubeResults.m */; };
+		7933CAF01597986200195C19 /* GLCubeResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAEF1597986100195C19 /* GLCubeResultViewController.m */; };
+		7933CAF31597A1A900195C19 /* ResultData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933CAF21597A1A800195C19 /* ResultData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +69,40 @@
 		7919A95F158AD17800D6C660 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7919A964158B8C7B00D6C660 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7919A966158BA0B500D6C660 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = CPerformanceTesting/libTestFlight.a; sourceTree = "<group>"; };
+		7933C8E015957CFC00195C19 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
+		7933C8E115957CFC00195C19 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
+		7933C8E415958F4500195C19 /* DeviceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoViewController.h; sourceTree = "<group>"; };
+		7933C8E515958F4500195C19 /* DeviceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoViewController.m; sourceTree = "<group>"; };
+		7933C8E715960D4800195C19 /* TextEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEditCell.h; sourceTree = "<group>"; };
+		7933C8E815960D4800195C19 /* TextEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEditCell.m; sourceTree = "<group>"; };
+		7933C93E15961AA800195C19 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7933C94015961B4C00195C19 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		7933CACD159751A200195C19 /* ns1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ns1.h; path = Soap/ns1.h; sourceTree = "<group>"; };
+		7933CACE159751A200195C19 /* ns1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ns1.m; path = Soap/ns1.m; sourceTree = "<group>"; };
+		7933CACF159751A200195C19 /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+ISO8601Parsing.h"; path = "Soap/NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
+		7933CAD0159751A200195C19 /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ISO8601Parsing.m"; path = "Soap/NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
+		7933CAD1159751A200195C19 /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+ISO8601Unparsing.h"; path = "Soap/NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
+		7933CAD2159751A200195C19 /* NSDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ISO8601Unparsing.m"; path = "Soap/NSDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
+		7933CAD3159751A200195C19 /* PerformanceTestingDataServiceSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PerformanceTestingDataServiceSvc.h; path = Soap/PerformanceTestingDataServiceSvc.h; sourceTree = "<group>"; };
+		7933CAD4159751A200195C19 /* PerformanceTestingDataServiceSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PerformanceTestingDataServiceSvc.m; path = Soap/PerformanceTestingDataServiceSvc.m; sourceTree = "<group>"; };
+		7933CAD5159751A200195C19 /* tns1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tns1.h; path = Soap/tns1.h; sourceTree = "<group>"; };
+		7933CAD6159751A200195C19 /* tns1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tns1.m; path = Soap/tns1.m; sourceTree = "<group>"; };
+		7933CAD7159751A200195C19 /* tns2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tns2.h; path = Soap/tns2.h; sourceTree = "<group>"; };
+		7933CAD8159751A200195C19 /* tns2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tns2.m; path = Soap/tns2.m; sourceTree = "<group>"; };
+		7933CAD9159751A200195C19 /* USAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USAdditions.h; path = Soap/USAdditions.h; sourceTree = "<group>"; };
+		7933CADA159751A200195C19 /* USAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USAdditions.m; path = Soap/USAdditions.m; sourceTree = "<group>"; };
+		7933CADB159751A200195C19 /* USGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USGlobals.h; path = Soap/USGlobals.h; sourceTree = "<group>"; };
+		7933CADC159751A200195C19 /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USGlobals.m; path = Soap/USGlobals.m; sourceTree = "<group>"; };
+		7933CADD159751A200195C19 /* xs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xs.h; path = Soap/xs.h; sourceTree = "<group>"; };
+		7933CADE159751A200195C19 /* xs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xs.m; path = Soap/xs.m; sourceTree = "<group>"; };
+		7933CAE815976A7A00195C19 /* GLCubeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCubeResult.h; sourceTree = "<group>"; };
+		7933CAE915976A7A00195C19 /* GLCubeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCubeResult.m; sourceTree = "<group>"; };
+		7933CAEB1597939100195C19 /* GLCubeResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCubeResults.h; sourceTree = "<group>"; };
+		7933CAEC1597939100195C19 /* GLCubeResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCubeResults.m; sourceTree = "<group>"; };
+		7933CAEE1597986100195C19 /* GLCubeResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCubeResultViewController.h; sourceTree = "<group>"; };
+		7933CAEF1597986100195C19 /* GLCubeResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCubeResultViewController.m; sourceTree = "<group>"; };
+		7933CAF11597A1A800195C19 /* ResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultData.h; sourceTree = "<group>"; };
+		7933CAF21597A1A800195C19 /* ResultData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7933C93F15961AA800195C19 /* SystemConfiguration.framework in Frameworks */,
 				7919A967158BA0B500D6C660 /* libTestFlight.a in Frameworks */,
 				7919A965158B8C7B00D6C660 /* libz.dylib in Frameworks */,
 				7919A960158AD17800D6C660 /* OpenGLES.framework in Frameworks */,
@@ -106,6 +158,8 @@
 		7919A93F158AB99400D6C660 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7933C94015961B4C00195C19 /* libxml2.dylib */,
+				7933C93E15961AA800195C19 /* SystemConfiguration.framework */,
 				7919A966158BA0B500D6C660 /* libTestFlight.a */,
 				7919A964158B8C7B00D6C660 /* libz.dylib */,
 				7919A95D158AC6F000D6C660 /* GLKit.framework */,
@@ -120,6 +174,7 @@
 		7919A946158AB99400D6C660 /* CPerformanceTesting */ = {
 			isa = PBXGroup;
 			children = (
+				7933C9D6159676F100195C19 /* Soap */,
 				7919A947158AB99400D6C660 /* Supporting Files */,
 				7919A94F158AB99400D6C660 /* AppDelegate.h */,
 				7919A950158AB99500D6C660 /* AppDelegate.m */,
@@ -127,6 +182,20 @@
 				7919A958158ABA3400D6C660 /* TopMenu.m */,
 				7919A95A158ABDB900D6C660 /* GLPerformanceCube.h */,
 				7919A95B158ABDB900D6C660 /* GLPerformanceCube.m */,
+				7933C8E015957CFC00195C19 /* DeviceInfo.h */,
+				7933C8E115957CFC00195C19 /* DeviceInfo.m */,
+				7933C8E415958F4500195C19 /* DeviceInfoViewController.h */,
+				7933C8E515958F4500195C19 /* DeviceInfoViewController.m */,
+				7933C8E715960D4800195C19 /* TextEditCell.h */,
+				7933C8E815960D4800195C19 /* TextEditCell.m */,
+				7933CAE815976A7A00195C19 /* GLCubeResult.h */,
+				7933CAE915976A7A00195C19 /* GLCubeResult.m */,
+				7933CAEB1597939100195C19 /* GLCubeResults.h */,
+				7933CAEC1597939100195C19 /* GLCubeResults.m */,
+				7933CAEE1597986100195C19 /* GLCubeResultViewController.h */,
+				7933CAEF1597986100195C19 /* GLCubeResultViewController.m */,
+				7933CAF11597A1A800195C19 /* ResultData.h */,
+				7933CAF21597A1A800195C19 /* ResultData.m */,
 			);
 			path = CPerformanceTesting;
 			sourceTree = "<group>";
@@ -140,6 +209,31 @@
 				7919A94E158AB99400D6C660 /* CPerformanceTesting-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7933C9D6159676F100195C19 /* Soap */ = {
+			isa = PBXGroup;
+			children = (
+				7933CACD159751A200195C19 /* ns1.h */,
+				7933CACE159751A200195C19 /* ns1.m */,
+				7933CACF159751A200195C19 /* NSDate+ISO8601Parsing.h */,
+				7933CAD0159751A200195C19 /* NSDate+ISO8601Parsing.m */,
+				7933CAD1159751A200195C19 /* NSDate+ISO8601Unparsing.h */,
+				7933CAD2159751A200195C19 /* NSDate+ISO8601Unparsing.m */,
+				7933CAD3159751A200195C19 /* PerformanceTestingDataServiceSvc.h */,
+				7933CAD4159751A200195C19 /* PerformanceTestingDataServiceSvc.m */,
+				7933CAD5159751A200195C19 /* tns1.h */,
+				7933CAD6159751A200195C19 /* tns1.m */,
+				7933CAD7159751A200195C19 /* tns2.h */,
+				7933CAD8159751A200195C19 /* tns2.m */,
+				7933CAD9159751A200195C19 /* USAdditions.h */,
+				7933CADA159751A200195C19 /* USAdditions.m */,
+				7933CADB159751A200195C19 /* USGlobals.h */,
+				7933CADC159751A200195C19 /* USGlobals.m */,
+				7933CADD159751A200195C19 /* xs.h */,
+				7933CADE159751A200195C19 /* xs.m */,
+			);
+			name = Soap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +308,22 @@
 				7919A951158AB99500D6C660 /* AppDelegate.m in Sources */,
 				7919A959158ABA3400D6C660 /* TopMenu.m in Sources */,
 				7919A95C158ABDB900D6C660 /* GLPerformanceCube.m in Sources */,
+				7933C8E215957CFC00195C19 /* DeviceInfo.m in Sources */,
+				7933C8E615958F4500195C19 /* DeviceInfoViewController.m in Sources */,
+				7933C8E915960D4800195C19 /* TextEditCell.m in Sources */,
+				7933CADF159751A200195C19 /* ns1.m in Sources */,
+				7933CAE0159751A200195C19 /* NSDate+ISO8601Parsing.m in Sources */,
+				7933CAE1159751A200195C19 /* NSDate+ISO8601Unparsing.m in Sources */,
+				7933CAE2159751A200195C19 /* PerformanceTestingDataServiceSvc.m in Sources */,
+				7933CAE3159751A200195C19 /* tns1.m in Sources */,
+				7933CAE4159751A200195C19 /* tns2.m in Sources */,
+				7933CAE5159751A200195C19 /* USAdditions.m in Sources */,
+				7933CAE6159751A200195C19 /* USGlobals.m in Sources */,
+				7933CAE7159751A200195C19 /* xs.m in Sources */,
+				7933CAEA15976A7B00195C19 /* GLCubeResult.m in Sources */,
+				7933CAED1597939200195C19 /* GLCubeResults.m in Sources */,
+				7933CAF01597986200195C19 /* GLCubeResultViewController.m in Sources */,
+				7933CAF31597A1A900195C19 /* ResultData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,13 +395,16 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CPerformanceTesting/CPerformanceTesting-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "CPerformanceTesting/CPerformanceTesting-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Downloads/TestFlightSDK1-1\"",
 					"\"$(SRCROOT)/CPerformanceTesting\"",
 				);
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -301,13 +414,16 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CPerformanceTesting/CPerformanceTesting-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "CPerformanceTesting/CPerformanceTesting-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Downloads/TestFlightSDK1-1\"",
 					"\"$(SRCROOT)/CPerformanceTesting\"",
 				);
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

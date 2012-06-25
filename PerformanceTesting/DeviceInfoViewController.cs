@@ -28,7 +28,6 @@ namespace PerformanceTesting
 			FullDeviceInfo deviceInfo = new FullDeviceInfo ();
 			
 			deviceInfo.ModelName = DeviceInfo.ModelName;
-			deviceInfo.ModelName = DeviceInfo.ModelName;
 			deviceInfo.UIIdion = DeviceInfo.UIIdion;
 			deviceInfo.SpecificHWVersion = DeviceInfo.SpecificHWVersion;
 			deviceInfo.OSName = DeviceInfo.OSName;
