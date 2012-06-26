@@ -22,10 +22,10 @@ namespace PerformanceTestingWebApp
         List<DeviceInfo> GetDeviceList();
 
         [OperationContract]
-        int AddPerformanceCubeResult(PerformanceCubeResult result, bool isMonoTouch);
+        int AddPerformanceCubeResult(PerformanceCubeResult result);
 
         [OperationContract]
-        void AddPerformanceCubeResults(List <PerformanceCubeResult> results, bool isMonoTouch);
+        void AddPerformanceCubeResults(List <PerformanceCubeResult> results);
 
         [OperationContract]
         List<PerformanceCubeResult> GetPerformanceCubeResults();

@@ -195,7 +195,7 @@ namespace PerformanceTestingWebApp
             return retList;
         }
 
-        public int AddPerformanceCubeResult(PerformanceCubeResult result, bool isMonoTouch)
+        public int AddPerformanceCubeResult(PerformanceCubeResult result)
         {
             int databaseId = -1;
 
@@ -257,11 +257,11 @@ namespace PerformanceTestingWebApp
             return databaseId;
         }
 
-        public void AddPerformanceCubeResults(List<PerformanceCubeResult> results, bool isMonoTouch)
+        public void AddPerformanceCubeResults(List<PerformanceCubeResult> results)
         {
             foreach (PerformanceCubeResult result in results)
             {
-                AddPerformanceCubeResult(result, isMonoTouch);
+                AddPerformanceCubeResult(result);
             }
         }
 
