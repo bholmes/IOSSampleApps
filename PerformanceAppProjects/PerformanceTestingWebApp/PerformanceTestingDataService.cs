@@ -195,7 +195,7 @@ namespace PerformanceTestingWebApp
             return retList;
         }
 
-        public int AddPerformanceCubeResult(PerformanceCubeResult result)
+        public int AddPerformanceCubeResult(PerformanceCubeResult result, bool isMonoTouch)
         {
             int databaseId = -1;
 
@@ -230,8 +230,8 @@ namespace PerformanceTestingWebApp
                     System.Data.Odbc.OdbcCommand myInsertCommand = new System.Data.Odbc.OdbcCommand(mySelectQuery, conn, transaction);
 
                     string myInsertQuery =
-                        string.Format("INSERT INTO `billholmes54`.`PerformanceGLCubeResults` (`id`, `DBDeviceId`, `NumberTriangles`, `FramesPerSecond`) VALUES (NULL, '{0}', '{1}', '{2}');",
-                        result.DeviceDatabaseId, result.NumberOfTriangles, result.FramesPerSecond);
+                        string.Format("INSERT INTO `billholmes54`.`PerformanceGLCubeResults` (`id`, `DBDeviceId`, `NumberTriangles`, `FramesPerSecond`, `isMonoTouch`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}');",
+                        result.DeviceDatabaseId, result.NumberOfTriangles, result.FramesPerSecond, result.IsMonoTouch ? "1" : "0");
 
                     myInsertCommand.CommandText = myInsertQuery;
                     myInsertCommand.ExecuteNonQuery();
@@ -257,15 +257,27 @@ namespace PerformanceTestingWebApp
             return databaseId;
         }
 
-        public void AddPerformanceCubeResults(List<PerformanceCubeResult> results)
+        public void AddPerformanceCubeResults(List<PerformanceCubeResult> results, bool isMonoTouch)
         {
             foreach (PerformanceCubeResult result in results)
             {
-                AddPerformanceCubeResult(result);
+                AddPerformanceCubeResult(result, isMonoTouch);
             }
         }
 
+        private enum GetPerformanceCubeResultsFilter
+        {
+            All,
+            MonoTouch,
+            ObjectiveC
+        }
+
         public List<PerformanceCubeResult> GetPerformanceCubeResults()
+        {
+            return GetPerformanceCubeResults(GetPerformanceCubeResultsFilter.All);
+        }
+
+        private List<PerformanceCubeResult> GetPerformanceCubeResults(GetPerformanceCubeResultsFilter filter)
         {
             List<PerformanceCubeResult> cubeResults = new List<PerformanceCubeResult>();
 
@@ -273,7 +285,19 @@ namespace PerformanceTestingWebApp
             try
             {
                 // 
-                string mySelectQuery = "SELECT * FROM `PerformanceGLCubeResults`;";
+                string mySelectQuery;
+                switch (filter)
+                {
+                    case GetPerformanceCubeResultsFilter.MonoTouch:
+                        mySelectQuery = "SELECT *  FROM `PerformanceGLCubeResults` WHERE `isMonoTouch` = 1 ORDER BY `DBDeviceId` ASC";
+                        break;
+                    case GetPerformanceCubeResultsFilter.ObjectiveC:
+                        mySelectQuery = "SELECT *  FROM `PerformanceGLCubeResults` WHERE `isMonoTouch` = 0 ORDER BY `DBDeviceId` ASC";
+                        break;
+                    default:
+                        mySelectQuery = "SELECT * FROM `PerformanceGLCubeResults` ORDER BY `PerformanceGLCubeResults`.`DBDeviceId` ASC";
+                        break;
+                }
                 System.Data.Odbc.OdbcCommand myCommand = new System.Data.Odbc.OdbcCommand(mySelectQuery, conn);
                 conn.Open();
                 System.Data.Odbc.OdbcDataReader myReader = myCommand.ExecuteReader();
@@ -283,12 +307,13 @@ namespace PerformanceTestingWebApp
                     while (myReader.Read())
                     {
                         cubeResults.Add(new PerformanceCubeResult()
-                            {
-                                DatabaseId = (int)myReader["id"],
-                                DeviceDatabaseId = (int)myReader["DBDeviceId"],
-                                NumberOfTriangles = (int)myReader["NumberTriangles"],
-                                FramesPerSecond = (double)myReader["FramesPerSecond"],
-                            });
+                        {
+                            DatabaseId = (int)myReader["id"],
+                            DeviceDatabaseId = (int)myReader["DBDeviceId"],
+                            NumberOfTriangles = (int)myReader["NumberTriangles"],
+                            FramesPerSecond = (double)myReader["FramesPerSecond"],
+                            IsMonoTouch = Convert.ToBoolean(myReader["isMonoTouch"])
+                        });
                     }
                 }
                 finally
@@ -302,6 +327,16 @@ namespace PerformanceTestingWebApp
             }
 
             return cubeResults;
+        }
+
+        public List<PerformanceCubeResult> GetPerformanceCubeResultsForMonoTouch()
+        {
+            return GetPerformanceCubeResults(GetPerformanceCubeResultsFilter.MonoTouch);
+        }
+
+        public List<PerformanceCubeResult> GetPerformanceCubeResultsForObjectiveC()
+        {
+            return GetPerformanceCubeResults(GetPerformanceCubeResultsFilter.ObjectiveC);
         }
 
         private static System.Data.Odbc.OdbcConnection createSQLConnection()
