@@ -19,6 +19,12 @@
   <message name="IPerformanceTestingDataService_FindDeviceInfo_OutputMessage">
     <part name="parameters" element="tns:FindDeviceInfoResponse" />
   </message>
+  <message name="IPerformanceTestingDataService_FindFullDeviceInfo_InputMessage">
+    <part name="parameters" element="tns:FindFullDeviceInfo" />
+  </message>
+  <message name="IPerformanceTestingDataService_FindFullDeviceInfo_OutputMessage">
+    <part name="parameters" element="tns:FindFullDeviceInfoResponse" />
+  </message>
   <message name="IPerformanceTestingDataService_GetDeviceList_InputMessage">
     <part name="parameters" element="tns:GetDeviceList" />
   </message>
@@ -43,6 +49,24 @@
   <message name="IPerformanceTestingDataService_GetPerformanceCubeResults_OutputMessage">
     <part name="parameters" element="tns:GetPerformanceCubeResultsResponse" />
   </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceCubeResultsForMonoTouch_InputMessage">
+    <part name="parameters" element="tns:GetPerformanceCubeResultsForMonoTouch" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceCubeResultsForMonoTouch_OutputMessage">
+    <part name="parameters" element="tns:GetPerformanceCubeResultsForMonoTouchResponse" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceCubeResultsForObjectiveC_InputMessage">
+    <part name="parameters" element="tns:GetPerformanceCubeResultsForObjectiveC" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceCubeResultsForObjectiveC_OutputMessage">
+    <part name="parameters" element="tns:GetPerformanceCubeResultsForObjectiveCResponse" />
+  </message>
+  <message name="IPerformanceTestingDataService_FindPerformanceCubeResult_InputMessage">
+    <part name="parameters" element="tns:FindPerformanceCubeResult" />
+  </message>
+  <message name="IPerformanceTestingDataService_FindPerformanceCubeResult_OutputMessage">
+    <part name="parameters" element="tns:FindPerformanceCubeResultResponse" />
+  </message>
   <portType name="IPerformanceTestingDataService">
     <operation name="AddDevice">
       <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddDevice" message="tns:IPerformanceTestingDataService_AddDevice_InputMessage" />
@@ -51,6 +75,10 @@
     <operation name="FindDeviceInfo">
       <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindDeviceInfo" message="tns:IPerformanceTestingDataService_FindDeviceInfo_InputMessage" />
       <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindDeviceInfoResponse" message="tns:IPerformanceTestingDataService_FindDeviceInfo_OutputMessage" />
+    </operation>
+    <operation name="FindFullDeviceInfo">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindFullDeviceInfo" message="tns:IPerformanceTestingDataService_FindFullDeviceInfo_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindFullDeviceInfoResponse" message="tns:IPerformanceTestingDataService_FindFullDeviceInfo_OutputMessage" />
     </operation>
     <operation name="GetDeviceList">
       <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetDeviceList" message="tns:IPerformanceTestingDataService_GetDeviceList_InputMessage" />
@@ -68,6 +96,18 @@
       <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResults" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResults_InputMessage" />
       <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsResponse" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResults_OutputMessage" />
     </operation>
+    <operation name="GetPerformanceCubeResultsForMonoTouch">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForMonoTouch" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResultsForMonoTouch_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForMonoTouchResponse" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResultsForMonoTouch_OutputMessage" />
+    </operation>
+    <operation name="GetPerformanceCubeResultsForObjectiveC">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForObjectiveC" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResultsForObjectiveC_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForObjectiveCResponse" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResultsForObjectiveC_OutputMessage" />
+    </operation>
+    <operation name="FindPerformanceCubeResult">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResult" message="tns:IPerformanceTestingDataService_FindPerformanceCubeResult_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResultResponse" message="tns:IPerformanceTestingDataService_FindPerformanceCubeResult_OutputMessage" />
+    </operation>
   </portType>
   <binding name="BasicHttpBinding_IPerformanceTestingDataService" type="tns:IPerformanceTestingDataService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -82,6 +122,15 @@
     </operation>
     <operation name="FindDeviceInfo">
       <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/FindDeviceInfo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FindFullDeviceInfo">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/FindFullDeviceInfo" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -118,6 +167,33 @@
     </operation>
     <operation name="GetPerformanceCubeResults">
       <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResults" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPerformanceCubeResultsForMonoTouch">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForMonoTouch" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPerformanceCubeResultsForObjectiveC">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForObjectiveC" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FindPerformanceCubeResult">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResult" style="document" />
       <input>
         <soap:body use="literal" />
       </input>

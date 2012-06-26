@@ -81,6 +81,7 @@ namespace PerformanceTesting
 				result.NumberOfTrianglesSpecified = true;
 				result.FramesPerSecond = _glResults[i].FramesPerSecond;
 				result.FramesPerSecondSpecified = true;
+				result.IsMonoTouch = result.IsMonoTouchSpecified = true;
 				results.Add (result);
 			}
 			
