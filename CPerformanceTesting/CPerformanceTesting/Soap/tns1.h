@@ -94,6 +94,7 @@
 	NSNumber * DatabaseId;
 	NSNumber * DeviceDatabaseId;
 	NSNumber * FramesPerSecond;
+	USBoolean * IsMonoTouch;
 	NSNumber * NumberOfTriangles;
 /* attributes */
 }
@@ -108,6 +109,7 @@
 @property (retain) NSNumber * DatabaseId;
 @property (retain) NSNumber * DeviceDatabaseId;
 @property (retain) NSNumber * FramesPerSecond;
+@property (retain) USBoolean * IsMonoTouch;
 @property (retain) NSNumber * NumberOfTriangles;
 /* attributes */
 - (NSDictionary *)attributes;

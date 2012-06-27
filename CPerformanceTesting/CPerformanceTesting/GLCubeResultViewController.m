@@ -149,6 +149,7 @@
         result.DeviceDatabaseId = [[NSNumber alloc]initWithInt: myDeviceId];
         result.FramesPerSecond = [[NSNumber alloc]initWithDouble: myResult.framesPerSecond];
         result.NumberOfTriangles = [[NSNumber alloc]initWithInt: myResult.numberOfTriangles];
+        result.IsMonoTouch = [[USBoolean alloc]initWithBool:NO];
         
         [lresults addPerformanceCubeResult:result];
     }

@@ -173,7 +173,7 @@ static BOOL is_leap_year(unsigned year) {
 - (NSString *)prepareDateFormatWithTimeSeparator:(unichar)timeSep {
   NSString *dateFormat = self;
   if(timeSep != ':') {
-    NSMutableString *dateFormatMutable = [dateFormat mutableCopy];
+    NSMutableString *dateFormatMutable = [dateFormat mutableCopy] ;
     [dateFormatMutable replaceOccurrencesOfString:@":"
   withString:[NSString stringWithCharacters:&timeSep length:1U]
   options:NSBackwardsSearch | NSLiteralSearch
