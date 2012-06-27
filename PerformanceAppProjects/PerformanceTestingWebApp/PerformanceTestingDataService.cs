@@ -204,8 +204,8 @@ namespace PerformanceTestingWebApp
             try
             {
                 string mySelectQuery =
-                    string.Format("SELECT  `id` ,  `FramesPerSecond` FROM  `PerformanceGLCubeResults` WHERE  `DBDeviceId` ={0} AND  `NumberTriangles` ={1}",
-                    result.DeviceDatabaseId, result.NumberOfTriangles);
+                    string.Format("SELECT  `id` ,  `FramesPerSecond` FROM  `PerformanceGLCubeResults` WHERE  `DBDeviceId` ={0} AND  `NumberTriangles` ={1} AND  `isMonoTouch` ={2}",
+                    result.DeviceDatabaseId, result.NumberOfTriangles, result.IsMonoTouch ? 1 : 0);
 
                 conn.Open();
 
@@ -217,7 +217,7 @@ namespace PerformanceTestingWebApp
                     System.Data.Odbc.OdbcCommand myUpdateCommand = new System.Data.Odbc.OdbcCommand(mySelectQuery, conn);
                     databaseId = Convert.ToInt32(reader["id"]);
 
-                    string myUpdateQuery = string.Format("UPDATE  `billholmes54`.`PerformanceGLCubeResults` SET  `FramesPerSecond` =  '{1}' WHERE  `PerformanceGLCubeResults`.`id` ={0} AND  `PerformanceGLCubeResults`.`FramesPerSecond` >{1} LIMIT 1 ;",
+                    string myUpdateQuery = string.Format("UPDATE  `billholmes54`.`PerformanceGLCubeResults` SET  `FramesPerSecond` =  '{1}' WHERE  `PerformanceGLCubeResults`.`id` ={0} AND  `PerformanceGLCubeResults`.`FramesPerSecond` <{1} LIMIT 1 ;",
                         databaseId, result.FramesPerSecond);
 
                     myUpdateCommand.CommandText = myUpdateQuery;
