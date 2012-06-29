@@ -6,6 +6,8 @@
 @class PerformanceTestingDataServiceSvc_AddDeviceResponse;
 @class PerformanceTestingDataServiceSvc_FindDeviceInfo;
 @class PerformanceTestingDataServiceSvc_FindDeviceInfoResponse;
+@class PerformanceTestingDataServiceSvc_FindFullDeviceInfo;
+@class PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse;
 @class PerformanceTestingDataServiceSvc_GetDeviceList;
 @class PerformanceTestingDataServiceSvc_GetDeviceListResponse;
 @class PerformanceTestingDataServiceSvc_AddPerformanceCubeResult;
@@ -14,6 +16,12 @@
 @class PerformanceTestingDataServiceSvc_AddPerformanceCubeResultsResponse;
 @class PerformanceTestingDataServiceSvc_GetPerformanceCubeResults;
 @class PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsResponse;
+@class PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch;
+@class PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouchResponse;
+@class PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC;
+@class PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveCResponse;
+@class PerformanceTestingDataServiceSvc_FindPerformanceCubeResult;
+@class PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse;
 #import "tns1.h"
 @interface PerformanceTestingDataServiceSvc_AddDevice : NSObject {
 	
@@ -84,6 +92,42 @@
 - (void)deserializeElementsFromNode:(xmlNodePtr)cur;
 /* elements */
 @property (retain) tns1_DeviceInfo * FindDeviceInfoResult;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_FindFullDeviceInfo : NSObject {
+	
+/* elements */
+	NSString * uniqueId;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_FindFullDeviceInfo *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) NSString * uniqueId;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse : NSObject {
+	
+/* elements */
+	tns1_FullDeviceInfo * FindFullDeviceInfoResult;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) tns1_FullDeviceInfo * FindFullDeviceInfoResult;
 /* attributes */
 - (NSDictionary *)attributes;
 @end
@@ -225,6 +269,110 @@
 /* attributes */
 - (NSDictionary *)attributes;
 @end
+@interface PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch : NSObject {
+	
+/* elements */
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouchResponse : NSObject {
+	
+/* elements */
+	tns1_ArrayOfPerformanceCubeResult * GetPerformanceCubeResultsForMonoTouchResult;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouchResponse *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) tns1_ArrayOfPerformanceCubeResult * GetPerformanceCubeResultsForMonoTouchResult;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC : NSObject {
+	
+/* elements */
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveCResponse : NSObject {
+	
+/* elements */
+	tns1_ArrayOfPerformanceCubeResult * GetPerformanceCubeResultsForObjectiveCResult;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveCResponse *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) tns1_ArrayOfPerformanceCubeResult * GetPerformanceCubeResultsForObjectiveCResult;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_FindPerformanceCubeResult : NSObject {
+	
+/* elements */
+	NSNumber * id_;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) NSNumber * id_;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse : NSObject {
+	
+/* elements */
+	tns1_PerformanceCubeResult * FindPerformanceCubeResultResult;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) tns1_PerformanceCubeResult * FindPerformanceCubeResultResult;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
 /* Cookies handling provided by http://en.wikibooks.org/wiki/Programming:WebObjects/Web_Services/Web_Service_Provider */
 #import <libxml/parser.h>
 #import "xs.h"
@@ -265,6 +413,8 @@
 - (void)AddDeviceAsyncUsingParameters:(PerformanceTestingDataServiceSvc_AddDevice *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)FindDeviceInfoUsingParameters:(PerformanceTestingDataServiceSvc_FindDeviceInfo *)aParameters ;
 - (void)FindDeviceInfoAsyncUsingParameters:(PerformanceTestingDataServiceSvc_FindDeviceInfo *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)FindFullDeviceInfoUsingParameters:(PerformanceTestingDataServiceSvc_FindFullDeviceInfo *)aParameters ;
+- (void)FindFullDeviceInfoAsyncUsingParameters:(PerformanceTestingDataServiceSvc_FindFullDeviceInfo *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetDeviceListUsingParameters:(PerformanceTestingDataServiceSvc_GetDeviceList *)aParameters ;
 - (void)GetDeviceListAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetDeviceList *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)AddPerformanceCubeResultUsingParameters:(PerformanceTestingDataServiceSvc_AddPerformanceCubeResult *)aParameters ;
@@ -273,11 +423,17 @@
 - (void)AddPerformanceCubeResultsAsyncUsingParameters:(PerformanceTestingDataServiceSvc_AddPerformanceCubeResults *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceCubeResultsUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResults *)aParameters ;
 - (void)GetPerformanceCubeResultsAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResults *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceCubeResultsForMonoTouchUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch *)aParameters ;
+- (void)GetPerformanceCubeResultsForMonoTouchAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceCubeResultsForObjectiveCUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC *)aParameters ;
+- (void)GetPerformanceCubeResultsForObjectiveCAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)FindPerformanceCubeResultUsingParameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParameters ;
+- (void)FindPerformanceCubeResultAsyncUsingParameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
 @end
 @interface BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation : NSOperation {
 	BasicHttpBinding_IPerformanceTestingDataServiceBinding *binding;
 	BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *response;
-	//id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate> delegate;
+	id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate> _delegate;
 	NSMutableData *responseData;
 	NSURLConnection *urlConnection;
 }
@@ -302,6 +458,14 @@
 @property (retain) PerformanceTestingDataServiceSvc_FindDeviceInfo * parameters;
 - (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
 	parameters:(PerformanceTestingDataServiceSvc_FindDeviceInfo *)aParameters
+;
+@end
+@interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindFullDeviceInfo : BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation {
+	PerformanceTestingDataServiceSvc_FindFullDeviceInfo * parameters;
+}
+@property (retain) PerformanceTestingDataServiceSvc_FindFullDeviceInfo * parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
+	parameters:(PerformanceTestingDataServiceSvc_FindFullDeviceInfo *)aParameters
 ;
 @end
 @interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetDeviceList : BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation {
@@ -334,6 +498,30 @@
 @property (retain) PerformanceTestingDataServiceSvc_GetPerformanceCubeResults * parameters;
 - (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
 	parameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResults *)aParameters
+;
+@end
+@interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResultsForMonoTouch : BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation {
+	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch * parameters;
+}
+@property (retain) PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch * parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
+	parameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch *)aParameters
+;
+@end
+@interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResultsForObjectiveC : BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation {
+	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC * parameters;
+}
+@property (retain) PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC * parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
+	parameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC *)aParameters
+;
+@end
+@interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindPerformanceCubeResult : BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation {
+	PerformanceTestingDataServiceSvc_FindPerformanceCubeResult * parameters;
+}
+@property (retain) PerformanceTestingDataServiceSvc_FindPerformanceCubeResult * parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
+	parameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParameters
 ;
 @end
 @interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope : NSObject {

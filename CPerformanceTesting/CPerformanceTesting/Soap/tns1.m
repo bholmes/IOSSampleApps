@@ -23,7 +23,7 @@
 - (void)dealloc
 {
 	if(DatabaseId != nil) DatabaseId = nil;
-	if(ModelName != nil) ModelName =nil;
+	if(ModelName != nil) ModelName = nil;
 	if(OSName != nil) OSName = nil;
 	if(OSVersion != nil) OSVersion = nil;
 	if(OwnerName != nil) OwnerName = nil;
@@ -31,6 +31,8 @@
 	if(SystemName != nil) SystemName = nil;
 	if(UIIdion != nil) UIIdion = nil;
 	if(UniqueId != nil) UniqueId = nil;
+	
+	
 }
 - (NSString *)nsPrefix
 {
@@ -111,7 +113,7 @@
 }
 + (tns1_FullDeviceInfo *)deserializeNode:(xmlNodePtr)cur
 {
-	tns1_FullDeviceInfo *newObject = [tns1_FullDeviceInfo new];
+	tns1_FullDeviceInfo *newObject = [tns1_FullDeviceInfo new] ;
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -458,6 +460,8 @@
 	if(OSVersion != nil) OSVersion = nil;
 	if(SpecificHWVersion != nil) SpecificHWVersion = nil;
 	if(UIIdion != nil) UIIdion = nil;
+	
+	
 }
 - (NSString *)nsPrefix
 {
@@ -765,6 +769,7 @@
 {
 	if(DeviceInfo != nil) DeviceInfo = nil;
 	
+	
 }
 - (NSString *)nsPrefix
 {
@@ -819,7 +824,7 @@
 }
 + (tns1_ArrayOfDeviceInfo *)deserializeNode:(xmlNodePtr)cur
 {
-	tns1_ArrayOfDeviceInfo *newObject =[tns1_ArrayOfDeviceInfo new];
+	tns1_ArrayOfDeviceInfo *newObject = [tns1_ArrayOfDeviceInfo new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -887,6 +892,7 @@
 		DatabaseId = 0;
 		DeviceDatabaseId = 0;
 		FramesPerSecond = 0;
+		IsMonoTouch = 0;
 		NumberOfTriangles = 0;
 	}
 	
@@ -897,7 +903,10 @@
 	if(DatabaseId != nil) DatabaseId = nil;
 	if(DeviceDatabaseId != nil) DeviceDatabaseId = nil;
 	if(FramesPerSecond != nil) FramesPerSecond = nil;
+	if(IsMonoTouch != nil) IsMonoTouch = nil;
 	if(NumberOfTriangles != nil) NumberOfTriangles = nil;
+	
+	
 }
 - (NSString *)nsPrefix
 {
@@ -940,6 +949,9 @@
 	if(self.FramesPerSecond != 0) {
 		xmlAddChild(node, [self.FramesPerSecond xmlNodeForDoc:node->doc elementName:@"FramesPerSecond" elementNSPrefix:@"tns1"]);
 	}
+	if(self.IsMonoTouch != 0) {
+		xmlAddChild(node, [self.IsMonoTouch xmlNodeForDoc:node->doc elementName:@"IsMonoTouch" elementNSPrefix:@"tns1"]);
+	}
 	if(self.NumberOfTriangles != 0) {
 		xmlAddChild(node, [self.NumberOfTriangles xmlNodeForDoc:node->doc elementName:@"NumberOfTriangles" elementNSPrefix:@"tns1"]);
 	}
@@ -948,6 +960,7 @@
 @synthesize DatabaseId;
 @synthesize DeviceDatabaseId;
 @synthesize FramesPerSecond;
+@synthesize IsMonoTouch;
 @synthesize NumberOfTriangles;
 /* attributes */
 - (NSDictionary *)attributes
@@ -1081,6 +1094,39 @@
 				
 				self.FramesPerSecond = newChild;
 			}
+			if(xmlStrEqual(cur->name, (const xmlChar *) "IsMonoTouch")) {
+				
+				Class elementClass = nil;
+				xmlChar *instanceType = xmlGetNsProp(cur, (const xmlChar *) "type", (const xmlChar *) "http://www.w3.org/2001/XMLSchema-instance");
+				if(instanceType == NULL) {
+					elementClass = [USBoolean  class];
+				} else {
+					NSString *elementTypeString = [NSString stringWithCString:(char*)instanceType encoding:NSUTF8StringEncoding];
+					
+					NSArray *elementTypeArray = [elementTypeString componentsSeparatedByString:@":"];
+					
+					NSString *elementClassString = nil;
+					if([elementTypeArray count] > 1) {
+						NSString *prefix = [elementTypeArray objectAtIndex:0];
+						NSString *localName = [elementTypeArray objectAtIndex:1];
+						
+						xmlNsPtr elementNamespace = xmlSearchNs(cur->doc, cur, [prefix xmlString]);
+						
+						NSString *standardPrefix = [[USGlobals sharedInstance].wsdlStandardNamespaces objectForKey:[NSString stringWithCString:(char*)elementNamespace->href encoding:NSUTF8StringEncoding]];
+						
+						elementClassString = [NSString stringWithFormat:@"%@_%@", standardPrefix, localName];
+					} else {
+						elementClassString = [elementTypeString stringByReplacingOccurrencesOfString:@":" withString:@"_" options:0 range:NSMakeRange(0, [elementTypeString length])];
+					}
+					
+					elementClass = NSClassFromString(elementClassString);
+					xmlFree(instanceType);
+				}
+				
+				id newChild = [elementClass deserializeNode:cur];
+				
+				self.IsMonoTouch = newChild;
+			}
 			if(xmlStrEqual(cur->name, (const xmlChar *) "NumberOfTriangles")) {
 				
 				Class elementClass = nil;
@@ -1130,6 +1176,7 @@
 - (void)dealloc
 {
 	if(PerformanceCubeResult != nil) PerformanceCubeResult = nil;
+	
 	
 }
 - (NSString *)nsPrefix

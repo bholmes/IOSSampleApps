@@ -31,6 +31,12 @@ namespace PerformanceTestingWebApp
         List<PerformanceCubeResult> GetPerformanceCubeResults();
 
         [OperationContract]
+        List<PerformanceCubeResult> GetPerformanceCubeResultsForMonoTouch();
+
+        [OperationContract]
+        List<PerformanceCubeResult> GetPerformanceCubeResultsForObjectiveC();
+
+        [OperationContract]
         PerformanceCubeResult FindPerformanceCubeResult(int id);
     }
 }

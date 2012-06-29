@@ -21,6 +21,8 @@ namespace PerformanceTesting.PerformanceTestingWebService {
         
         private System.Threading.SendOrPostCallback FindDeviceInfoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback FindFullDeviceInfoOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDeviceListOperationCompleted;
         
         private System.Threading.SendOrPostCallback AddPerformanceCubeResultOperationCompleted;
@@ -28,6 +30,12 @@ namespace PerformanceTesting.PerformanceTestingWebService {
         private System.Threading.SendOrPostCallback AddPerformanceCubeResultsOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetPerformanceCubeResultsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetPerformanceCubeResultsForMonoTouchOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetPerformanceCubeResultsForObjectiveCOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FindPerformanceCubeResultOperationCompleted;
         
         public PerformanceTestingDataService() {
             this.Url = "http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc/basic";
@@ -41,6 +49,8 @@ namespace PerformanceTesting.PerformanceTestingWebService {
         
         public event FindDeviceInfoCompletedEventHandler FindDeviceInfoCompleted;
         
+        public event FindFullDeviceInfoCompletedEventHandler FindFullDeviceInfoCompleted;
+        
         public event GetDeviceListCompletedEventHandler GetDeviceListCompleted;
         
         public event AddPerformanceCubeResultCompletedEventHandler AddPerformanceCubeResultCompleted;
@@ -48,6 +58,12 @@ namespace PerformanceTesting.PerformanceTestingWebService {
         public event AddPerformanceCubeResultsCompletedEventHandler AddPerformanceCubeResultsCompleted;
         
         public event GetPerformanceCubeResultsCompletedEventHandler GetPerformanceCubeResultsCompleted;
+        
+        public event GetPerformanceCubeResultsForMonoTouchCompletedEventHandler GetPerformanceCubeResultsForMonoTouchCompleted;
+        
+        public event GetPerformanceCubeResultsForObjectiveCCompletedEventHandler GetPerformanceCubeResultsForObjectiveCCompleted;
+        
+        public event FindPerformanceCubeResultCompletedEventHandler FindPerformanceCubeResultCompleted;
         
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IPerformanceTestingDataService/AddDevice", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
         public int AddDevice([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] FullDeviceInfo deviceInfo) {
@@ -119,6 +135,43 @@ namespace PerformanceTesting.PerformanceTestingWebService {
             if ((this.FindDeviceInfoCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.FindDeviceInfoCompleted(this, new FindDeviceInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IPerformanceTestingDataService/FindFullDeviceInfo", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public FullDeviceInfo FindFullDeviceInfo([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string uniqueId) {
+            object[] results = this.Invoke("FindFullDeviceInfo", new object[] {
+                        uniqueId});
+            return ((FullDeviceInfo)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginFindFullDeviceInfo(string uniqueId, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("FindFullDeviceInfo", new object[] {
+                        uniqueId}, callback, asyncState);
+        }
+        
+        public FullDeviceInfo EndFindFullDeviceInfo(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((FullDeviceInfo)(results[0]));
+        }
+        
+        public void FindFullDeviceInfoAsync(string uniqueId) {
+            this.FindFullDeviceInfoAsync(uniqueId, null);
+        }
+        
+        public void FindFullDeviceInfoAsync(string uniqueId, object userState) {
+            if ((this.FindFullDeviceInfoOperationCompleted == null)) {
+                this.FindFullDeviceInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFindFullDeviceInfoCompleted);
+            }
+            this.InvokeAsync("FindFullDeviceInfo", new object[] {
+                        uniqueId}, this.FindFullDeviceInfoOperationCompleted, userState);
+        }
+        
+        private void OnFindFullDeviceInfoCompleted(object arg) {
+            if ((this.FindFullDeviceInfoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FindFullDeviceInfoCompleted(this, new FindFullDeviceInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -261,6 +314,113 @@ namespace PerformanceTesting.PerformanceTestingWebService {
                 this.GetPerformanceCubeResultsCompleted(this, new GetPerformanceCubeResultsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForMonoTouch", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [return: System.Xml.Serialization.XmlArray(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItem(Namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebApp")]
+        public PerformanceCubeResult[] GetPerformanceCubeResultsForMonoTouch() {
+            object[] results = this.Invoke("GetPerformanceCubeResultsForMonoTouch", new object[0]);
+            return ((PerformanceCubeResult[])(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetPerformanceCubeResultsForMonoTouch(System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetPerformanceCubeResultsForMonoTouch", new object[0], callback, asyncState);
+        }
+        
+        public PerformanceCubeResult[] EndGetPerformanceCubeResultsForMonoTouch(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((PerformanceCubeResult[])(results[0]));
+        }
+        
+        public void GetPerformanceCubeResultsForMonoTouchAsync() {
+            this.GetPerformanceCubeResultsForMonoTouchAsync(null);
+        }
+        
+        public void GetPerformanceCubeResultsForMonoTouchAsync(object userState) {
+            if ((this.GetPerformanceCubeResultsForMonoTouchOperationCompleted == null)) {
+                this.GetPerformanceCubeResultsForMonoTouchOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPerformanceCubeResultsForMonoTouchCompleted);
+            }
+            this.InvokeAsync("GetPerformanceCubeResultsForMonoTouch", new object[0], this.GetPerformanceCubeResultsForMonoTouchOperationCompleted, userState);
+        }
+        
+        private void OnGetPerformanceCubeResultsForMonoTouchCompleted(object arg) {
+            if ((this.GetPerformanceCubeResultsForMonoTouchCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPerformanceCubeResultsForMonoTouchCompleted(this, new GetPerformanceCubeResultsForMonoTouchCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForObjectiveC", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [return: System.Xml.Serialization.XmlArray(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItem(Namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebApp")]
+        public PerformanceCubeResult[] GetPerformanceCubeResultsForObjectiveC() {
+            object[] results = this.Invoke("GetPerformanceCubeResultsForObjectiveC", new object[0]);
+            return ((PerformanceCubeResult[])(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGetPerformanceCubeResultsForObjectiveC(System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetPerformanceCubeResultsForObjectiveC", new object[0], callback, asyncState);
+        }
+        
+        public PerformanceCubeResult[] EndGetPerformanceCubeResultsForObjectiveC(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((PerformanceCubeResult[])(results[0]));
+        }
+        
+        public void GetPerformanceCubeResultsForObjectiveCAsync() {
+            this.GetPerformanceCubeResultsForObjectiveCAsync(null);
+        }
+        
+        public void GetPerformanceCubeResultsForObjectiveCAsync(object userState) {
+            if ((this.GetPerformanceCubeResultsForObjectiveCOperationCompleted == null)) {
+                this.GetPerformanceCubeResultsForObjectiveCOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPerformanceCubeResultsForObjectiveCCompleted);
+            }
+            this.InvokeAsync("GetPerformanceCubeResultsForObjectiveC", new object[0], this.GetPerformanceCubeResultsForObjectiveCOperationCompleted, userState);
+        }
+        
+        private void OnGetPerformanceCubeResultsForObjectiveCCompleted(object arg) {
+            if ((this.GetPerformanceCubeResultsForObjectiveCCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPerformanceCubeResultsForObjectiveCCompleted(this, new GetPerformanceCubeResultsForObjectiveCCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResult", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public PerformanceCubeResult FindPerformanceCubeResult(int id) {
+            object[] results = this.Invoke("FindPerformanceCubeResult", new object[] {
+                        id});
+            return ((PerformanceCubeResult)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginFindPerformanceCubeResult(int id, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("FindPerformanceCubeResult", new object[] {
+                        id}, callback, asyncState);
+        }
+        
+        public PerformanceCubeResult EndFindPerformanceCubeResult(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((PerformanceCubeResult)(results[0]));
+        }
+        
+        public void FindPerformanceCubeResultAsync(int id) {
+            this.FindPerformanceCubeResultAsync(id, null);
+        }
+        
+        public void FindPerformanceCubeResultAsync(int id, object userState) {
+            if ((this.FindPerformanceCubeResultOperationCompleted == null)) {
+                this.FindPerformanceCubeResultOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFindPerformanceCubeResultCompleted);
+            }
+            this.InvokeAsync("FindPerformanceCubeResult", new object[] {
+                        id}, this.FindPerformanceCubeResultOperationCompleted, userState);
+        }
+        
+        private void OnFindPerformanceCubeResultCompleted(object arg) {
+            if ((this.FindPerformanceCubeResultCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FindPerformanceCubeResultCompleted(this, new FindPerformanceCubeResultCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
     }
     
     /// <remarks/>
@@ -377,6 +537,13 @@ namespace PerformanceTesting.PerformanceTestingWebService {
         public bool FramesPerSecondSpecified;
         
         /// <remarks/>
+        public bool IsMonoTouch;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnore()]
+        public bool IsMonoTouchSpecified;
+        
+        /// <remarks/>
         public int NumberOfTriangles;
         
         /// <remarks/>
@@ -421,6 +588,25 @@ namespace PerformanceTesting.PerformanceTestingWebService {
     }
     
     public delegate void FindDeviceInfoCompletedEventHandler(object sender, FindDeviceInfoCompletedEventArgs args);
+    
+    public partial class FindFullDeviceInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FindFullDeviceInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public FullDeviceInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FullDeviceInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void FindFullDeviceInfoCompletedEventHandler(object sender, FindFullDeviceInfoCompletedEventArgs args);
     
     public partial class GetDeviceListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
@@ -480,4 +666,61 @@ namespace PerformanceTesting.PerformanceTestingWebService {
     }
     
     public delegate void GetPerformanceCubeResultsCompletedEventHandler(object sender, GetPerformanceCubeResultsCompletedEventArgs args);
+    
+    public partial class GetPerformanceCubeResultsForMonoTouchCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPerformanceCubeResultsForMonoTouchCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public PerformanceCubeResult[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((PerformanceCubeResult[])(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetPerformanceCubeResultsForMonoTouchCompletedEventHandler(object sender, GetPerformanceCubeResultsForMonoTouchCompletedEventArgs args);
+    
+    public partial class GetPerformanceCubeResultsForObjectiveCCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPerformanceCubeResultsForObjectiveCCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public PerformanceCubeResult[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((PerformanceCubeResult[])(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GetPerformanceCubeResultsForObjectiveCCompletedEventHandler(object sender, GetPerformanceCubeResultsForObjectiveCCompletedEventArgs args);
+    
+    public partial class FindPerformanceCubeResultCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FindPerformanceCubeResultCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public PerformanceCubeResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((PerformanceCubeResult)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void FindPerformanceCubeResultCompletedEventHandler(object sender, FindPerformanceCubeResultCompletedEventArgs args);
 }

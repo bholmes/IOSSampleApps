@@ -20,5 +20,8 @@ namespace PerformanceTestingWebApp
 
         [DataMember]
         public double FramesPerSecond { get; set; }
+
+        [DataMember]
+        public bool IsMonoTouch { get; set; }
     }
 }
