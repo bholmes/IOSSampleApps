@@ -28,13 +28,10 @@ namespace PerformanceTesting
 			{
 			case 1:
 				return "C# Result";
-				break;
 			case 2:
 				return "Objective C Result";
-				break;
 			case 3:
 				return "BLAS Result";
-				break;
 			}
 
 			return string.Empty;

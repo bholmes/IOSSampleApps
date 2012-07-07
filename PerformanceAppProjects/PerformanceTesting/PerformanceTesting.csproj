@@ -91,10 +91,10 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="OpenTK" />
-    <Reference Include="TestFlight">
-      <HintPath>..\..\xamarin\monotouch-bindings\TestFlight\binding\TestFlight.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Services" />
+    <Reference Include="TestFlight">
+      <HintPath>TestFlight.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
