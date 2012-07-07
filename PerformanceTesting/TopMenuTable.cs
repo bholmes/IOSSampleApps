@@ -21,7 +21,7 @@ namespace PerformanceTesting
 		[Export ("numberOfSectionsInTableView:")]
 		public virtual int NumberOfSections (UITableView tableView)
 		{
-			return 2;
+			return 3;
 		}
 
 		
@@ -33,6 +33,8 @@ namespace PerformanceTesting
 			case 0:
 				return 3;
 			case 1:
+				return 1;
+			case 2:
 				return 1;
 			default:
 				return 0;
@@ -66,6 +68,17 @@ namespace PerformanceTesting
 			}
 			else if (indexPath.Section == 1)
 			{
+				switch (indexPath.Row)
+				{
+				case 0 :
+					ret.TextLabel.Text = "Matrix Test";
+					break;
+				default:
+					break;
+				}
+			}
+			else if (indexPath.Section == 2)
+			{
 				ret.TextLabel.Text = "View Device Info";	
 			}
 			return ret;
@@ -95,9 +108,12 @@ namespace PerformanceTesting
 			}
 			else if (indexPath.Section == 1)
 			{
+				this.NavigationController.PushViewController (new MatrixTestViewController (), true);	
+			}
+			else if (indexPath.Section == 2)
+			{
 				this.NavigationController.PushViewController (new DeviceInfoViewController (), true);	
 			}
-			
 		}
 		
 		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
