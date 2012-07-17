@@ -154,7 +154,8 @@ namespace PerformanceTesting
 
 				MatrixTestEngine engine = new MatrixTestEngine ();
 				_currentTests[0] = engine.RunCSTest ();
-				_currentTests[2] = _currentTests[1] = _currentTests[0];
+				_currentTests[1] = engine.RunCTest (false);
+				_currentTests[2] = engine.RunCTest (true);
 
 				this.InvokeOnMainThread ( () => {
 					this.TableView.ReloadData ();
