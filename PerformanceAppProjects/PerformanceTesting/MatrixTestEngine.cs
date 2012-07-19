@@ -31,7 +31,7 @@ namespace PerformanceTesting
 				MatrixTest ret = new MatrixTest ();
 				ret.Iterations = info.numberIterations;
 				ret.MatrixSize = info.matrixSize;
-				ret.Seconds = info.totalTime;
+				ret.Seconds = info.matrixMultiplyTime;
 
 				return ret;
 			}

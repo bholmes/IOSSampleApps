@@ -63,44 +63,39 @@ namespace PerformanceTesting
 		{
 			UITableViewCell ret = null;
 			
-			//if (indexPath.Section == 1)
+			if (indexPath.Row < 5)
 			{
-				if (indexPath.Row < 5)
+				ret = tableView.DequeueReusableCell ("RootItem1");
+		        if (ret == null) 
 				{
-					ret = tableView.DequeueReusableCell ("RootItem1");
-			        if (ret == null) 
-					{
-						ret = new UITableViewCell (UITableViewCellStyle.Value1, "RootItem1");
-						ret.SelectionStyle = UITableViewCellSelectionStyle.None;
-			        }
-					
-					switch (indexPath.Row)
-					{
-					case 0:
-						ret.TextLabel.Text = "Matrix Size";
-						ret.DetailTextLabel.Text = _currentTests[indexPath.Section-1].MatrixSize.ToString ();
-						break;
-					case 1:
-						ret.TextLabel.Text = "Iterations";
-						ret.DetailTextLabel.Text = _currentTests[indexPath.Section-1].Iterations.ToString ();
-						break;
-					case 2:
-						ret.TextLabel.Text = "MFlops";
-						ret.DetailTextLabel.Text = _currentTests[indexPath.Section-1].MFlops.ToString ("N3");
-						break;
-					case 3:
-						ret.TextLabel.Text = "Time";
-						ret.DetailTextLabel.Text = _currentTests[indexPath.Section-1].Seconds.ToString ("N3");
-						break;
-					case 4:
-						ret.TextLabel.Text = "MFlops/Second";
-						ret.DetailTextLabel.Text = _currentTests[indexPath.Section-1].MFlopsPerSecond.ToString ("N3");
-						break;
-					}
+					ret = new UITableViewCell (UITableViewCellStyle.Value1, "RootItem1");
+					ret.SelectionStyle = UITableViewCellSelectionStyle.None;
+		        }
+				
+				switch (indexPath.Row)
+				{
+				case 0:
+					ret.TextLabel.Text = "Matrix Size";
+					ret.DetailTextLabel.Text = _currentTests[indexPath.Section-1].MatrixSize.ToString ();
+					break;
+				case 1:
+					ret.TextLabel.Text = "Iterations";
+					ret.DetailTextLabel.Text = _currentTests[indexPath.Section-1].Iterations.ToString ();
+					break;
+				case 2:
+					ret.TextLabel.Text = "MFlops";
+					ret.DetailTextLabel.Text = _currentTests[indexPath.Section-1].MFlops.ToString ("N3");
+					break;
+				case 3:
+					ret.TextLabel.Text = "Time";
+					ret.DetailTextLabel.Text = _currentTests[indexPath.Section-1].Seconds.ToString ("N3");
+					break;
+				case 4:
+					ret.TextLabel.Text = "MFlops/Second";
+					ret.DetailTextLabel.Text = _currentTests[indexPath.Section-1].MFlopsPerSecond.ToString ("N3");
+					break;
 				}
 			}
-
-
 
 			return ret;
 		}
@@ -168,4 +163,6 @@ namespace PerformanceTesting
 		}
 	}
 }
+
+	
 

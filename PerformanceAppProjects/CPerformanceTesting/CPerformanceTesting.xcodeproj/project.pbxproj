@@ -25,6 +25,11 @@
 		7919A960158AD17800D6C660 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A95F158AD17800D6C660 /* OpenGLES.framework */; };
 		7919A965158B8C7B00D6C660 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A964158B8C7B00D6C660 /* libz.dylib */; };
 		7919A967158BA0B500D6C660 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A966158BA0B500D6C660 /* libTestFlight.a */; };
+		792AA29215B735180032957D /* MatrixTestViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792AA29115B735180032957D /* MatrixTestViewControllerViewController.m */; };
+		792AA29615B737750032957D /* MatrixTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 792AA29515B737750032957D /* MatrixTest.m */; };
+		792AA29915B74CDB0032957D /* MatrixTestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 792AA29815B74CDB0032957D /* MatrixTestEngine.m */; };
+		792AA29B15B767740032957D /* libPerformanceAppLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 792AA29A15B767740032957D /* libPerformanceAppLib.a */; };
+		792AA29D15B7679F0032957D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792AA29C15B7679F0032957D /* Accelerate.framework */; };
 		7933C8E215957CFC00195C19 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933C8E115957CFC00195C19 /* DeviceInfo.m */; };
 		7933C8E615958F4500195C19 /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933C8E515958F4500195C19 /* DeviceInfoViewController.m */; };
 		7933C8E915960D4800195C19 /* TextEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933C8E815960D4800195C19 /* TextEditCell.m */; };
@@ -69,6 +74,14 @@
 		7919A95F158AD17800D6C660 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7919A964158B8C7B00D6C660 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7919A966158BA0B500D6C660 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = CPerformanceTesting/libTestFlight.a; sourceTree = "<group>"; };
+		792AA29015B735180032957D /* MatrixTestViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixTestViewControllerViewController.h; sourceTree = "<group>"; };
+		792AA29115B735180032957D /* MatrixTestViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixTestViewControllerViewController.m; sourceTree = "<group>"; };
+		792AA29415B737750032957D /* MatrixTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixTest.h; sourceTree = "<group>"; };
+		792AA29515B737750032957D /* MatrixTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixTest.m; sourceTree = "<group>"; };
+		792AA29715B74CDB0032957D /* MatrixTestEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixTestEngine.h; sourceTree = "<group>"; };
+		792AA29815B74CDB0032957D /* MatrixTestEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixTestEngine.m; sourceTree = "<group>"; };
+		792AA29A15B767740032957D /* libPerformanceAppLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPerformanceAppLib.a; path = ../PerformanceTesting/libPerformanceAppLib.a; sourceTree = "<group>"; };
+		792AA29C15B7679F0032957D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7933C8E015957CFC00195C19 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		7933C8E115957CFC00195C19 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		7933C8E415958F4500195C19 /* DeviceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoViewController.h; sourceTree = "<group>"; };
@@ -110,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				792AA29D15B7679F0032957D /* Accelerate.framework in Frameworks */,
+				792AA29B15B767740032957D /* libPerformanceAppLib.a in Frameworks */,
 				7933C93F15961AA800195C19 /* SystemConfiguration.framework in Frameworks */,
 				7919A967158BA0B500D6C660 /* libTestFlight.a in Frameworks */,
 				7919A965158B8C7B00D6C660 /* libz.dylib in Frameworks */,
@@ -158,6 +173,8 @@
 		7919A93F158AB99400D6C660 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				792AA29A15B767740032957D /* libPerformanceAppLib.a */,
+				792AA29C15B7679F0032957D /* Accelerate.framework */,
 				7933C94015961B4C00195C19 /* libxml2.dylib */,
 				7933C93E15961AA800195C19 /* SystemConfiguration.framework */,
 				7919A966158BA0B500D6C660 /* libTestFlight.a */,
@@ -196,6 +213,12 @@
 				7933CAEF1597986100195C19 /* GLCubeResultViewController.m */,
 				7933CAF11597A1A800195C19 /* ResultData.h */,
 				7933CAF21597A1A800195C19 /* ResultData.m */,
+				792AA29015B735180032957D /* MatrixTestViewControllerViewController.h */,
+				792AA29115B735180032957D /* MatrixTestViewControllerViewController.m */,
+				792AA29415B737750032957D /* MatrixTest.h */,
+				792AA29515B737750032957D /* MatrixTest.m */,
+				792AA29715B74CDB0032957D /* MatrixTestEngine.h */,
+				792AA29815B74CDB0032957D /* MatrixTestEngine.m */,
 			);
 			path = CPerformanceTesting;
 			sourceTree = "<group>";
@@ -324,6 +347,9 @@
 				7933CAED1597939200195C19 /* GLCubeResults.m in Sources */,
 				7933CAF01597986200195C19 /* GLCubeResultViewController.m in Sources */,
 				7933CAF31597A1A900195C19 /* ResultData.m in Sources */,
+				792AA29215B735180032957D /* MatrixTestViewControllerViewController.m in Sources */,
+				792AA29615B737750032957D /* MatrixTest.m in Sources */,
+				792AA29915B74CDB0032957D /* MatrixTestEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,12 +425,12 @@
 				INFOPLIST_FILE = "CPerformanceTesting/CPerformanceTesting-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../Downloads/TestFlightSDK1-1\"",
 					"\"$(SRCROOT)/CPerformanceTesting\"",
+					"\"$(SRCROOT)/../PerformanceTesting\"",
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/CPerformanceTesting\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -420,10 +446,11 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Downloads/TestFlightSDK1-1\"",
 					"\"$(SRCROOT)/CPerformanceTesting\"",
+					"\"$(SRCROOT)/../PerformanceTesting\"",
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/CPerformanceTesting\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

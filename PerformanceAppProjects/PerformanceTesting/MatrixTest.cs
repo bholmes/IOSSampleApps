@@ -26,7 +26,7 @@ namespace PerformanceTesting
 		{
 			get
 			{
-				return this.MFlops/Seconds;
+				return this.MFlops/this.Seconds;
 			}
 		}
 		public double Seconds {get;set;}

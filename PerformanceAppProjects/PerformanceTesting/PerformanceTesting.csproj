@@ -123,6 +123,12 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="PerformanceTesting.userprefs">
+      <Visible>False</Visible>
+    </None>
+    <None Include="libPerformanceAppLib.a">
+      <Visible>False</Visible>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
