@@ -27,7 +27,7 @@
     <MtouchArch>ARMv7</MtouchArch>
     <MtouchI18n />
     <CrashReportingApiKey />
-    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir} -lPerformanceAppLib -force_load ${ProjectDir}/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
+    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -38,7 +38,7 @@
     <ConsolePause>false</ConsolePause>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>ARMv7</MtouchArch>
-    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir} -lPerformanceAppLib -force_load ${ProjectDir}/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
+    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
     <MtouchI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
@@ -59,7 +59,7 @@
     <MtouchArch>ARMv7</MtouchArch>
     <CrashReportingApiKey />
     <additionalargs>-lAccelerate</additionalargs>
-    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir} -lPerformanceAppLib -force_load ${ProjectDir}/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
+    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -72,7 +72,7 @@
     <CodesignProvision>01705AA0-611D-43FC-BDA6-58B31F5035D0</CodesignProvision>
     <BuildIpa>true</BuildIpa>
     <MtouchArch>ARMv7</MtouchArch>
-    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir} -lPerformanceAppLib -force_load ${ProjectDir}/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
+    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
     <MtouchI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
@@ -85,7 +85,7 @@
     <BuildIpa>true</BuildIpa>
     <CodesignKey>iPhone Developer: William Holmes (7NLBGWH956)</CodesignKey>
     <CodesignProvision>01705AA0-611D-43FC-BDA6-58B31F5035D0</CodesignProvision>
-    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir} -lPerformanceAppLib -force_load ${ProjectDir}/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
+    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
     <MtouchArch>ARMv7</MtouchArch>
     <MtouchI18n />
   </PropertyGroup>
@@ -98,7 +98,7 @@
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer: William Holmes (7NLBGWH956)</CodesignKey>
     <CodesignProvision>01705AA0-611D-43FC-BDA6-58B31F5035D0</CodesignProvision>
-    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir} -lPerformanceAppLib -force_load ${ProjectDir}/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
+    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
     <MtouchArch>ARMv7</MtouchArch>
     <MtouchI18n />
   </PropertyGroup>

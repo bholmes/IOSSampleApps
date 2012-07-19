@@ -1,12 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="MatrixTestEngine.cs">
+    <Files>
+      <File FileName="MatrixTestViewController.cs" Line="158" Column="64" />
+      <File FileName="TopMenuTable.cs" Line="74" Column="39" />
+      <File FileName="MatrixTest.cs" Line="29" Column="37" />
+      <File FileName="MatrixTestEngine.cs" Line="130" Column="9" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="PerformanceTesting" expanded="True">
-            <Node name="MatrixTestViewController.cs" selected="True" />
-          </Node>
+          <Node name="PerformanceTesting" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
