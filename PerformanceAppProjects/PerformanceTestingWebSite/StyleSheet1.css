@@ -1,0 +1,74 @@
+﻿body 
+{
+    /* Old browsers */
+    background: #000000; 
+    
+   /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(left, #000000 0%, #29008A 100%);
+
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(left, #000000 0%, #29008A 100%);
+
+    /* Opera */ 
+    background-image: -o-linear-gradient(left, #000000 0%, #29008A 100%);
+
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #000000), color-stop(1, #29008A));
+
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(left, #000000 0%, #29008A 100%);
+
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to right, #000000 0%, #29008A 100%);
+}
+
+#menuPanel, .post
+{
+    background-color: #F7F6F3;
+}
+
+#mainPage
+{
+    width: 900px;
+    min-height: 800px;  
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#menuPanel, .post
+{
+    padding: 5px;
+    margin: 5px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#menuPanel
+{
+    padding: 5px;
+    margin: 5px;
+    width: 260px;
+    float: left;
+    min-height: 300px;
+}
+
+#postPanel
+{
+    width: 600px;
+    float: left;
+}
+
+.post
+{
+    width: 100%;
+}
+
+.post table
+{
+    width: 95%;
+}
+
+#Button1, .post table
+{
+    margin: 10px;
+}
