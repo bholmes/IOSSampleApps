@@ -15,7 +15,7 @@ namespace PerformanceTestingWebSite.PerformanceService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FullDeviceInfo", Namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebApp")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FullDeviceInfo", Namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite")]
     [System.SerializableAttribute()]
     public partial class FullDeviceInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -188,7 +188,7 @@ namespace PerformanceTestingWebSite.PerformanceService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DeviceInfo", Namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebApp")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DeviceInfo", Namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite")]
     [System.SerializableAttribute()]
     public partial class DeviceInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -313,7 +313,7 @@ namespace PerformanceTestingWebSite.PerformanceService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PerformanceCubeResult", Namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebApp")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PerformanceCubeResult", Namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite")]
     [System.SerializableAttribute()]
     public partial class PerformanceCubeResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         

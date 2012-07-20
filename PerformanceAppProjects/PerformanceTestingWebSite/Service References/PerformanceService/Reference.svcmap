@@ -18,14 +18,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://apps.slapholmesproductions.com/performancetesting/service.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="f295767a-3db2-4f5e-97bd-3c4e01795447" SourceId="1" SourceUrl="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="bd028109-dc81-4ee3-a195-04095e7d83e1" SourceId="1" SourceUrl="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?disco" />
-    <MetadataFile FileName="PerformanceTestingDataService.wsdl" MetadataType="Wsdl" ID="cebf9d93-2521-4431-92a0-148021a02e86" SourceId="1" SourceUrl="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?wsdl" />
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="2e5da8db-4490-490f-a0a7-6feda7a80a02" SourceId="1" SourceUrl="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd0" />
-    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="666caa43-a4e2-4fe3-9ba9-6c455715a457" SourceId="1" SourceUrl="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="PerformanceTestingDataService.xsd" MetadataType="Schema" ID="1a4866bf-ed23-4f3f-befa-b55a58c04de2" SourceId="1" SourceUrl="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PerformanceTestingDataService.disco" MetadataType="Disco" ID="8d704317-482c-4bbb-96cb-e9fec042372c" SourceId="1" SourceUrl="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?disco" />
+    <MetadataFile FileName="PerformanceTestingDataService1.xsd" MetadataType="Schema" ID="4b5ae0e0-2aea-4396-9039-c5bdee50941c" SourceId="1" SourceUrl="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PerformanceTestingDataService2.xsd" MetadataType="Schema" ID="57af2593-d151-418d-af6a-8c8b2405c5a0" SourceId="1" SourceUrl="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PerformanceTestingDataService1.wsdl" MetadataType="Wsdl" ID="916d98bc-acef-4ff7-8a63-21c325d68ca5" SourceId="1" SourceUrl="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

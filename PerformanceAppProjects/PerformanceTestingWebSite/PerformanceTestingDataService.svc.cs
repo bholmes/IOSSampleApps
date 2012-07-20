@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ServiceModel;
 
-namespace PerformanceTestingWebApp
+namespace PerformanceTestingWebSite
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class PerformanceTestingDataService : IPerformanceTestingDataService

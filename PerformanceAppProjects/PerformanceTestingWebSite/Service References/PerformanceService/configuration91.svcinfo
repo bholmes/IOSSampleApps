@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="oWZ+xTL2wLMqLO31jCM1d6nQj6o=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="dK+x64bOGS5HTvfptKAqgWicHSI=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IPerformanceTestingDataService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IPerformanceTestingDataService" contract="PerformanceService.IPerformanceTestingDataService" bindingType="basicHttpBinding" address="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc/basic" bindingConfiguration="BasicHttpBinding_IPerformanceTestingDataService">
+    <endpoint name="BasicHttpBinding_IPerformanceTestingDataService" contract="PerformanceService.IPerformanceTestingDataService" bindingType="basicHttpBinding" address="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc/basic" bindingConfiguration="BasicHttpBinding_IPerformanceTestingDataService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc/basic</serializedValue>
+          <serializedValue>http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc/basic</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
