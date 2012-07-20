@@ -1,4 +1,6 @@
-﻿using System;
+﻿//#define UseServiceReference
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
 using System.Data;
+
+
+#if UseServiceReference
 using PerformanceTestingWebSite.PerformanceService;
+#else
+using PerformanceTestingWebSite;
+#endif
 
 namespace WebApplication1
 {
@@ -21,13 +29,16 @@ namespace WebApplication1
 
             Page.ClientScript.RegisterStartupScript(Page.GetType(), "Foo", string.Format("emptyChart('{0}');", _chartName), true);
 
-
+#if UseServiceReference
             PerformanceTestingDataServiceClient svc = new PerformanceTestingDataServiceClient();
+#else
+            PerformanceTestingDataService svc = new PerformanceTestingDataService();
+#endif
 
-            PerformanceCubeResult[] resultsArray = svc.GetPerformanceCubeResultsForMonoTouch();
-            List<DeviceInfo> deviceList = new List<DeviceInfo>(svc.GetDeviceList());
+            List<PerformanceCubeResult> resultsArray = svc.GetPerformanceCubeResultsForMonoTouch();
+            List<DeviceInfo> deviceList = svc.GetDeviceList();
 
-            if (resultsArray.Length != 0)
+            if (resultsArray.Count != 0)
             {
                 DataSet ds = new DataSet("MyTables");
                 ds.Tables.Add("DeviceList");
@@ -62,13 +73,16 @@ namespace WebApplication1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+#if UseServiceReference
             PerformanceTestingDataServiceClient svc = new PerformanceTestingDataServiceClient();
+#else
+            PerformanceTestingDataService svc = new PerformanceTestingDataService();
+#endif
 
-            PerformanceCubeResult[] resultsArray = svc.GetPerformanceCubeResultsForMonoTouch();
-            List<DeviceInfo> deviceList = new List<DeviceInfo>(svc.GetDeviceList());
+            List<PerformanceCubeResult> resultsArray = svc.GetPerformanceCubeResultsForMonoTouch();
+            List<DeviceInfo> deviceList = svc.GetDeviceList();
 
-            if (resultsArray.Length == 0)
+            if (resultsArray.Count == 0)
             {
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ReloadChart1", string.Format("emptyChart('{0}');", _chartName), true);
                 return;

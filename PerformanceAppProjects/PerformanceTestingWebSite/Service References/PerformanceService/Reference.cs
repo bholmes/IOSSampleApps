@@ -434,7 +434,7 @@ namespace PerformanceTestingWebSite.PerformanceService {
         PerformanceTestingWebSite.PerformanceService.FullDeviceInfo FindFullDeviceInfo(string uniqueId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/GetDeviceList", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/GetDeviceListResponse")]
-        PerformanceTestingWebSite.PerformanceService.DeviceInfo[] GetDeviceList();
+        System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.DeviceInfo> GetDeviceList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResult", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResultRespons" +
             "e")]
@@ -442,21 +442,21 @@ namespace PerformanceTestingWebSite.PerformanceService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResults", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResultsRespon" +
             "se")]
-        void AddPerformanceCubeResults(PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult[] results);
+        void AddPerformanceCubeResults(System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult> results);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResults", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsRespon" +
             "se")]
-        PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult[] GetPerformanceCubeResults();
+        System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult> GetPerformanceCubeResults();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForMon" +
             "oTouch", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForMon" +
             "oTouchResponse")]
-        PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult[] GetPerformanceCubeResultsForMonoTouch();
+        System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult> GetPerformanceCubeResultsForMonoTouch();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForObj" +
             "ectiveC", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForObj" +
             "ectiveCResponse")]
-        PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult[] GetPerformanceCubeResultsForObjectiveC();
+        System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult> GetPerformanceCubeResultsForObjectiveC();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResult", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResultRespon" +
             "se")]
@@ -502,7 +502,7 @@ namespace PerformanceTestingWebSite.PerformanceService {
             return base.Channel.FindFullDeviceInfo(uniqueId);
         }
         
-        public PerformanceTestingWebSite.PerformanceService.DeviceInfo[] GetDeviceList() {
+        public System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.DeviceInfo> GetDeviceList() {
             return base.Channel.GetDeviceList();
         }
         
@@ -510,19 +510,19 @@ namespace PerformanceTestingWebSite.PerformanceService {
             return base.Channel.AddPerformanceCubeResult(result);
         }
         
-        public void AddPerformanceCubeResults(PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult[] results) {
+        public void AddPerformanceCubeResults(System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult> results) {
             base.Channel.AddPerformanceCubeResults(results);
         }
         
-        public PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult[] GetPerformanceCubeResults() {
+        public System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult> GetPerformanceCubeResults() {
             return base.Channel.GetPerformanceCubeResults();
         }
         
-        public PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult[] GetPerformanceCubeResultsForMonoTouch() {
+        public System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult> GetPerformanceCubeResultsForMonoTouch() {
             return base.Channel.GetPerformanceCubeResultsForMonoTouch();
         }
         
-        public PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult[] GetPerformanceCubeResultsForObjectiveC() {
+        public System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult> GetPerformanceCubeResultsForObjectiveC() {
             return base.Channel.GetPerformanceCubeResultsForObjectiveC();
         }
         

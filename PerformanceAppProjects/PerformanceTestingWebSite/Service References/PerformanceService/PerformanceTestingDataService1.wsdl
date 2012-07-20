@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PerformanceTestingDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPerformanceTestingDataService_AddDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDevice" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_AddDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_FindDeviceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindDeviceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_FindDeviceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindDeviceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_FindFullDeviceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindFullDeviceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_FindFullDeviceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindFullDeviceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetDeviceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceList" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetDeviceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_AddPerformanceCubeResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPerformanceCubeResult" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_AddPerformanceCubeResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPerformanceCubeResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_AddPerformanceCubeResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPerformanceCubeResults" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_AddPerformanceCubeResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPerformanceCubeResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceCubeResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceCubeResults" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceCubeResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceCubeResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceCubeResultsForMonoTouch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceCubeResultsForMonoTouch" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceCubeResultsForMonoTouch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceCubeResultsForMonoTouchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceCubeResultsForObjectiveC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceCubeResultsForObjectiveC" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceCubeResultsForObjectiveC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceCubeResultsForObjectiveCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_FindPerformanceCubeResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPerformanceCubeResult" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_FindPerformanceCubeResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPerformanceCubeResultResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPerformanceTestingDataService">
+    <wsdl:operation name="AddDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddDevice" message="tns:IPerformanceTestingDataService_AddDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddDeviceResponse" message="tns:IPerformanceTestingDataService_AddDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindDeviceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindDeviceInfo" message="tns:IPerformanceTestingDataService_FindDeviceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindDeviceInfoResponse" message="tns:IPerformanceTestingDataService_FindDeviceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindFullDeviceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindFullDeviceInfo" message="tns:IPerformanceTestingDataService_FindFullDeviceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindFullDeviceInfoResponse" message="tns:IPerformanceTestingDataService_FindFullDeviceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetDeviceList" message="tns:IPerformanceTestingDataService_GetDeviceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetDeviceListResponse" message="tns:IPerformanceTestingDataService_GetDeviceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPerformanceCubeResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResult" message="tns:IPerformanceTestingDataService_AddPerformanceCubeResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResultResponse" message="tns:IPerformanceTestingDataService_AddPerformanceCubeResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPerformanceCubeResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResults" message="tns:IPerformanceTestingDataService_AddPerformanceCubeResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResultsResponse" message="tns:IPerformanceTestingDataService_AddPerformanceCubeResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceCubeResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResults" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsResponse" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceCubeResultsForMonoTouch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForMonoTouch" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResultsForMonoTouch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForMonoTouchResponse" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResultsForMonoTouch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceCubeResultsForObjectiveC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForObjectiveC" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResultsForObjectiveC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForObjectiveCResponse" message="tns:IPerformanceTestingDataService_GetPerformanceCubeResultsForObjectiveC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPerformanceCubeResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResult" message="tns:IPerformanceTestingDataService_FindPerformanceCubeResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResultResponse" message="tns:IPerformanceTestingDataService_FindPerformanceCubeResult_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPerformanceTestingDataService" type="tns:IPerformanceTestingDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddDevice">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/AddDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDeviceInfo">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/FindDeviceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindFullDeviceInfo">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/FindFullDeviceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceList">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetDeviceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPerformanceCubeResult">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPerformanceCubeResults">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceCubeResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceCubeResults">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceCubeResultsForMonoTouch">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForMonoTouch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceCubeResultsForObjectiveC">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceCubeResultsForObjectiveC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPerformanceCubeResult">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PerformanceTestingDataService">
+    <wsdl:port name="BasicHttpBinding_IPerformanceTestingDataService" binding="tns:BasicHttpBinding_IPerformanceTestingDataService">
+      <soap:address location="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc/basic" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
