@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="DeviceInfo.cs" />
     <Compile Include="IPerformanceTestingDataService.cs" />
+    <Compile Include="MatrixTestResult.cs" />
     <Compile Include="PerformanceCubeResult.cs" />
     <Compile Include="PerformanceTestingDataService.svc.cs">
       <DependentUpon>PerformanceTestingDataService.svc</DependentUpon>

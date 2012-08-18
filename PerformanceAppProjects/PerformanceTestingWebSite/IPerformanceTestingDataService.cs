@@ -38,5 +38,17 @@ namespace PerformanceTestingWebSite
 
         [OperationContract]
         PerformanceCubeResult FindPerformanceCubeResult(int id);
+
+        [OperationContract]
+        int AddPerformanceMatrixTestResult(MatrixTestResult result);
+
+        [OperationContract]
+        List<MatrixTestResult> GetPerformanceMatrixResults();
+
+        [OperationContract]
+        List<MatrixTestResult> GetPerformanceMatrixResultsForMonoTouch();
+
+        [OperationContract]
+        List<MatrixTestResult> GetPerformanceMatrixResultsForObjectiveC();
     }
 }
