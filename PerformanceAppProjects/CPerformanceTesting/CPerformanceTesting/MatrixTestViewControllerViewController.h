@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MatrixTestViewControllerViewController : UITableViewController
+@interface MatrixTestViewControllerViewController : UITableViewController 
 
 @end

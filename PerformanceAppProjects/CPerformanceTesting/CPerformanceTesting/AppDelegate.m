@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "TopMenu.h"
 #import "TestFlight.h"
+#import "DeviceInfo.h"
 
 @implementation AppDelegate
 
@@ -18,6 +19,9 @@
 {
     //[TestFlight setDeviceIdentifier:UIDevice.currentDevice.uniqueIdentifier];
     //[TestFlight takeOff:@"token removed"];
+    
+    DeviceInfo* di = [DeviceInfo current];
+    di = nil;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

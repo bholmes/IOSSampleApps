@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PerformanceTestingDataServiceSvc.h"
 
-@interface DeviceInfo : NSObject
+@interface DeviceInfo : NSObject <BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>
 {
     NSString* _specificHWVersion;
 }

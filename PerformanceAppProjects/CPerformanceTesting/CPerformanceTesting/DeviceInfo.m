@@ -28,12 +28,54 @@
     return self;
 }
 
+-(void) fetchInfoFromServer
+{
+    BasicHttpBinding_IPerformanceTestingDataServiceBinding* binding =
+    [PerformanceTestingDataServiceSvc BasicHttpBinding_IPerformanceTestingDataServiceBinding];
+    binding.logXMLInOut = NO;
+    
+    PerformanceTestingDataServiceSvc_FindFullDeviceInfo* params =
+    [[PerformanceTestingDataServiceSvc_FindFullDeviceInfo alloc]init];
+    
+    params.uniqueId = self.uniqueId;
+    
+    [binding FindFullDeviceInfoAsyncUsingParameters:params delegate:self];
+}
+
+- (void) operation:(BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation *)operation completedWithResponse:(BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)response
+{
+    NSString* buff;
+    
+    for (id mine in response.bodyParts)
+    {
+        if ([mine isKindOfClass:[SOAPFault class]]) {
+            // You can get the error like this:
+            buff = ((SOAPFault *)mine).simpleFaultString;
+            continue;
+        }
+        
+        if ([mine isKindOfClass:[PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse class]])
+        {
+            tns1_FullDeviceInfo* di =
+            ((PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse*)mine).FindFullDeviceInfoResult;
+            
+            self.ownerName = di.OwnerName;
+            self.databaseId = di.DatabaseId.intValue;
+        }
+
+    }
+}
+
 + (DeviceInfo*) current
 {
     static DeviceInfo* g_current = nil;
     
     if (!g_current)
+    {
         g_current = [[DeviceInfo alloc]init];
+        [g_current fetchInfoFromServer];
+        
+    }
     
     return g_current;
 }

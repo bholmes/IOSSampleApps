@@ -142,14 +142,15 @@
     else
     {
         TextEditCell* txtCell = [tableView dequeueReusableCellWithIdentifier: @"RootItem2"];
-        ret = txtCell;
-        if (ret == nil) 
+        if (txtCell == nil) 
         {
-            ret = [[TextEditCell alloc]initWithReuseIdentifier:@"RootItem2"];
+            txtCell = [[TextEditCell alloc]initWithReuseIdentifier:@"RootItem2"];
         }	
         
-        ret.textLabel.text = @"Owner Name";
+        txtCell.textLabel.text = @"Owner Name";
+        
         txtCell.textField.text = [DeviceInfo current].ownerName;
+        ret = txtCell;
     }
     
     return ret;
