@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Results>
-    <DiscoveryClientResult filename="Service.xsd" referenceType="System.Web.Services.Discovery.SchemaReference" url="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd1" />
-    <DiscoveryClientResult filename="Service1.xsd" referenceType="System.Web.Services.Discovery.SchemaReference" url="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd2" />
-    <DiscoveryClientResult filename="Service.wsdl" referenceType="System.Web.Services.Discovery.ContractReference" url="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?wsdl" />
-    <DiscoveryClientResult filename="Service2.xsd" referenceType="System.Web.Services.Discovery.SchemaReference" url="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd0" />
-  </Results>
-</DiscoveryClientResultsFile>

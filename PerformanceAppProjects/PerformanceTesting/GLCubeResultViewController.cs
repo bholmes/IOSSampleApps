@@ -75,7 +75,7 @@ namespace PerformanceTesting
 			for (int i=0; i<_glResults.Count; i++)
 			{
 				PerformanceCubeResult result = new PerformanceCubeResult ();
-				result.DeviceDatabaseId = DeviceInfo.DatabaseId;
+				result.DeviceDatabaseId = DeviceInfo.CurrentDevice.DatabaseId;
 				result.DeviceDatabaseIdSpecified = true;
 				result.NumberOfTriangles = _glResults[i].NumberOfTriangles;
 				result.NumberOfTrianglesSpecified = true;

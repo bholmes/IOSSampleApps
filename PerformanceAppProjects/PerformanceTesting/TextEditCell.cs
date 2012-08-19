@@ -64,7 +64,7 @@ namespace PerformanceTesting
 		[Export ("textFieldDidEndEditing:")]
 		public virtual void EditingEnded (UITextField textField)
 		{
-			DeviceInfo.OwnerName = textField.Text;
+			DeviceInfo.CurrentDevice.OwnerName = textField.Text;
 		}
 		
 		[Export ("textFieldShouldReturn:")]

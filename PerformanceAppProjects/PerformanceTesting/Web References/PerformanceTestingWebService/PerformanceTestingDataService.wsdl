@@ -2,9 +2,9 @@
 <definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" name="PerformanceTestingDataService" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xs:schema xmlns:tns="http://tempuri.org/Imports" targetNamespace="http://tempuri.org/Imports" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-      <xs:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xs:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xs:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebApp" />
+      <xs:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xs:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:import schemaLocation="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite" />
     </xs:schema>
   </types>
   <message name="IPerformanceTestingDataService_AddDevice_InputMessage">
@@ -67,6 +67,30 @@
   <message name="IPerformanceTestingDataService_FindPerformanceCubeResult_OutputMessage">
     <part name="parameters" element="tns:FindPerformanceCubeResultResponse" />
   </message>
+  <message name="IPerformanceTestingDataService_AddPerformanceMatrixTestResult_InputMessage">
+    <part name="parameters" element="tns:AddPerformanceMatrixTestResult" />
+  </message>
+  <message name="IPerformanceTestingDataService_AddPerformanceMatrixTestResult_OutputMessage">
+    <part name="parameters" element="tns:AddPerformanceMatrixTestResultResponse" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceMatrixResults_InputMessage">
+    <part name="parameters" element="tns:GetPerformanceMatrixResults" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceMatrixResults_OutputMessage">
+    <part name="parameters" element="tns:GetPerformanceMatrixResultsResponse" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceMatrixResultsForMonoTouch_InputMessage">
+    <part name="parameters" element="tns:GetPerformanceMatrixResultsForMonoTouch" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceMatrixResultsForMonoTouch_OutputMessage">
+    <part name="parameters" element="tns:GetPerformanceMatrixResultsForMonoTouchResponse" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceMatrixResultsForObjectiveC_InputMessage">
+    <part name="parameters" element="tns:GetPerformanceMatrixResultsForObjectiveC" />
+  </message>
+  <message name="IPerformanceTestingDataService_GetPerformanceMatrixResultsForObjectiveC_OutputMessage">
+    <part name="parameters" element="tns:GetPerformanceMatrixResultsForObjectiveCResponse" />
+  </message>
   <portType name="IPerformanceTestingDataService">
     <operation name="AddDevice">
       <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddDevice" message="tns:IPerformanceTestingDataService_AddDevice_InputMessage" />
@@ -107,6 +131,22 @@
     <operation name="FindPerformanceCubeResult">
       <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResult" message="tns:IPerformanceTestingDataService_FindPerformanceCubeResult_InputMessage" />
       <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResultResponse" message="tns:IPerformanceTestingDataService_FindPerformanceCubeResult_OutputMessage" />
+    </operation>
+    <operation name="AddPerformanceMatrixTestResult">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceMatrixTestResult" message="tns:IPerformanceTestingDataService_AddPerformanceMatrixTestResult_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceMatrixTestResultResponse" message="tns:IPerformanceTestingDataService_AddPerformanceMatrixTestResult_OutputMessage" />
+    </operation>
+    <operation name="GetPerformanceMatrixResults">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResults" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResults_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsResponse" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResults_OutputMessage" />
+    </operation>
+    <operation name="GetPerformanceMatrixResultsForMonoTouch">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForMonoTouch" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResultsForMonoTouch_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForMonoTouchResponse" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResultsForMonoTouch_OutputMessage" />
+    </operation>
+    <operation name="GetPerformanceMatrixResultsForObjectiveC">
+      <input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForObjectiveC" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResultsForObjectiveC_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForObjectiveCResponse" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResultsForObjectiveC_OutputMessage" />
     </operation>
   </portType>
   <binding name="BasicHttpBinding_IPerformanceTestingDataService" type="tns:IPerformanceTestingDataService">
@@ -201,10 +241,46 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="AddPerformanceMatrixTestResult">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceMatrixTestResult" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPerformanceMatrixResults">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResults" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPerformanceMatrixResultsForMonoTouch">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForMonoTouch" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPerformanceMatrixResultsForObjectiveC">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForObjectiveC" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
   </binding>
   <service name="PerformanceTestingDataService">
     <port name="BasicHttpBinding_IPerformanceTestingDataService" binding="tns:BasicHttpBinding_IPerformanceTestingDataService">
-      <soap:address location="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc/basic" />
+      <soap:address location="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc/basic" />
     </port>
   </service>
 </definitions>

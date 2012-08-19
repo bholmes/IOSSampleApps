@@ -6,6 +6,7 @@ using OpenTK;
 using System.Drawing;
 using OpenTK.Graphics.ES20;
 using MonoTouch.OpenGLES;
+using PerformanceTesting.PerformanceTestingWebService;
 
 namespace PerformanceTesting
 {
@@ -297,9 +298,29 @@ namespace PerformanceTesting
 			float framesPerSecond = frameCount / ((float)currentTime.Subtract (startTime).TotalSeconds);
 			
 			_fpLabel.Text = "fps = " + framesPerSecond;
-			
-			ResultData.Results.GLCubeResults.Add 
-				(new GLCubeResult (_triangles/3, framesPerSecond));
+
+			GLCubeResult cubeResult = new GLCubeResult (_triangles/3, framesPerSecond);
+			ResultData.Results.GLCubeResults.Add (cubeResult);
+
+			postResults (cubeResult);
+		}
+
+		void postResults (GLCubeResult cubeResult)
+		{
+			PerformanceTestingDataService service = new PerformanceTestingDataService ();
+			PerformanceCubeResult result = new PerformanceCubeResult ()
+			{
+				DeviceDatabaseId = DeviceInfo.CurrentDevice.DatabaseId,
+				DeviceDatabaseIdSpecified = true,
+				NumberOfTriangles = cubeResult.NumberOfTriangles,
+				NumberOfTrianglesSpecified = true,
+				FramesPerSecond = cubeResult.FramesPerSecond,
+				FramesPerSecondSpecified = true,
+				IsMonoTouch = true,
+				IsMonoTouchSpecified = true
+			};
+
+			service.AddPerformanceCubeResultAsync (result);
 		}
 		
 		public void RotateXY (float x, float y)

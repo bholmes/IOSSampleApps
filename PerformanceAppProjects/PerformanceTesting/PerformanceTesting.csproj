@@ -115,19 +115,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
-    <None Include="Web References\PerformanceTestingWebService\Service.xsd" />
-    <None Include="Web References\PerformanceTestingWebService\Service1.xsd" />
-    <None Include="Web References\PerformanceTestingWebService\Service.wsdl" />
-    <None Include="Web References\PerformanceTestingWebService\Service2.xsd" />
-    <None Include="Web References\PerformanceTestingWebService\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="PerformanceTesting.userprefs">
       <Visible>False</Visible>
     </None>
     <None Include="libPerformanceAppLib.a">
       <Visible>False</Visible>
+    </None>
+    <None Include="Web References\PerformanceTestingWebService\PerformanceTestingDataService.wsdl" />
+    <None Include="Web References\PerformanceTestingWebService\PerformanceTestingDataService.xsd" />
+    <None Include="Web References\PerformanceTestingWebService\PerformanceTestingDataService1.xsd" />
+    <None Include="Web References\PerformanceTestingWebService\PerformanceTestingDataService2.xsd" />
+    <None Include="Web References\PerformanceTestingWebService\PerformanceTestingDataService.disco" />
+    <None Include="Web References\PerformanceTestingWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -142,12 +143,12 @@
     <Compile Include="DeviceInfoViewController.cs" />
     <Compile Include="DeviceInfo.cs" />
     <Compile Include="TextEditCell.cs" />
-    <Compile Include="Web References\PerformanceTestingWebService\Reference.cs">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <Compile Include="MatrixTestViewController.cs" />
     <Compile Include="MatrixTest.cs" />
     <Compile Include="MatrixTestEngine.cs" />
+    <Compile Include="Web References\PerformanceTestingWebService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -168,10 +169,10 @@
     <WebReferences Include="Web References" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?wsdl">
+    <WebReferenceUrl Include="http://apps.slapholmesproductions.com/PerformanceApp/PerformanceTestingDataService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\PerformanceTestingWebService</RelPath>
-      <UpdateFromURL>http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc?wsdl</UpdateFromURL>
+      <UpdateFromURL>http://apps.slapholmesproductions.com/PerformanceApp/PerformanceTestingDataService.svc</UpdateFromURL>
     </WebReferenceUrl>
   </ItemGroup>
 </Project>

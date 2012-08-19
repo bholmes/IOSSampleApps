@@ -2,6 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using MonoTouch.UIKit;
+using PerformanceTesting.PerformanceTestingWebService;
 
 
 namespace PerformanceTesting
@@ -13,7 +14,7 @@ namespace PerformanceTesting
 			
 		}
 		
-		public static string DeviceName
+		public string DeviceName
 		{
 			get 
 			{
@@ -21,7 +22,7 @@ namespace PerformanceTesting
 			}
 		}
 		
-		public static string OSName
+		public string OSName
 		{
 			get 
 			{
@@ -29,7 +30,7 @@ namespace PerformanceTesting
 			}
 		}
 		
-		public static string OSVersion
+		public string OSVersion
 		{
 			get 
 			{
@@ -37,7 +38,7 @@ namespace PerformanceTesting
 			}
 		}
 		
-		public static string ModelName
+		public string ModelName
 		{
 			get 
 			{
@@ -45,9 +46,9 @@ namespace PerformanceTesting
 			}
 		}
 		
-		static private string _specificHWVersion;
+		private string _specificHWVersion;
 		
-		public static string SpecificHWVersion 
+		public string SpecificHWVersion 
 		{
 			get
 			{
@@ -67,7 +68,7 @@ namespace PerformanceTesting
 			}
 		}
 		
-		public static string UniqueId 
+		public string UniqueId 
 		{
 			get 
 			{
@@ -75,17 +76,25 @@ namespace PerformanceTesting
 			}
 		}
 		
-		public static string UIIdion 
+		public string UIIdion 
 		{
 			get 
 			{
 				return UIDevice.CurrentDevice.UserInterfaceIdiom.ToString ();	
 			}
 		}
+
+		private void fetchInfoFromServer ()
+		{
+			PerformanceTestingDataService service = new PerformanceTestingDataService ();
+			FullDeviceInfo di = service.FindFullDeviceInfo (this.UniqueId);
+			this.DatabaseId = di.DatabaseId;
+			this.OwnerName = di.OwnerName;
+		}
 		
-		public static string OwnerName {get;set;}
+		public string OwnerName {get;set;}
 		
-		public static int DatabaseId {get;set;}
+		public int DatabaseId {get;set;}
 		
 		[DllImport (MonoTouch.Constants.SystemLibrary, EntryPoint="sysctlbyname")]
 		private static extern int sysctlbyname ([MarshalAs (UnmanagedType.LPStr)]string name,
@@ -96,6 +105,21 @@ namespace PerformanceTesting
 		private static extern int sysctlbyname2 ([MarshalAs (UnmanagedType.LPStr)]string name,
 		                                         StringBuilder oldp, ref IntPtr oldlenp, IntPtr newp, 
 		                                         IntPtr newlen);
+
+		private static DeviceInfo _GDevice = null;
+		public static DeviceInfo CurrentDevice
+		{
+			get
+			{
+				if (_GDevice == null)
+				{
+					_GDevice = new DeviceInfo ();
+					_GDevice.fetchInfoFromServer ();
+				}
+
+				return _GDevice;
+			}
+		}
 		
 	}
 }
