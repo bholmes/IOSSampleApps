@@ -7,6 +7,8 @@
 @class tns1_ArrayOfDeviceInfo;
 @class tns1_PerformanceCubeResult;
 @class tns1_ArrayOfPerformanceCubeResult;
+@class tns1_MatrixTestResult;
+@class tns1_ArrayOfMatrixTestResult;
 @interface tns1_FullDeviceInfo : NSObject {
 	
 /* elements */
@@ -130,6 +132,53 @@
 /* elements */
 - (void)addPerformanceCubeResult:(tns1_PerformanceCubeResult *)toAdd;
 @property (readonly) NSMutableArray * PerformanceCubeResult;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface tns1_MatrixTestResult : NSObject {
+	
+/* elements */
+	NSNumber * BLASTestResult;
+	NSNumber * CSTestResult;
+	NSNumber * CTestResult;
+	NSNumber * DatabaseId;
+	NSNumber * DeviceDatabaseId;
+	USBoolean * IsMonoTouch;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (tns1_MatrixTestResult *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) NSNumber * BLASTestResult;
+@property (retain) NSNumber * CSTestResult;
+@property (retain) NSNumber * CTestResult;
+@property (retain) NSNumber * DatabaseId;
+@property (retain) NSNumber * DeviceDatabaseId;
+@property (retain) USBoolean * IsMonoTouch;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface tns1_ArrayOfMatrixTestResult : NSObject {
+	
+/* elements */
+	NSMutableArray *MatrixTestResult;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (tns1_ArrayOfMatrixTestResult *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+- (void)addMatrixTestResult:(tns1_MatrixTestResult *)toAdd;
+@property (readonly) NSMutableArray * MatrixTestResult;
 /* attributes */
 - (NSDictionary *)attributes;
 @end
