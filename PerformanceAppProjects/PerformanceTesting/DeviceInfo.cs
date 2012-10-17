@@ -88,8 +88,37 @@ namespace PerformanceTesting
 		{
 			PerformanceTestingDataService service = new PerformanceTestingDataService ();
 			FullDeviceInfo di = service.FindFullDeviceInfo (this.UniqueId);
-			this.DatabaseId = di.DatabaseId;
-			this.OwnerName = di.OwnerName;
+			if (di == null)
+			{
+				this.RegisterWithServer ();
+			}
+
+			else
+			{
+				this.DatabaseId = di.DatabaseId;
+				this.OwnerName = di.OwnerName;
+			}
+		}
+
+		public void RegisterWithServer ()
+		{
+			FullDeviceInfo deviceInfo = new FullDeviceInfo ();
+			
+			deviceInfo.ModelName = this.ModelName;
+			deviceInfo.UIIdion = this.UIIdion;
+			deviceInfo.SpecificHWVersion = this.SpecificHWVersion;
+			deviceInfo.OSName = this.OSName;
+			deviceInfo.OSVersion = this.OSVersion;
+			deviceInfo.UniqueId = this.UniqueId;
+			deviceInfo.SystemName = this.DeviceName;
+			deviceInfo.OwnerName = this.OwnerName;
+			
+			PerformanceTestingDataService service = new PerformanceTestingDataService ();
+			
+			service.BeginAddDevice (deviceInfo, (result) => {
+				Console.WriteLine ("Done");
+				this.DatabaseId = service.EndAddDevice (result);
+			} , null);
 		}
 		
 		public string OwnerName {get;set;}

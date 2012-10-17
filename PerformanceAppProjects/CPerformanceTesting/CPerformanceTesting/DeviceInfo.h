@@ -15,6 +15,7 @@
 }
 
 + (DeviceInfo*) current;
+-(void) registerWithServer;
 
 @property(nonatomic,readonly) NSString *deviceName;
 @property(nonatomic,readonly) NSString *osName;

@@ -42,6 +42,27 @@
     [binding FindFullDeviceInfoAsyncUsingParameters:params delegate:self];
 }
 
+-(void) registerWithServer
+{
+    BasicHttpBinding_IPerformanceTestingDataServiceBinding* binding =
+    [PerformanceTestingDataServiceSvc BasicHttpBinding_IPerformanceTestingDataServiceBinding];
+    binding.logXMLInOut = NO;
+    
+    PerformanceTestingDataServiceSvc_AddDevice* params = [[PerformanceTestingDataServiceSvc_AddDevice alloc]init];
+    params.deviceInfo = [[tns1_FullDeviceInfo alloc]init];
+    
+    params.deviceInfo.UniqueId = self.uniqueId;
+    params.deviceInfo.OSName = self.osName;
+    params.deviceInfo.OSVersion = self.osVersion;
+    params.deviceInfo.ModelName = self.modelName;
+    params.deviceInfo.SpecificHWVersion = self.specificHWVersion;
+    params.deviceInfo.UIIdion = self.uiIdion;
+    params.deviceInfo.SystemName = self.deviceName;
+    params.deviceInfo.OwnerName = self.ownerName;
+    
+    [binding AddDeviceAsyncUsingParameters:params delegate:self];
+}
+
 - (void) operation:(BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation *)operation completedWithResponse:(BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)response
 {
     NSString* buff;
@@ -59,10 +80,19 @@
             tns1_FullDeviceInfo* di =
             ((PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse*)mine).FindFullDeviceInfoResult;
             
-            self.ownerName = di.OwnerName;
-            self.databaseId = di.DatabaseId.intValue;
+            if (di.DatabaseId) {
+                self.ownerName = di.OwnerName;
+                self.databaseId = di.DatabaseId.intValue;
+            }
+            else {
+                [self registerWithServer];
+            }
         }
-
+        
+        if ([mine isKindOfClass:[PerformanceTestingDataServiceSvc_AddDeviceResponse class]])
+        {
+            self.databaseId = [[mine AddDeviceResult] intValue];
+        }
     }
 }
 

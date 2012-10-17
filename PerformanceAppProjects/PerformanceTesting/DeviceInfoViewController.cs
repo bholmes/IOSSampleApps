@@ -25,24 +25,7 @@ namespace PerformanceTesting
 		
 		void registerButtonClicked (object sender, EventArgs e)
 		{
-			FullDeviceInfo deviceInfo = new FullDeviceInfo ();
-			
-			deviceInfo.ModelName = DeviceInfo.CurrentDevice.ModelName;
-			deviceInfo.UIIdion = DeviceInfo.CurrentDevice.UIIdion;
-			deviceInfo.SpecificHWVersion = DeviceInfo.CurrentDevice.SpecificHWVersion;
-			deviceInfo.OSName = DeviceInfo.CurrentDevice.OSName;
-			deviceInfo.OSVersion = DeviceInfo.CurrentDevice.OSVersion;
-			deviceInfo.UniqueId = DeviceInfo.CurrentDevice.UniqueId;
-			deviceInfo.SystemName = DeviceInfo.CurrentDevice.DeviceName;
-			deviceInfo.OwnerName = DeviceInfo.CurrentDevice.OwnerName;
-			
-			PerformanceTestingDataService service = new PerformanceTestingDataService ();
-			
-			service.BeginAddDevice (deviceInfo, (result) => {
-				Console.WriteLine ("Done");
-				DeviceInfo.CurrentDevice.DatabaseId = service.EndAddDevice (result);
-			} , null);
-			
+			DeviceInfo.CurrentDevice.RegisterWithServer ();
 		}
 		
 		[Export ("numberOfSectionsInTableView:")]
