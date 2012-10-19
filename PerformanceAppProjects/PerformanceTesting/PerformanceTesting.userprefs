@@ -1,16 +1,25 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MatrixTestEngine.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DeviceInfo.cs">
     <Files>
-      <File FileName="MatrixTestViewController.cs" Line="158" Column="64" />
-      <File FileName="TopMenuTable.cs" Line="74" Column="39" />
-      <File FileName="MatrixTest.cs" Line="29" Column="37" />
-      <File FileName="MatrixTestEngine.cs" Line="130" Column="9" />
+      <File FileName="MatrixTestEngine.cs" Line="90" Column="25" />
+      <File FileName="MatrixTestEngine.cs" Line="83" Column="1" />
+      <File FileName="MatrixTestEngine.cs" Line="90" Column="25" />
+      <File FileName="MatrixTestEngine.cs" Line="90" Column="25" />
+      <File FileName="DeviceInfo.cs" Line="5" Column="54" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="PerformanceTesting" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>result.IsMonoTouch</Value>
         </State>
       </Pad>
     </Pads>

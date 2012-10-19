@@ -87,22 +87,31 @@ namespace PerformanceTesting
 			}
 			#endregion
 
-			private void csMatrixMult (int n, double [] A, double [] B, double [] C)
+			unsafe private void csMatrixMult (int n, double [] A, double [] B, double [] C)
 			{
 			    int i, j, k;
 			    double sum, a, b;
 			    
-			    for (i=0; i<n; i++) {
-			        for (j=0; j<n; j++) {
-			            sum = 0.0;
-			            for (k=0; k<n; k++) {
-			                a = A[i * n + k];
-			                b = B[k * n + j];
-			                sum += a * b;
-			            }
-			            C[i * n + j] = sum;
-			        }
-			    }
+				fixed (double *fA = A)
+				{
+					fixed (double *fB = B)
+					{
+						fixed (double *fC = C)
+						{
+						    for (i=0; i<n; i++) {
+						        for (j=0; j<n; j++) {
+						            sum = 0.0;
+						            for (k=0; k<n; k++) {
+						                a = fA[i * n + k];
+						                b = fB[k * n + j];
+						                sum += a * b;
+						            }
+						            fC[i * n + j] = sum;
+						        }
+						    }
+						}
+					}
+				}
 			}
 		}
 

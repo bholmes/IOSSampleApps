@@ -13,46 +13,48 @@
     <newfilesearch>OnLoad</newfilesearch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <MtouchDebug>true</MtouchDebug>
-    <MtouchProfiling>true</MtouchProfiling>
+    <ConsolePause>False</ConsolePause>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchProfiling>True</MtouchProfiling>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>ARMv7</MtouchArch>
     <MtouchI18n />
     <CrashReportingApiKey />
     <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>ARMv7</MtouchArch>
     <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
     <MtouchI18n />
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\iPhone\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Developer: William Holmes (7NLBGWH956)</CodesignKey>
-    <MtouchDebug>true</MtouchDebug>
-    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchProfiling>True</MtouchProfiling>
     <CodesignProvision>01705AA0-611D-43FC-BDA6-58B31F5035D0</CodesignProvision>
     <IpaPackageName />
     <MtouchI18n />
@@ -60,47 +62,52 @@
     <CrashReportingApiKey />
     <additionalargs>-lAccelerate</additionalargs>
     <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Developer: William Holmes (7NLBGWH956)</CodesignKey>
     <CodesignProvision>01705AA0-611D-43FC-BDA6-58B31F5035D0</CodesignProvision>
-    <BuildIpa>true</BuildIpa>
+    <BuildIpa>True</BuildIpa>
     <MtouchArch>ARMv7</MtouchArch>
     <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
     <MtouchI18n />
+    <MtouchUseLlvm>True</MtouchUseLlvm>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <BuildIpa>true</BuildIpa>
+    <ConsolePause>False</ConsolePause>
+    <BuildIpa>True</BuildIpa>
     <CodesignKey>iPhone Developer: William Holmes (7NLBGWH956)</CodesignKey>
     <CodesignProvision>01705AA0-611D-43FC-BDA6-58B31F5035D0</CodesignProvision>
     <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
     <MtouchArch>ARMv7</MtouchArch>
     <MtouchI18n />
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\iPhone\AppStore</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Developer: William Holmes (7NLBGWH956)</CodesignKey>
     <CodesignProvision>01705AA0-611D-43FC-BDA6-58B31F5035D0</CodesignProvision>
     <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
     <MtouchArch>ARMv7</MtouchArch>
     <MtouchI18n />
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -125,7 +132,6 @@
     <None Include="Web References\PerformanceTestingWebService\PerformanceTestingDataService.xsd" />
     <None Include="Web References\PerformanceTestingWebService\PerformanceTestingDataService1.xsd" />
     <None Include="Web References\PerformanceTestingWebService\PerformanceTestingDataService2.xsd" />
-    <None Include="Web References\PerformanceTestingWebService\PerformanceTestingDataService.disco" />
     <None Include="Web References\PerformanceTestingWebService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -169,10 +175,10 @@
     <WebReferences Include="Web References" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://apps.slapholmesproductions.com/PerformanceApp/PerformanceTestingDataService.svc">
+    <WebReferenceUrl Include="http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?wsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\PerformanceTestingWebService</RelPath>
-      <UpdateFromURL>http://apps.slapholmesproductions.com/PerformanceApp/PerformanceTestingDataService.svc</UpdateFromURL>
+      <UpdateFromURL>http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc?wsdl</UpdateFromURL>
     </WebReferenceUrl>
   </ItemGroup>
 </Project>
