@@ -1,4 +1,4 @@
-﻿#define UseServiceReference
+﻿//#define UseServiceReference
 
 using System;
 using System.Collections.Generic;
@@ -267,7 +267,7 @@ namespace WebApplication1
 								insertIndex = i;
 								break;
 							}
-							else if (_resultRows[i].NumTrangles < result.NumberOfTriangles)
+							else if (_resultRows[i].NumTrangles > result.NumberOfTriangles)
 							{
 								insertIndex = i;
 								break;
