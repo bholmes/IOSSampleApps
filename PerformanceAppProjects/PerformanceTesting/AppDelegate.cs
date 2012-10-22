@@ -27,7 +27,9 @@ namespace PerformanceTesting
 //			{
 //				Console.WriteLine (exp.Message);	
 //			}
-			
+
+			loadDeviceInfo ();
+
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 			_menu = new TopMenuTable ();
 			_nav = new UINavigationController (_menu);
@@ -37,6 +39,15 @@ namespace PerformanceTesting
 			window.MakeKeyAndVisible ();
 			
 			return true;
+		}
+
+		private void loadDeviceInfo ()
+		{
+			System.Threading.ThreadStart ts = new System.Threading.ThreadStart (() => {
+				DeviceInfo di = DeviceInfo.CurrentDevice;
+			});
+
+			ts.BeginInvoke (null, null);
 		}
 	}
 	

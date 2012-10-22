@@ -22,6 +22,14 @@
 @class PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveCResponse;
 @class PerformanceTestingDataServiceSvc_FindPerformanceCubeResult;
 @class PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse;
+@class PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult;
+@class PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResultResponse;
+@class PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults;
+@class PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsResponse;
+@class PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch;
+@class PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouchResponse;
+@class PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC;
+@class PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveCResponse;
 #import "tns1.h"
 @interface PerformanceTestingDataServiceSvc_AddDevice : NSObject {
 	
@@ -373,6 +381,144 @@
 /* attributes */
 - (NSDictionary *)attributes;
 @end
+@interface PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult : NSObject {
+	
+/* elements */
+	tns1_MatrixTestResult * result;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) tns1_MatrixTestResult * result;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResultResponse : NSObject {
+	
+/* elements */
+	NSNumber * AddPerformanceMatrixTestResultResult;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResultResponse *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) NSNumber * AddPerformanceMatrixTestResultResult;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults : NSObject {
+	
+/* elements */
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsResponse : NSObject {
+	
+/* elements */
+	tns1_ArrayOfMatrixTestResult * GetPerformanceMatrixResultsResult;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsResponse *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) tns1_ArrayOfMatrixTestResult * GetPerformanceMatrixResultsResult;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch : NSObject {
+	
+/* elements */
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouchResponse : NSObject {
+	
+/* elements */
+	tns1_ArrayOfMatrixTestResult * GetPerformanceMatrixResultsForMonoTouchResult;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouchResponse *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) tns1_ArrayOfMatrixTestResult * GetPerformanceMatrixResultsForMonoTouchResult;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC : NSObject {
+	
+/* elements */
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+/* attributes */
+- (NSDictionary *)attributes;
+@end
+@interface PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveCResponse : NSObject {
+	
+/* elements */
+	tns1_ArrayOfMatrixTestResult * GetPerformanceMatrixResultsForObjectiveCResult;
+/* attributes */
+}
+- (NSString *)nsPrefix;
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix;
+- (void)addAttributesToNode:(xmlNodePtr)node;
+- (void)addElementsToNode:(xmlNodePtr)node;
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveCResponse *)deserializeNode:(xmlNodePtr)cur;
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur;
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur;
+/* elements */
+@property (retain) tns1_ArrayOfMatrixTestResult * GetPerformanceMatrixResultsForObjectiveCResult;
+/* attributes */
+- (NSDictionary *)attributes;
+@end
 /* Cookies handling provided by http://en.wikibooks.org/wiki/Programming:WebObjects/Web_Services/Web_Service_Provider */
 #import <libxml/parser.h>
 #import "xs.h"
@@ -429,6 +575,14 @@
 - (void)GetPerformanceCubeResultsForObjectiveCAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)FindPerformanceCubeResultUsingParameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParameters ;
 - (void)FindPerformanceCubeResultAsyncUsingParameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)AddPerformanceMatrixTestResultUsingParameters:(PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult *)aParameters ;
+- (void)AddPerformanceMatrixTestResultAsyncUsingParameters:(PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceMatrixResultsUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults *)aParameters ;
+- (void)GetPerformanceMatrixResultsAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceMatrixResultsForMonoTouchUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch *)aParameters ;
+- (void)GetPerformanceMatrixResultsForMonoTouchAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceMatrixResultsForObjectiveCUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC *)aParameters ;
+- (void)GetPerformanceMatrixResultsForObjectiveCAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate;
 @end
 @interface BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation : NSOperation {
 	BasicHttpBinding_IPerformanceTestingDataServiceBinding *binding;
@@ -522,6 +676,38 @@
 @property (retain) PerformanceTestingDataServiceSvc_FindPerformanceCubeResult * parameters;
 - (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
 	parameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParameters
+;
+@end
+@interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceMatrixTestResult : BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation {
+	PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult * parameters;
+}
+@property (retain) PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult * parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
+	parameters:(PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult *)aParameters
+;
+@end
+@interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResults : BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation {
+	PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults * parameters;
+}
+@property (retain) PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults * parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
+	parameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults *)aParameters
+;
+@end
+@interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForMonoTouch : BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation {
+	PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch * parameters;
+}
+@property (retain) PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch * parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
+	parameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch *)aParameters
+;
+@end
+@interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForObjectiveC : BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation {
+	PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC * parameters;
+}
+@property (retain) PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC * parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)aDelegate
+	parameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC *)aParameters
 ;
 @end
 @interface BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope : NSObject {

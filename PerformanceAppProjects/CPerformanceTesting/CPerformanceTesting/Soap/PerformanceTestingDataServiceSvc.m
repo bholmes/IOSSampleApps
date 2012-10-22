@@ -16,7 +16,6 @@
 {
 	if(deviceInfo != nil) deviceInfo = nil;
 	
-	
 }
 - (NSString *)nsPrefix
 {
@@ -65,7 +64,7 @@
 }
 + (PerformanceTestingDataServiceSvc_AddDevice *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_AddDevice *newObject = [PerformanceTestingDataServiceSvc_AddDevice new] ;
+	PerformanceTestingDataServiceSvc_AddDevice *newObject = [PerformanceTestingDataServiceSvc_AddDevice new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -138,8 +137,6 @@
 - (void)dealloc
 {
 	if(AddDeviceResult != nil) AddDeviceResult = nil;
-	
-	
 }
 - (NSString *)nsPrefix
 {
@@ -188,7 +185,7 @@
 }
 + (PerformanceTestingDataServiceSvc_AddDeviceResponse *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_AddDeviceResponse *newObject = [PerformanceTestingDataServiceSvc_AddDeviceResponse new] ;
+	PerformanceTestingDataServiceSvc_AddDeviceResponse *newObject = [PerformanceTestingDataServiceSvc_AddDeviceResponse new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -262,7 +259,6 @@
 {
 	if(databaseId != nil) databaseId = nil;
 	
-	
 }
 - (NSString *)nsPrefix
 {
@@ -311,7 +307,7 @@
 }
 + (PerformanceTestingDataServiceSvc_FindDeviceInfo *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_FindDeviceInfo *newObject = [PerformanceTestingDataServiceSvc_FindDeviceInfo new] ;
+	PerformanceTestingDataServiceSvc_FindDeviceInfo *newObject = [PerformanceTestingDataServiceSvc_FindDeviceInfo new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -385,7 +381,7 @@
 {
 	if(FindDeviceInfoResult != nil) FindDeviceInfoResult = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -434,7 +430,7 @@
 }
 + (PerformanceTestingDataServiceSvc_FindDeviceInfoResponse *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_FindDeviceInfoResponse *newObject = [PerformanceTestingDataServiceSvc_FindDeviceInfoResponse new] ;
+	PerformanceTestingDataServiceSvc_FindDeviceInfoResponse *newObject = [PerformanceTestingDataServiceSvc_FindDeviceInfoResponse new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -508,7 +504,7 @@
 {
 	if(uniqueId != nil) uniqueId = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -557,7 +553,7 @@
 }
 + (PerformanceTestingDataServiceSvc_FindFullDeviceInfo *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_FindFullDeviceInfo *newObject = [PerformanceTestingDataServiceSvc_FindFullDeviceInfo new] ;
+	PerformanceTestingDataServiceSvc_FindFullDeviceInfo *newObject = [PerformanceTestingDataServiceSvc_FindFullDeviceInfo new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -631,7 +627,7 @@
 {
 	if(FindFullDeviceInfoResult != nil) FindFullDeviceInfoResult = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -680,7 +676,7 @@
 }
 + (PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse *newObject = [PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse new] ;
+	PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse *newObject = [PerformanceTestingDataServiceSvc_FindFullDeviceInfoResponse new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -752,7 +748,7 @@
 - (void)dealloc
 {
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -796,7 +792,7 @@
 }
 + (PerformanceTestingDataServiceSvc_GetDeviceList *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_GetDeviceList *newObject = [PerformanceTestingDataServiceSvc_GetDeviceList new] ;
+	PerformanceTestingDataServiceSvc_GetDeviceList *newObject = [PerformanceTestingDataServiceSvc_GetDeviceList new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -825,7 +821,7 @@
 {
 	if(GetDeviceListResult != nil) GetDeviceListResult = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -874,7 +870,7 @@
 }
 + (PerformanceTestingDataServiceSvc_GetDeviceListResponse *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_GetDeviceListResponse *newObject = [PerformanceTestingDataServiceSvc_GetDeviceListResponse new] ;
+	PerformanceTestingDataServiceSvc_GetDeviceListResponse *newObject = [PerformanceTestingDataServiceSvc_GetDeviceListResponse new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -948,7 +944,7 @@
 {
 	if(result != nil) result = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -997,7 +993,7 @@
 }
 + (PerformanceTestingDataServiceSvc_AddPerformanceCubeResult *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_AddPerformanceCubeResult *newObject = [PerformanceTestingDataServiceSvc_AddPerformanceCubeResult new] ;
+	PerformanceTestingDataServiceSvc_AddPerformanceCubeResult *newObject = [PerformanceTestingDataServiceSvc_AddPerformanceCubeResult new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -1071,7 +1067,7 @@
 {
 	if(AddPerformanceCubeResultResult != nil) AddPerformanceCubeResultResult = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -1120,7 +1116,7 @@
 }
 + (PerformanceTestingDataServiceSvc_AddPerformanceCubeResultResponse *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_AddPerformanceCubeResultResponse *newObject = [PerformanceTestingDataServiceSvc_AddPerformanceCubeResultResponse new] ;
+	PerformanceTestingDataServiceSvc_AddPerformanceCubeResultResponse *newObject = [PerformanceTestingDataServiceSvc_AddPerformanceCubeResultResponse new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -1194,7 +1190,7 @@
 {
 	if(results != nil) results = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -1243,7 +1239,7 @@
 }
 + (PerformanceTestingDataServiceSvc_AddPerformanceCubeResults *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_AddPerformanceCubeResults *newObject = [PerformanceTestingDataServiceSvc_AddPerformanceCubeResults new] ;
+	PerformanceTestingDataServiceSvc_AddPerformanceCubeResults *newObject = [PerformanceTestingDataServiceSvc_AddPerformanceCubeResults new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -1315,7 +1311,7 @@
 - (void)dealloc
 {
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -1359,7 +1355,7 @@
 }
 + (PerformanceTestingDataServiceSvc_AddPerformanceCubeResultsResponse *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_AddPerformanceCubeResultsResponse *newObject = [PerformanceTestingDataServiceSvc_AddPerformanceCubeResultsResponse new] ;
+	PerformanceTestingDataServiceSvc_AddPerformanceCubeResultsResponse *newObject = [PerformanceTestingDataServiceSvc_AddPerformanceCubeResultsResponse new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -1386,7 +1382,7 @@
 - (void)dealloc
 {
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -1430,7 +1426,7 @@
 }
 + (PerformanceTestingDataServiceSvc_GetPerformanceCubeResults *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_GetPerformanceCubeResults *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResults new] ;
+	PerformanceTestingDataServiceSvc_GetPerformanceCubeResults *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResults new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -1459,7 +1455,7 @@
 {
 	if(GetPerformanceCubeResultsResult != nil) GetPerformanceCubeResultsResult = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -1508,7 +1504,7 @@
 }
 + (PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsResponse *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsResponse *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsResponse new] ;
+	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsResponse *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsResponse new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -1580,7 +1576,7 @@
 - (void)dealloc
 {
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -1624,7 +1620,7 @@
 }
 + (PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch new] ;
+	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -1653,7 +1649,7 @@
 {
 	if(GetPerformanceCubeResultsForMonoTouchResult != nil) GetPerformanceCubeResultsForMonoTouchResult = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -1702,7 +1698,7 @@
 }
 + (PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouchResponse *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouchResponse *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouchResponse new] ;
+	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouchResponse *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouchResponse new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -1774,7 +1770,7 @@
 - (void)dealloc
 {
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -1818,7 +1814,7 @@
 }
 + (PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC new] ;
+	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -1847,7 +1843,7 @@
 {
 	if(GetPerformanceCubeResultsForObjectiveCResult != nil) GetPerformanceCubeResultsForObjectiveCResult = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -1896,7 +1892,7 @@
 }
 + (PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveCResponse *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveCResponse *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveCResponse new] ;
+	PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveCResponse *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveCResponse new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -1970,7 +1966,7 @@
 {
 	if(id_ != nil) id_ = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -2019,7 +2015,7 @@
 }
 + (PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *newObject = [PerformanceTestingDataServiceSvc_FindPerformanceCubeResult new] ;
+	PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *newObject = [PerformanceTestingDataServiceSvc_FindPerformanceCubeResult new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -2093,7 +2089,7 @@
 {
 	if(FindPerformanceCubeResultResult != nil) FindPerformanceCubeResultResult = nil;
 	
-	
+
 }
 - (NSString *)nsPrefix
 {
@@ -2142,7 +2138,7 @@
 }
 + (PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse *)deserializeNode:(xmlNodePtr)cur
 {
-	PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse *newObject = [PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse new] ;
+	PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse *newObject = [PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse new];
 	
 	[newObject deserializeAttributesFromNode:cur];
 	[newObject deserializeElementsFromNode:cur];
@@ -2203,18 +2199,846 @@
 	}
 }
 @end
+@implementation PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult
+- (id)init
+{
+	if((self = [super init])) {
+		result = 0;
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	if(result != nil) result = nil;
+	
+
+}
+- (NSString *)nsPrefix
+{
+	return @"PerformanceTestingDataServiceSvc";
+}
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix
+{
+	NSString *nodeName = nil;
+	if(elNSPrefix != nil && [elNSPrefix length] > 0)
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", elNSPrefix, elName];
+	}
+	else
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", @"PerformanceTestingDataServiceSvc", elName];
+	}
+	
+	xmlNodePtr node = xmlNewDocNode(doc, NULL, [nodeName xmlString], NULL);
+	
+	
+	[self addAttributesToNode:node];
+	
+	[self addElementsToNode:node];
+	
+	return node;
+}
+- (void)addAttributesToNode:(xmlNodePtr)node
+{
+	
+}
+- (void)addElementsToNode:(xmlNodePtr)node
+{
+	
+	if(self.result != 0) {
+		xmlAddChild(node, [self.result xmlNodeForDoc:node->doc elementName:@"result" elementNSPrefix:@"PerformanceTestingDataServiceSvc"]);
+	}
+}
+/* elements */
+@synthesize result;
+/* attributes */
+- (NSDictionary *)attributes
+{
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+	
+	return attributes;
+}
++ (PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult *)deserializeNode:(xmlNodePtr)cur
+{
+	PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult *newObject = [PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult new];
+	
+	[newObject deserializeAttributesFromNode:cur];
+	[newObject deserializeElementsFromNode:cur];
+	
+	return newObject;
+}
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur
+{
+}
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur
+{
+	
+	
+	for( cur = cur->children ; cur != NULL ; cur = cur->next ) {
+		if(cur->type == XML_ELEMENT_NODE) {
+			xmlChar *elementText = xmlNodeListGetString(cur->doc, cur->children, 1);
+			NSString *elementString = nil;
+			
+			if(elementText != NULL) {
+				elementString = [NSString stringWithCString:(char*)elementText encoding:NSUTF8StringEncoding];
+				[elementString self]; // avoid compiler warning for unused var
+				xmlFree(elementText);
+			}
+			if(xmlStrEqual(cur->name, (const xmlChar *) "result")) {
+				
+				Class elementClass = nil;
+				xmlChar *instanceType = xmlGetNsProp(cur, (const xmlChar *) "type", (const xmlChar *) "http://www.w3.org/2001/XMLSchema-instance");
+				if(instanceType == NULL) {
+					elementClass = [tns1_MatrixTestResult class];
+				} else {
+					NSString *elementTypeString = [NSString stringWithCString:(char*)instanceType encoding:NSUTF8StringEncoding];
+					
+					NSArray *elementTypeArray = [elementTypeString componentsSeparatedByString:@":"];
+					
+					NSString *elementClassString = nil;
+					if([elementTypeArray count] > 1) {
+						NSString *prefix = [elementTypeArray objectAtIndex:0];
+						NSString *localName = [elementTypeArray objectAtIndex:1];
+						
+						xmlNsPtr elementNamespace = xmlSearchNs(cur->doc, cur, [prefix xmlString]);
+						
+						NSString *standardPrefix = [[USGlobals sharedInstance].wsdlStandardNamespaces objectForKey:[NSString stringWithCString:(char*)elementNamespace->href encoding:NSUTF8StringEncoding]];
+						
+						elementClassString = [NSString stringWithFormat:@"%@_%@", standardPrefix, localName];
+					} else {
+						elementClassString = [elementTypeString stringByReplacingOccurrencesOfString:@":" withString:@"_" options:0 range:NSMakeRange(0, [elementTypeString length])];
+					}
+					
+					elementClass = NSClassFromString(elementClassString);
+					xmlFree(instanceType);
+				}
+				
+				id newChild = [elementClass deserializeNode:cur];
+				
+				self.result = newChild;
+			}
+		}
+	}
+}
+@end
+@implementation PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResultResponse
+- (id)init
+{
+	if((self = [super init])) {
+		AddPerformanceMatrixTestResultResult = 0;
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	if(AddPerformanceMatrixTestResultResult != nil) AddPerformanceMatrixTestResultResult = nil;
+	
+
+}
+- (NSString *)nsPrefix
+{
+	return @"PerformanceTestingDataServiceSvc";
+}
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix
+{
+	NSString *nodeName = nil;
+	if(elNSPrefix != nil && [elNSPrefix length] > 0)
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", elNSPrefix, elName];
+	}
+	else
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", @"PerformanceTestingDataServiceSvc", elName];
+	}
+	
+	xmlNodePtr node = xmlNewDocNode(doc, NULL, [nodeName xmlString], NULL);
+	
+	
+	[self addAttributesToNode:node];
+	
+	[self addElementsToNode:node];
+	
+	return node;
+}
+- (void)addAttributesToNode:(xmlNodePtr)node
+{
+	
+}
+- (void)addElementsToNode:(xmlNodePtr)node
+{
+	
+	if(self.AddPerformanceMatrixTestResultResult != 0) {
+		xmlAddChild(node, [self.AddPerformanceMatrixTestResultResult xmlNodeForDoc:node->doc elementName:@"AddPerformanceMatrixTestResultResult" elementNSPrefix:@"PerformanceTestingDataServiceSvc"]);
+	}
+}
+/* elements */
+@synthesize AddPerformanceMatrixTestResultResult;
+/* attributes */
+- (NSDictionary *)attributes
+{
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+	
+	return attributes;
+}
++ (PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResultResponse *)deserializeNode:(xmlNodePtr)cur
+{
+	PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResultResponse *newObject = [PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResultResponse new];
+	
+	[newObject deserializeAttributesFromNode:cur];
+	[newObject deserializeElementsFromNode:cur];
+	
+	return newObject;
+}
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur
+{
+}
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur
+{
+	
+	
+	for( cur = cur->children ; cur != NULL ; cur = cur->next ) {
+		if(cur->type == XML_ELEMENT_NODE) {
+			xmlChar *elementText = xmlNodeListGetString(cur->doc, cur->children, 1);
+			NSString *elementString = nil;
+			
+			if(elementText != NULL) {
+				elementString = [NSString stringWithCString:(char*)elementText encoding:NSUTF8StringEncoding];
+				[elementString self]; // avoid compiler warning for unused var
+				xmlFree(elementText);
+			}
+			if(xmlStrEqual(cur->name, (const xmlChar *) "AddPerformanceMatrixTestResultResult")) {
+				
+				Class elementClass = nil;
+				xmlChar *instanceType = xmlGetNsProp(cur, (const xmlChar *) "type", (const xmlChar *) "http://www.w3.org/2001/XMLSchema-instance");
+				if(instanceType == NULL) {
+					elementClass = [NSNumber  class];
+				} else {
+					NSString *elementTypeString = [NSString stringWithCString:(char*)instanceType encoding:NSUTF8StringEncoding];
+					
+					NSArray *elementTypeArray = [elementTypeString componentsSeparatedByString:@":"];
+					
+					NSString *elementClassString = nil;
+					if([elementTypeArray count] > 1) {
+						NSString *prefix = [elementTypeArray objectAtIndex:0];
+						NSString *localName = [elementTypeArray objectAtIndex:1];
+						
+						xmlNsPtr elementNamespace = xmlSearchNs(cur->doc, cur, [prefix xmlString]);
+						
+						NSString *standardPrefix = [[USGlobals sharedInstance].wsdlStandardNamespaces objectForKey:[NSString stringWithCString:(char*)elementNamespace->href encoding:NSUTF8StringEncoding]];
+						
+						elementClassString = [NSString stringWithFormat:@"%@_%@", standardPrefix, localName];
+					} else {
+						elementClassString = [elementTypeString stringByReplacingOccurrencesOfString:@":" withString:@"_" options:0 range:NSMakeRange(0, [elementTypeString length])];
+					}
+					
+					elementClass = NSClassFromString(elementClassString);
+					xmlFree(instanceType);
+				}
+				
+				id newChild = [elementClass deserializeNode:cur];
+				
+				self.AddPerformanceMatrixTestResultResult = newChild;
+			}
+		}
+	}
+}
+@end
+@implementation PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults
+- (id)init
+{
+	if((self = [super init])) {
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	
+
+}
+- (NSString *)nsPrefix
+{
+	return @"PerformanceTestingDataServiceSvc";
+}
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix
+{
+	NSString *nodeName = nil;
+	if(elNSPrefix != nil && [elNSPrefix length] > 0)
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", elNSPrefix, elName];
+	}
+	else
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", @"PerformanceTestingDataServiceSvc", elName];
+	}
+	
+	xmlNodePtr node = xmlNewDocNode(doc, NULL, [nodeName xmlString], NULL);
+	
+	
+	[self addAttributesToNode:node];
+	
+	
+	return node;
+}
+- (void)addAttributesToNode:(xmlNodePtr)node
+{
+	
+}
+- (void)addElementsToNode:(xmlNodePtr)node
+{
+	
+}
+/* elements */
+/* attributes */
+- (NSDictionary *)attributes
+{
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+	
+	return attributes;
+}
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults *)deserializeNode:(xmlNodePtr)cur
+{
+	PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults new];
+	
+	[newObject deserializeAttributesFromNode:cur];
+	[newObject deserializeElementsFromNode:cur];
+	
+	return newObject;
+}
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur
+{
+}
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur
+{
+	
+	
+}
+@end
+@implementation PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsResponse
+- (id)init
+{
+	if((self = [super init])) {
+		GetPerformanceMatrixResultsResult = 0;
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	if(GetPerformanceMatrixResultsResult != nil) GetPerformanceMatrixResultsResult = nil;
+	
+
+}
+- (NSString *)nsPrefix
+{
+	return @"PerformanceTestingDataServiceSvc";
+}
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix
+{
+	NSString *nodeName = nil;
+	if(elNSPrefix != nil && [elNSPrefix length] > 0)
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", elNSPrefix, elName];
+	}
+	else
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", @"PerformanceTestingDataServiceSvc", elName];
+	}
+	
+	xmlNodePtr node = xmlNewDocNode(doc, NULL, [nodeName xmlString], NULL);
+	
+	
+	[self addAttributesToNode:node];
+	
+	[self addElementsToNode:node];
+	
+	return node;
+}
+- (void)addAttributesToNode:(xmlNodePtr)node
+{
+	
+}
+- (void)addElementsToNode:(xmlNodePtr)node
+{
+	
+	if(self.GetPerformanceMatrixResultsResult != 0) {
+		xmlAddChild(node, [self.GetPerformanceMatrixResultsResult xmlNodeForDoc:node->doc elementName:@"GetPerformanceMatrixResultsResult" elementNSPrefix:@"PerformanceTestingDataServiceSvc"]);
+	}
+}
+/* elements */
+@synthesize GetPerformanceMatrixResultsResult;
+/* attributes */
+- (NSDictionary *)attributes
+{
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+	
+	return attributes;
+}
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsResponse *)deserializeNode:(xmlNodePtr)cur
+{
+	PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsResponse *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsResponse new];
+	
+	[newObject deserializeAttributesFromNode:cur];
+	[newObject deserializeElementsFromNode:cur];
+	
+	return newObject;
+}
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur
+{
+}
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur
+{
+	
+	
+	for( cur = cur->children ; cur != NULL ; cur = cur->next ) {
+		if(cur->type == XML_ELEMENT_NODE) {
+			xmlChar *elementText = xmlNodeListGetString(cur->doc, cur->children, 1);
+			NSString *elementString = nil;
+			
+			if(elementText != NULL) {
+				elementString = [NSString stringWithCString:(char*)elementText encoding:NSUTF8StringEncoding];
+				[elementString self]; // avoid compiler warning for unused var
+				xmlFree(elementText);
+			}
+			if(xmlStrEqual(cur->name, (const xmlChar *) "GetPerformanceMatrixResultsResult")) {
+				
+				Class elementClass = nil;
+				xmlChar *instanceType = xmlGetNsProp(cur, (const xmlChar *) "type", (const xmlChar *) "http://www.w3.org/2001/XMLSchema-instance");
+				if(instanceType == NULL) {
+					elementClass = [tns1_ArrayOfMatrixTestResult class];
+				} else {
+					NSString *elementTypeString = [NSString stringWithCString:(char*)instanceType encoding:NSUTF8StringEncoding];
+					
+					NSArray *elementTypeArray = [elementTypeString componentsSeparatedByString:@":"];
+					
+					NSString *elementClassString = nil;
+					if([elementTypeArray count] > 1) {
+						NSString *prefix = [elementTypeArray objectAtIndex:0];
+						NSString *localName = [elementTypeArray objectAtIndex:1];
+						
+						xmlNsPtr elementNamespace = xmlSearchNs(cur->doc, cur, [prefix xmlString]);
+						
+						NSString *standardPrefix = [[USGlobals sharedInstance].wsdlStandardNamespaces objectForKey:[NSString stringWithCString:(char*)elementNamespace->href encoding:NSUTF8StringEncoding]];
+						
+						elementClassString = [NSString stringWithFormat:@"%@_%@", standardPrefix, localName];
+					} else {
+						elementClassString = [elementTypeString stringByReplacingOccurrencesOfString:@":" withString:@"_" options:0 range:NSMakeRange(0, [elementTypeString length])];
+					}
+					
+					elementClass = NSClassFromString(elementClassString);
+					xmlFree(instanceType);
+				}
+				
+				id newChild = [elementClass deserializeNode:cur];
+				
+				self.GetPerformanceMatrixResultsResult = newChild;
+			}
+		}
+	}
+}
+@end
+@implementation PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch
+- (id)init
+{
+	if((self = [super init])) {
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	
+
+}
+- (NSString *)nsPrefix
+{
+	return @"PerformanceTestingDataServiceSvc";
+}
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix
+{
+	NSString *nodeName = nil;
+	if(elNSPrefix != nil && [elNSPrefix length] > 0)
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", elNSPrefix, elName];
+	}
+	else
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", @"PerformanceTestingDataServiceSvc", elName];
+	}
+	
+	xmlNodePtr node = xmlNewDocNode(doc, NULL, [nodeName xmlString], NULL);
+	
+	
+	[self addAttributesToNode:node];
+	
+	
+	return node;
+}
+- (void)addAttributesToNode:(xmlNodePtr)node
+{
+	
+}
+- (void)addElementsToNode:(xmlNodePtr)node
+{
+	
+}
+/* elements */
+/* attributes */
+- (NSDictionary *)attributes
+{
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+	
+	return attributes;
+}
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch *)deserializeNode:(xmlNodePtr)cur
+{
+	PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch new];
+	
+	[newObject deserializeAttributesFromNode:cur];
+	[newObject deserializeElementsFromNode:cur];
+	
+	return newObject;
+}
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur
+{
+}
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur
+{
+	
+	
+}
+@end
+@implementation PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouchResponse
+- (id)init
+{
+	if((self = [super init])) {
+		GetPerformanceMatrixResultsForMonoTouchResult = 0;
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	if(GetPerformanceMatrixResultsForMonoTouchResult != nil) GetPerformanceMatrixResultsForMonoTouchResult = nil;
+	
+
+}
+- (NSString *)nsPrefix
+{
+	return @"PerformanceTestingDataServiceSvc";
+}
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix
+{
+	NSString *nodeName = nil;
+	if(elNSPrefix != nil && [elNSPrefix length] > 0)
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", elNSPrefix, elName];
+	}
+	else
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", @"PerformanceTestingDataServiceSvc", elName];
+	}
+	
+	xmlNodePtr node = xmlNewDocNode(doc, NULL, [nodeName xmlString], NULL);
+	
+	
+	[self addAttributesToNode:node];
+	
+	[self addElementsToNode:node];
+	
+	return node;
+}
+- (void)addAttributesToNode:(xmlNodePtr)node
+{
+	
+}
+- (void)addElementsToNode:(xmlNodePtr)node
+{
+	
+	if(self.GetPerformanceMatrixResultsForMonoTouchResult != 0) {
+		xmlAddChild(node, [self.GetPerformanceMatrixResultsForMonoTouchResult xmlNodeForDoc:node->doc elementName:@"GetPerformanceMatrixResultsForMonoTouchResult" elementNSPrefix:@"PerformanceTestingDataServiceSvc"]);
+	}
+}
+/* elements */
+@synthesize GetPerformanceMatrixResultsForMonoTouchResult;
+/* attributes */
+- (NSDictionary *)attributes
+{
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+	
+	return attributes;
+}
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouchResponse *)deserializeNode:(xmlNodePtr)cur
+{
+	PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouchResponse *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouchResponse new];
+	
+	[newObject deserializeAttributesFromNode:cur];
+	[newObject deserializeElementsFromNode:cur];
+	
+	return newObject;
+}
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur
+{
+}
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur
+{
+	
+	
+	for( cur = cur->children ; cur != NULL ; cur = cur->next ) {
+		if(cur->type == XML_ELEMENT_NODE) {
+			xmlChar *elementText = xmlNodeListGetString(cur->doc, cur->children, 1);
+			NSString *elementString = nil;
+			
+			if(elementText != NULL) {
+				elementString = [NSString stringWithCString:(char*)elementText encoding:NSUTF8StringEncoding];
+				[elementString self]; // avoid compiler warning for unused var
+				xmlFree(elementText);
+			}
+			if(xmlStrEqual(cur->name, (const xmlChar *) "GetPerformanceMatrixResultsForMonoTouchResult")) {
+				
+				Class elementClass = nil;
+				xmlChar *instanceType = xmlGetNsProp(cur, (const xmlChar *) "type", (const xmlChar *) "http://www.w3.org/2001/XMLSchema-instance");
+				if(instanceType == NULL) {
+					elementClass = [tns1_ArrayOfMatrixTestResult class];
+				} else {
+					NSString *elementTypeString = [NSString stringWithCString:(char*)instanceType encoding:NSUTF8StringEncoding];
+					
+					NSArray *elementTypeArray = [elementTypeString componentsSeparatedByString:@":"];
+					
+					NSString *elementClassString = nil;
+					if([elementTypeArray count] > 1) {
+						NSString *prefix = [elementTypeArray objectAtIndex:0];
+						NSString *localName = [elementTypeArray objectAtIndex:1];
+						
+						xmlNsPtr elementNamespace = xmlSearchNs(cur->doc, cur, [prefix xmlString]);
+						
+						NSString *standardPrefix = [[USGlobals sharedInstance].wsdlStandardNamespaces objectForKey:[NSString stringWithCString:(char*)elementNamespace->href encoding:NSUTF8StringEncoding]];
+						
+						elementClassString = [NSString stringWithFormat:@"%@_%@", standardPrefix, localName];
+					} else {
+						elementClassString = [elementTypeString stringByReplacingOccurrencesOfString:@":" withString:@"_" options:0 range:NSMakeRange(0, [elementTypeString length])];
+					}
+					
+					elementClass = NSClassFromString(elementClassString);
+					xmlFree(instanceType);
+				}
+				
+				id newChild = [elementClass deserializeNode:cur];
+				
+				self.GetPerformanceMatrixResultsForMonoTouchResult = newChild;
+			}
+		}
+	}
+}
+@end
+@implementation PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC
+- (id)init
+{
+	if((self = [super init])) {
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	
+
+}
+- (NSString *)nsPrefix
+{
+	return @"PerformanceTestingDataServiceSvc";
+}
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix
+{
+	NSString *nodeName = nil;
+	if(elNSPrefix != nil && [elNSPrefix length] > 0)
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", elNSPrefix, elName];
+	}
+	else
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", @"PerformanceTestingDataServiceSvc", elName];
+	}
+	
+	xmlNodePtr node = xmlNewDocNode(doc, NULL, [nodeName xmlString], NULL);
+	
+	
+	[self addAttributesToNode:node];
+	
+	
+	return node;
+}
+- (void)addAttributesToNode:(xmlNodePtr)node
+{
+	
+}
+- (void)addElementsToNode:(xmlNodePtr)node
+{
+	
+}
+/* elements */
+/* attributes */
+- (NSDictionary *)attributes
+{
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+	
+	return attributes;
+}
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC *)deserializeNode:(xmlNodePtr)cur
+{
+	PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC new];
+	
+	[newObject deserializeAttributesFromNode:cur];
+	[newObject deserializeElementsFromNode:cur];
+	
+	return newObject;
+}
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur
+{
+}
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur
+{
+	
+	
+}
+@end
+@implementation PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveCResponse
+- (id)init
+{
+	if((self = [super init])) {
+		GetPerformanceMatrixResultsForObjectiveCResult = 0;
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	if(GetPerformanceMatrixResultsForObjectiveCResult != nil) GetPerformanceMatrixResultsForObjectiveCResult = nil;
+	
+
+}
+- (NSString *)nsPrefix
+{
+	return @"PerformanceTestingDataServiceSvc";
+}
+- (xmlNodePtr)xmlNodeForDoc:(xmlDocPtr)doc elementName:(NSString *)elName elementNSPrefix:(NSString *)elNSPrefix
+{
+	NSString *nodeName = nil;
+	if(elNSPrefix != nil && [elNSPrefix length] > 0)
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", elNSPrefix, elName];
+	}
+	else
+	{
+		nodeName = [NSString stringWithFormat:@"%@:%@", @"PerformanceTestingDataServiceSvc", elName];
+	}
+	
+	xmlNodePtr node = xmlNewDocNode(doc, NULL, [nodeName xmlString], NULL);
+	
+	
+	[self addAttributesToNode:node];
+	
+	[self addElementsToNode:node];
+	
+	return node;
+}
+- (void)addAttributesToNode:(xmlNodePtr)node
+{
+	
+}
+- (void)addElementsToNode:(xmlNodePtr)node
+{
+	
+	if(self.GetPerformanceMatrixResultsForObjectiveCResult != 0) {
+		xmlAddChild(node, [self.GetPerformanceMatrixResultsForObjectiveCResult xmlNodeForDoc:node->doc elementName:@"GetPerformanceMatrixResultsForObjectiveCResult" elementNSPrefix:@"PerformanceTestingDataServiceSvc"]);
+	}
+}
+/* elements */
+@synthesize GetPerformanceMatrixResultsForObjectiveCResult;
+/* attributes */
+- (NSDictionary *)attributes
+{
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+	
+	return attributes;
+}
++ (PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveCResponse *)deserializeNode:(xmlNodePtr)cur
+{
+	PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveCResponse *newObject = [PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveCResponse new];
+	
+	[newObject deserializeAttributesFromNode:cur];
+	[newObject deserializeElementsFromNode:cur];
+	
+	return newObject;
+}
+- (void)deserializeAttributesFromNode:(xmlNodePtr)cur
+{
+}
+- (void)deserializeElementsFromNode:(xmlNodePtr)cur
+{
+	
+	
+	for( cur = cur->children ; cur != NULL ; cur = cur->next ) {
+		if(cur->type == XML_ELEMENT_NODE) {
+			xmlChar *elementText = xmlNodeListGetString(cur->doc, cur->children, 1);
+			NSString *elementString = nil;
+			
+			if(elementText != NULL) {
+				elementString = [NSString stringWithCString:(char*)elementText encoding:NSUTF8StringEncoding];
+				[elementString self]; // avoid compiler warning for unused var
+				xmlFree(elementText);
+			}
+			if(xmlStrEqual(cur->name, (const xmlChar *) "GetPerformanceMatrixResultsForObjectiveCResult")) {
+				
+				Class elementClass = nil;
+				xmlChar *instanceType = xmlGetNsProp(cur, (const xmlChar *) "type", (const xmlChar *) "http://www.w3.org/2001/XMLSchema-instance");
+				if(instanceType == NULL) {
+					elementClass = [tns1_ArrayOfMatrixTestResult class];
+				} else {
+					NSString *elementTypeString = [NSString stringWithCString:(char*)instanceType encoding:NSUTF8StringEncoding];
+					
+					NSArray *elementTypeArray = [elementTypeString componentsSeparatedByString:@":"];
+					
+					NSString *elementClassString = nil;
+					if([elementTypeArray count] > 1) {
+						NSString *prefix = [elementTypeArray objectAtIndex:0];
+						NSString *localName = [elementTypeArray objectAtIndex:1];
+						
+						xmlNsPtr elementNamespace = xmlSearchNs(cur->doc, cur, [prefix xmlString]);
+						
+						NSString *standardPrefix = [[USGlobals sharedInstance].wsdlStandardNamespaces objectForKey:[NSString stringWithCString:(char*)elementNamespace->href encoding:NSUTF8StringEncoding]];
+						
+						elementClassString = [NSString stringWithFormat:@"%@_%@", standardPrefix, localName];
+					} else {
+						elementClassString = [elementTypeString stringByReplacingOccurrencesOfString:@":" withString:@"_" options:0 range:NSMakeRange(0, [elementTypeString length])];
+					}
+					
+					elementClass = NSClassFromString(elementClassString);
+					xmlFree(instanceType);
+				}
+				
+				id newChild = [elementClass deserializeNode:cur];
+				
+				self.GetPerformanceMatrixResultsForObjectiveCResult = newChild;
+			}
+		}
+	}
+}
+@end
 @implementation PerformanceTestingDataServiceSvc
 + (void)initialize
 {
 	[[USGlobals sharedInstance].wsdlStandardNamespaces setObject:@"xs" forKey:@"http://www.w3.org/2001/XMLSchema"];
 	[[USGlobals sharedInstance].wsdlStandardNamespaces setObject:@"PerformanceTestingDataServiceSvc" forKey:@"http://tempuri.org/"];
 	[[USGlobals sharedInstance].wsdlStandardNamespaces setObject:@"ns1" forKey:@"http://tempuri.org/Imports"];
-	[[USGlobals sharedInstance].wsdlStandardNamespaces setObject:@"tns1" forKey:@"http://schemas.datacontract.org/2004/07/PerformanceTestingWebApp"];
+	[[USGlobals sharedInstance].wsdlStandardNamespaces setObject:@"tns1" forKey:@"http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite"];
 	[[USGlobals sharedInstance].wsdlStandardNamespaces setObject:@"tns2" forKey:@"http://schemas.microsoft.com/2003/10/Serialization/"];
 }
 + (BasicHttpBinding_IPerformanceTestingDataServiceBinding *)BasicHttpBinding_IPerformanceTestingDataServiceBinding
 {
-	return [[BasicHttpBinding_IPerformanceTestingDataServiceBinding alloc] initWithAddress:@"http://apps.slapholmesproductions.com/apps/PerformanceTesting/Service.svc/basic"] ;
+	return [[BasicHttpBinding_IPerformanceTestingDataServiceBinding alloc] initWithAddress:@"http://apps.slapholmesproductions.com/apps/PerformanceApp/PerformanceTestingDataService.svc/basic"];
 }
 @end
 @implementation BasicHttpBinding_IPerformanceTestingDataServiceBinding
@@ -2274,121 +3098,169 @@
 {
 	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddDevice*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddDevice alloc] initWithBinding:self delegate:self
 																							parameters:aParameters
-																							] ];
+																							]];
 }
 - (void)AddDeviceAsyncUsingParameters:(PerformanceTestingDataServiceSvc_AddDevice *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
 {
 	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddDevice*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddDevice alloc] initWithBinding:self delegate:responseDelegate
 																							 parameters:aParameters
-																							 ] ];
+																							 ]];
 }
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)FindDeviceInfoUsingParameters:(PerformanceTestingDataServiceSvc_FindDeviceInfo *)aParameters 
 {
 	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindDeviceInfo*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindDeviceInfo alloc] initWithBinding:self delegate:self
 																							parameters:aParameters
-																							] ];
+																							]];
 }
 - (void)FindDeviceInfoAsyncUsingParameters:(PerformanceTestingDataServiceSvc_FindDeviceInfo *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
 {
 	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindDeviceInfo*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindDeviceInfo alloc] initWithBinding:self delegate:responseDelegate
 																							 parameters:aParameters
-																							 ] ];
+																							 ]];
 }
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)FindFullDeviceInfoUsingParameters:(PerformanceTestingDataServiceSvc_FindFullDeviceInfo *)aParameters 
 {
 	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindFullDeviceInfo*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindFullDeviceInfo alloc] initWithBinding:self delegate:self
 																							parameters:aParameters
-																							] ];
+																							]];
 }
 - (void)FindFullDeviceInfoAsyncUsingParameters:(PerformanceTestingDataServiceSvc_FindFullDeviceInfo *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
 {
 	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindFullDeviceInfo*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindFullDeviceInfo alloc] initWithBinding:self delegate:responseDelegate
 																							 parameters:aParameters
-																							 ] ];
+																							 ]];
 }
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetDeviceListUsingParameters:(PerformanceTestingDataServiceSvc_GetDeviceList *)aParameters 
 {
 	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetDeviceList*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetDeviceList alloc] initWithBinding:self delegate:self
 																							parameters:aParameters
-																							] ];
+																							]];
 }
 - (void)GetDeviceListAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetDeviceList *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
 {
 	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetDeviceList*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetDeviceList alloc] initWithBinding:self delegate:responseDelegate
 																							 parameters:aParameters
-																							 ] ];
+																							 ]];
 }
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)AddPerformanceCubeResultUsingParameters:(PerformanceTestingDataServiceSvc_AddPerformanceCubeResult *)aParameters 
 {
 	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceCubeResult*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceCubeResult alloc] initWithBinding:self delegate:self
 																							parameters:aParameters
-																							] ];
+																							]];
 }
 - (void)AddPerformanceCubeResultAsyncUsingParameters:(PerformanceTestingDataServiceSvc_AddPerformanceCubeResult *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
 {
 	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceCubeResult*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceCubeResult alloc] initWithBinding:self delegate:responseDelegate
 																							 parameters:aParameters
-																							 ] ];
+																							 ]];
 }
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)AddPerformanceCubeResultsUsingParameters:(PerformanceTestingDataServiceSvc_AddPerformanceCubeResults *)aParameters 
 {
 	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceCubeResults*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceCubeResults alloc] initWithBinding:self delegate:self
 																							parameters:aParameters
-																							] ];
+																							]];
 }
 - (void)AddPerformanceCubeResultsAsyncUsingParameters:(PerformanceTestingDataServiceSvc_AddPerformanceCubeResults *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
 {
 	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceCubeResults*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceCubeResults alloc] initWithBinding:self delegate:responseDelegate
 																							 parameters:aParameters
-																							 ] ];
+																							 ]];
 }
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceCubeResultsUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResults *)aParameters 
 {
 	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResults*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResults alloc] initWithBinding:self delegate:self
 																							parameters:aParameters
-																							] ];
+																							]];
 }
 - (void)GetPerformanceCubeResultsAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResults *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
 {
 	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResults*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResults alloc] initWithBinding:self delegate:responseDelegate
 																							 parameters:aParameters
-																							 ] ];
+																							 ]];
 }
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceCubeResultsForMonoTouchUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch *)aParameters 
 {
 	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResultsForMonoTouch*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResultsForMonoTouch alloc] initWithBinding:self delegate:self
 																							parameters:aParameters
-																							] ];
+																							]];
 }
 - (void)GetPerformanceCubeResultsForMonoTouchAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTouch *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
 {
 	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResultsForMonoTouch*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResultsForMonoTouch alloc] initWithBinding:self delegate:responseDelegate
 																							 parameters:aParameters
-																							 ] ];
+																							 ]];
 }
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceCubeResultsForObjectiveCUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC *)aParameters 
 {
 	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResultsForObjectiveC*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResultsForObjectiveC alloc] initWithBinding:self delegate:self
 																							parameters:aParameters
-																							] ];
+																							]];
 }
 - (void)GetPerformanceCubeResultsForObjectiveCAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjectiveC *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
 {
 	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResultsForObjectiveC*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceCubeResultsForObjectiveC alloc] initWithBinding:self delegate:responseDelegate
 																							 parameters:aParameters
-																							 ] ];
+																							 ]];
 }
 - (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)FindPerformanceCubeResultUsingParameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParameters 
 {
 	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindPerformanceCubeResult*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindPerformanceCubeResult alloc] initWithBinding:self delegate:self
 																							parameters:aParameters
-																							] ];
+																							]];
 }
 - (void)FindPerformanceCubeResultAsyncUsingParameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
 {
 	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindPerformanceCubeResult*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_FindPerformanceCubeResult alloc] initWithBinding:self delegate:responseDelegate
 																							 parameters:aParameters
-																							 ] ];
+																							 ]];
+}
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)AddPerformanceMatrixTestResultUsingParameters:(PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult *)aParameters 
+{
+	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceMatrixTestResult*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceMatrixTestResult alloc] initWithBinding:self delegate:self
+																							parameters:aParameters
+																							]];
+}
+- (void)AddPerformanceMatrixTestResultAsyncUsingParameters:(PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
+{
+	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceMatrixTestResult*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceMatrixTestResult alloc] initWithBinding:self delegate:responseDelegate
+																							 parameters:aParameters
+																							 ]];
+}
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceMatrixResultsUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults *)aParameters 
+{
+	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResults*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResults alloc] initWithBinding:self delegate:self
+																							parameters:aParameters
+																							]];
+}
+- (void)GetPerformanceMatrixResultsAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
+{
+	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResults*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResults alloc] initWithBinding:self delegate:responseDelegate
+																							 parameters:aParameters
+																							 ]];
+}
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceMatrixResultsForMonoTouchUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch *)aParameters 
+{
+	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForMonoTouch*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForMonoTouch alloc] initWithBinding:self delegate:self
+																							parameters:aParameters
+																							]];
+}
+- (void)GetPerformanceMatrixResultsForMonoTouchAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
+{
+	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForMonoTouch*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForMonoTouch alloc] initWithBinding:self delegate:responseDelegate
+																							 parameters:aParameters
+																							 ]];
+}
+- (BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)GetPerformanceMatrixResultsForObjectiveCUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC *)aParameters 
+{
+	return [self performSynchronousOperation:[(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForObjectiveC*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForObjectiveC alloc] initWithBinding:self delegate:self
+																							parameters:aParameters
+																							]];
+}
+- (void)GetPerformanceMatrixResultsForObjectiveCAsyncUsingParameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC *)aParameters  delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
+{
+	[self performAsynchronousOperation: [(BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForObjectiveC*)[BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForObjectiveC alloc] initWithBinding:self delegate:responseDelegate
+																							 parameters:aParameters
+																							 ]];
 }
 - (void)sendHTTPCallUsingBody:(NSString *)outputBody soapAction:(NSString *)soapAction forOperation:(BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation *)operation
 {
@@ -2423,7 +3295,6 @@
 {
 	address = nil;
 	cookies = nil;
-	
 }
 @end
 @implementation BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation
@@ -2478,7 +3349,7 @@
 	
 	binding.cookies = cookies;
 	cookies = nil;
-    if ([urlResponse.MIMEType rangeOfString:@"text/xml"].length == 0) {
+  if ([urlResponse.MIMEType rangeOfString:@"text/xml"].length == 0) {
 		NSError *error = nil;
 		[connection cancel];
 		if ([httpResponse statusCode] >= 400) {
@@ -2509,7 +3380,7 @@
 		NSLog(@"ResponseError:\n%@", error);
 	}
 	response.error = error;
-	[delegate operation:self completedWithResponse:response];
+	[self.delegate operation:self completedWithResponse:response];
 }
 - (void)dealloc
 {
@@ -2519,7 +3390,7 @@
 	responseData = nil;
 	urlConnection = nil;
 	
-	
+
 }
 @end
 @implementation BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddDevice
@@ -2537,11 +3408,10 @@ parameters:(PerformanceTestingDataServiceSvc_AddDevice *)aParameters
 {
 	if(parameters != nil) parameters = nil;
 	
-	
+
 }
 - (void)main
 {
-
 	response = [BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse new];
 	
 	BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope *envelope = [BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope sharedInstance];
@@ -2565,7 +3435,7 @@ parameters:(PerformanceTestingDataServiceSvc_AddDevice *)aParameters
 		xmlNodePtr cur;
 		
 		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] );
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 		}
 		
 		doc = xmlParseMemory([responseData bytes], [responseData length]);
@@ -2630,11 +3500,10 @@ parameters:(PerformanceTestingDataServiceSvc_FindDeviceInfo *)aParameters
 {
 	if(parameters != nil) parameters = nil;
 	
-	
+
 }
 - (void)main
 {
-
 	response = [BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse new];
 	
 	BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope *envelope = [BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope sharedInstance];
@@ -2658,7 +3527,7 @@ parameters:(PerformanceTestingDataServiceSvc_FindDeviceInfo *)aParameters
 		xmlNodePtr cur;
 		
 		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] );
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 		}
 		
 		doc = xmlParseMemory([responseData bytes], [responseData length]);
@@ -2723,11 +3592,10 @@ parameters:(PerformanceTestingDataServiceSvc_FindFullDeviceInfo *)aParameters
 {
 	if(parameters != nil) parameters = nil;
 	
-	
+
 }
 - (void)main
 {
-
 	response = [BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse new];
 	
 	BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope *envelope = [BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope sharedInstance];
@@ -2751,7 +3619,7 @@ parameters:(PerformanceTestingDataServiceSvc_FindFullDeviceInfo *)aParameters
 		xmlNodePtr cur;
 		
 		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding ]);
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 		}
 		
 		doc = xmlParseMemory([responseData bytes], [responseData length]);
@@ -2816,7 +3684,7 @@ parameters:(PerformanceTestingDataServiceSvc_GetDeviceList *)aParameters
 {
 	if(parameters != nil) parameters = nil;
 	
-	
+
 }
 - (void)main
 {
@@ -2843,7 +3711,7 @@ parameters:(PerformanceTestingDataServiceSvc_GetDeviceList *)aParameters
 		xmlNodePtr cur;
 		
 		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] );
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 		}
 		
 		doc = xmlParseMemory([responseData bytes], [responseData length]);
@@ -2908,7 +3776,7 @@ parameters:(PerformanceTestingDataServiceSvc_AddPerformanceCubeResult *)aParamet
 {
 	if(parameters != nil) parameters = nil;
 	
-	
+
 }
 - (void)main
 {
@@ -2935,7 +3803,7 @@ parameters:(PerformanceTestingDataServiceSvc_AddPerformanceCubeResult *)aParamet
 		xmlNodePtr cur;
 		
 		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] );
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 		}
 		
 		doc = xmlParseMemory([responseData bytes], [responseData length]);
@@ -3000,7 +3868,7 @@ parameters:(PerformanceTestingDataServiceSvc_AddPerformanceCubeResults *)aParame
 {
 	if(parameters != nil) parameters = nil;
 	
-	
+
 }
 - (void)main
 {
@@ -3027,7 +3895,7 @@ parameters:(PerformanceTestingDataServiceSvc_AddPerformanceCubeResults *)aParame
 		xmlNodePtr cur;
 		
 		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] );
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 		}
 		
 		doc = xmlParseMemory([responseData bytes], [responseData length]);
@@ -3092,7 +3960,7 @@ parameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResults *)aParame
 {
 	if(parameters != nil) parameters = nil;
 	
-	
+
 }
 - (void)main
 {
@@ -3119,7 +3987,7 @@ parameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResults *)aParame
 		xmlNodePtr cur;
 		
 		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] );
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 		}
 		
 		doc = xmlParseMemory([responseData bytes], [responseData length]);
@@ -3184,7 +4052,7 @@ parameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTou
 {
 	if(parameters != nil) parameters = nil;
 	
-	
+
 }
 - (void)main
 {
@@ -3211,7 +4079,7 @@ parameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForMonoTou
 		xmlNodePtr cur;
 		
 		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] );
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 		}
 		
 		doc = xmlParseMemory([responseData bytes], [responseData length]);
@@ -3276,7 +4144,7 @@ parameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjecti
 {
 	if(parameters != nil) parameters = nil;
 	
-	
+
 }
 - (void)main
 {
@@ -3303,7 +4171,7 @@ parameters:(PerformanceTestingDataServiceSvc_GetPerformanceCubeResultsForObjecti
 		xmlNodePtr cur;
 		
 		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] );
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 		}
 		
 		doc = xmlParseMemory([responseData bytes], [responseData length]);
@@ -3368,7 +4236,7 @@ parameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParame
 {
 	if(parameters != nil) parameters = nil;
 	
-	
+
 }
 - (void)main
 {
@@ -3395,7 +4263,7 @@ parameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParame
 		xmlNodePtr cur;
 		
 		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] );
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 		}
 		
 		doc = xmlParseMemory([responseData bytes], [responseData length]);
@@ -3420,6 +4288,374 @@ parameters:(PerformanceTestingDataServiceSvc_FindPerformanceCubeResult *)aParame
 							if(cur->type == XML_ELEMENT_NODE) {
 								if(xmlStrEqual(bodyNode->name, (const xmlChar *) "FindPerformanceCubeResultResponse")) {
 									PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse *bodyObject = [PerformanceTestingDataServiceSvc_FindPerformanceCubeResultResponse deserializeNode:bodyNode];
+									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
+									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
+								}
+								if (xmlStrEqual(bodyNode->ns->prefix, cur->ns->prefix) && 
+									xmlStrEqual(bodyNode->name, (const xmlChar *) "Fault")) {
+									SOAPFault *bodyObject = [SOAPFault deserializeNode:bodyNode];
+									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
+									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
+								}
+							}
+						}
+						
+						response.bodyParts = responseBodyParts;
+					}
+				}
+			}
+			
+			xmlFreeDoc(doc);
+		}
+		
+		xmlCleanupParser();
+		[self.delegate operation:self completedWithResponse:response];
+	}
+}
+@end
+@implementation BasicHttpBinding_IPerformanceTestingDataServiceBinding_AddPerformanceMatrixTestResult
+@synthesize parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
+parameters:(PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult *)aParameters
+{
+	if((self = [super initWithBinding:aBinding delegate:responseDelegate])) {
+		self.parameters = aParameters;
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	if(parameters != nil) parameters = nil;
+	
+
+}
+- (void)main
+{
+	response = [BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse new];
+	
+	BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope *envelope = [BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope sharedInstance];
+	
+	NSMutableDictionary *headerElements = nil;
+	headerElements = [NSMutableDictionary dictionary];
+	
+	NSMutableDictionary *bodyElements = nil;
+	bodyElements = [NSMutableDictionary dictionary];
+	if(parameters != nil) [bodyElements setObject:parameters forKey:@"AddPerformanceMatrixTestResult"];
+	
+	NSString *operationXMLString = [envelope serializedFormUsingHeaderElements:headerElements bodyElements:bodyElements];
+	
+	[binding sendHTTPCallUsingBody:operationXMLString soapAction:@"http://tempuri.org/IPerformanceTestingDataService/AddPerformanceMatrixTestResult" forOperation:self];
+}
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+	if (responseData != nil && self.delegate != nil)
+	{
+		xmlDocPtr doc;
+		xmlNodePtr cur;
+		
+		if (binding.logXMLInOut) {
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+		}
+		
+		doc = xmlParseMemory([responseData bytes], [responseData length]);
+		
+		if (doc == NULL) {
+			NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Errors while parsing returned XML" forKey:NSLocalizedDescriptionKey];
+			
+			response.error = [NSError errorWithDomain:@"BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseXML" code:1 userInfo:userInfo];
+			[self.delegate operation:self completedWithResponse:response];
+		} else {
+			cur = xmlDocGetRootElement(doc);
+			cur = cur->children;
+			
+			for( ; cur != NULL ; cur = cur->next) {
+				if(cur->type == XML_ELEMENT_NODE) {
+					
+					if(xmlStrEqual(cur->name, (const xmlChar *) "Body")) {
+						NSMutableArray *responseBodyParts = [NSMutableArray array];
+						
+						xmlNodePtr bodyNode;
+						for(bodyNode=cur->children ; bodyNode != NULL ; bodyNode = bodyNode->next) {
+							if(cur->type == XML_ELEMENT_NODE) {
+								if(xmlStrEqual(bodyNode->name, (const xmlChar *) "AddPerformanceMatrixTestResultResponse")) {
+									PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResultResponse *bodyObject = [PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResultResponse deserializeNode:bodyNode];
+									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
+									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
+								}
+								if (xmlStrEqual(bodyNode->ns->prefix, cur->ns->prefix) && 
+									xmlStrEqual(bodyNode->name, (const xmlChar *) "Fault")) {
+									SOAPFault *bodyObject = [SOAPFault deserializeNode:bodyNode];
+									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
+									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
+								}
+							}
+						}
+						
+						response.bodyParts = responseBodyParts;
+					}
+				}
+			}
+			
+			xmlFreeDoc(doc);
+		}
+		
+		xmlCleanupParser();
+		[self.delegate operation:self completedWithResponse:response];
+	}
+}
+@end
+@implementation BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResults
+@synthesize parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
+parameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResults *)aParameters
+{
+	if((self = [super initWithBinding:aBinding delegate:responseDelegate])) {
+		self.parameters = aParameters;
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	if(parameters != nil) parameters = nil;
+	
+
+}
+- (void)main
+{
+	response = [BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse new];
+	
+	BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope *envelope = [BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope sharedInstance];
+	
+	NSMutableDictionary *headerElements = nil;
+	headerElements = [NSMutableDictionary dictionary];
+	
+	NSMutableDictionary *bodyElements = nil;
+	bodyElements = [NSMutableDictionary dictionary];
+	if(parameters != nil) [bodyElements setObject:parameters forKey:@"GetPerformanceMatrixResults"];
+	
+	NSString *operationXMLString = [envelope serializedFormUsingHeaderElements:headerElements bodyElements:bodyElements];
+	
+	[binding sendHTTPCallUsingBody:operationXMLString soapAction:@"http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResults" forOperation:self];
+}
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+	if (responseData != nil && self.delegate != nil)
+	{
+		xmlDocPtr doc;
+		xmlNodePtr cur;
+		
+		if (binding.logXMLInOut) {
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+		}
+		
+		doc = xmlParseMemory([responseData bytes], [responseData length]);
+		
+		if (doc == NULL) {
+			NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Errors while parsing returned XML" forKey:NSLocalizedDescriptionKey];
+			
+			response.error = [NSError errorWithDomain:@"BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseXML" code:1 userInfo:userInfo];
+			[self.delegate operation:self completedWithResponse:response];
+		} else {
+			cur = xmlDocGetRootElement(doc);
+			cur = cur->children;
+			
+			for( ; cur != NULL ; cur = cur->next) {
+				if(cur->type == XML_ELEMENT_NODE) {
+					
+					if(xmlStrEqual(cur->name, (const xmlChar *) "Body")) {
+						NSMutableArray *responseBodyParts = [NSMutableArray array];
+						
+						xmlNodePtr bodyNode;
+						for(bodyNode=cur->children ; bodyNode != NULL ; bodyNode = bodyNode->next) {
+							if(cur->type == XML_ELEMENT_NODE) {
+								if(xmlStrEqual(bodyNode->name, (const xmlChar *) "GetPerformanceMatrixResultsResponse")) {
+									PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsResponse *bodyObject = [PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsResponse deserializeNode:bodyNode];
+									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
+									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
+								}
+								if (xmlStrEqual(bodyNode->ns->prefix, cur->ns->prefix) && 
+									xmlStrEqual(bodyNode->name, (const xmlChar *) "Fault")) {
+									SOAPFault *bodyObject = [SOAPFault deserializeNode:bodyNode];
+									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
+									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
+								}
+							}
+						}
+						
+						response.bodyParts = responseBodyParts;
+					}
+				}
+			}
+			
+			xmlFreeDoc(doc);
+		}
+		
+		xmlCleanupParser();
+		[self.delegate operation:self completedWithResponse:response];
+	}
+}
+@end
+@implementation BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForMonoTouch
+@synthesize parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
+parameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouch *)aParameters
+{
+	if((self = [super initWithBinding:aBinding delegate:responseDelegate])) {
+		self.parameters = aParameters;
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	if(parameters != nil) parameters = nil;
+	
+
+}
+- (void)main
+{
+	response = [BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse new];
+	
+	BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope *envelope = [BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope sharedInstance];
+	
+	NSMutableDictionary *headerElements = nil;
+	headerElements = [NSMutableDictionary dictionary];
+	
+	NSMutableDictionary *bodyElements = nil;
+	bodyElements = [NSMutableDictionary dictionary];
+	if(parameters != nil) [bodyElements setObject:parameters forKey:@"GetPerformanceMatrixResultsForMonoTouch"];
+	
+	NSString *operationXMLString = [envelope serializedFormUsingHeaderElements:headerElements bodyElements:bodyElements];
+	
+	[binding sendHTTPCallUsingBody:operationXMLString soapAction:@"http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForMonoTouch" forOperation:self];
+}
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+	if (responseData != nil && self.delegate != nil)
+	{
+		xmlDocPtr doc;
+		xmlNodePtr cur;
+		
+		if (binding.logXMLInOut) {
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+		}
+		
+		doc = xmlParseMemory([responseData bytes], [responseData length]);
+		
+		if (doc == NULL) {
+			NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Errors while parsing returned XML" forKey:NSLocalizedDescriptionKey];
+			
+			response.error = [NSError errorWithDomain:@"BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseXML" code:1 userInfo:userInfo];
+			[self.delegate operation:self completedWithResponse:response];
+		} else {
+			cur = xmlDocGetRootElement(doc);
+			cur = cur->children;
+			
+			for( ; cur != NULL ; cur = cur->next) {
+				if(cur->type == XML_ELEMENT_NODE) {
+					
+					if(xmlStrEqual(cur->name, (const xmlChar *) "Body")) {
+						NSMutableArray *responseBodyParts = [NSMutableArray array];
+						
+						xmlNodePtr bodyNode;
+						for(bodyNode=cur->children ; bodyNode != NULL ; bodyNode = bodyNode->next) {
+							if(cur->type == XML_ELEMENT_NODE) {
+								if(xmlStrEqual(bodyNode->name, (const xmlChar *) "GetPerformanceMatrixResultsForMonoTouchResponse")) {
+									PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouchResponse *bodyObject = [PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForMonoTouchResponse deserializeNode:bodyNode];
+									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
+									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
+								}
+								if (xmlStrEqual(bodyNode->ns->prefix, cur->ns->prefix) && 
+									xmlStrEqual(bodyNode->name, (const xmlChar *) "Fault")) {
+									SOAPFault *bodyObject = [SOAPFault deserializeNode:bodyNode];
+									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
+									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
+								}
+							}
+						}
+						
+						response.bodyParts = responseBodyParts;
+					}
+				}
+			}
+			
+			xmlFreeDoc(doc);
+		}
+		
+		xmlCleanupParser();
+		[self.delegate operation:self completedWithResponse:response];
+	}
+}
+@end
+@implementation BasicHttpBinding_IPerformanceTestingDataServiceBinding_GetPerformanceMatrixResultsForObjectiveC
+@synthesize parameters;
+- (id)initWithBinding:(BasicHttpBinding_IPerformanceTestingDataServiceBinding *)aBinding delegate:(id<BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>)responseDelegate
+parameters:(PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveC *)aParameters
+{
+	if((self = [super initWithBinding:aBinding delegate:responseDelegate])) {
+		self.parameters = aParameters;
+	}
+	
+	return self;
+}
+- (void)dealloc
+{
+	if(parameters != nil) parameters = nil;
+	
+
+}
+- (void)main
+{
+	response = [BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse new];
+	
+	BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope *envelope = [BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope sharedInstance];
+	
+	NSMutableDictionary *headerElements = nil;
+	headerElements = [NSMutableDictionary dictionary];
+	
+	NSMutableDictionary *bodyElements = nil;
+	bodyElements = [NSMutableDictionary dictionary];
+	if(parameters != nil) [bodyElements setObject:parameters forKey:@"GetPerformanceMatrixResultsForObjectiveC"];
+	
+	NSString *operationXMLString = [envelope serializedFormUsingHeaderElements:headerElements bodyElements:bodyElements];
+	
+	[binding sendHTTPCallUsingBody:operationXMLString soapAction:@"http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForObjectiveC" forOperation:self];
+}
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+	if (responseData != nil && self.delegate != nil)
+	{
+		xmlDocPtr doc;
+		xmlNodePtr cur;
+		
+		if (binding.logXMLInOut) {
+			NSLog(@"ResponseBody:\n%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+		}
+		
+		doc = xmlParseMemory([responseData bytes], [responseData length]);
+		
+		if (doc == NULL) {
+			NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Errors while parsing returned XML" forKey:NSLocalizedDescriptionKey];
+			
+			response.error = [NSError errorWithDomain:@"BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseXML" code:1 userInfo:userInfo];
+			[self.delegate operation:self completedWithResponse:response];
+		} else {
+			cur = xmlDocGetRootElement(doc);
+			cur = cur->children;
+			
+			for( ; cur != NULL ; cur = cur->next) {
+				if(cur->type == XML_ELEMENT_NODE) {
+					
+					if(xmlStrEqual(cur->name, (const xmlChar *) "Body")) {
+						NSMutableArray *responseBodyParts = [NSMutableArray array];
+						
+						xmlNodePtr bodyNode;
+						for(bodyNode=cur->children ; bodyNode != NULL ; bodyNode = bodyNode->next) {
+							if(cur->type == XML_ELEMENT_NODE) {
+								if(xmlStrEqual(bodyNode->name, (const xmlChar *) "GetPerformanceMatrixResultsForObjectiveCResponse")) {
+									PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveCResponse *bodyObject = [PerformanceTestingDataServiceSvc_GetPerformanceMatrixResultsForObjectiveCResponse deserializeNode:bodyNode];
 									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
 									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
 								}
@@ -3479,7 +4715,7 @@ static BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope *BasicHtt
 	xmlNewNs(root, (const xmlChar*)"http://www.w3.org/2001/XMLSchema", (const xmlChar*)"xs");
 	xmlNewNs(root, (const xmlChar*)"http://tempuri.org/", (const xmlChar*)"PerformanceTestingDataServiceSvc");
 	xmlNewNs(root, (const xmlChar*)"http://tempuri.org/Imports", (const xmlChar*)"ns1");
-	xmlNewNs(root, (const xmlChar*)"http://schemas.datacontract.org/2004/07/PerformanceTestingWebApp", (const xmlChar*)"tns1");
+	xmlNewNs(root, (const xmlChar*)"http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite", (const xmlChar*)"tns1");
 	xmlNewNs(root, (const xmlChar*)"http://schemas.microsoft.com/2003/10/Serialization/", (const xmlChar*)"tns2");
 	
 	if((headerElements != nil) && ([headerElements count] > 0)) {
@@ -3530,7 +4766,6 @@ static BasicHttpBinding_IPerformanceTestingDataServiceBinding_envelope *BasicHtt
 -(void)dealloc {
     self.headers = nil;
     self.bodyParts = nil;
-    self.error = nil;	
-    
+    self.error = nil;
 }
 @end

@@ -9,6 +9,9 @@
 #import "MatrixTestViewControllerViewController.h"
 #import "MatrixTest.h"
 #import "MatrixTestEngine.h"
+#import "PerformanceTestingDataServiceSvc.h"
+#import "DeviceInfo.h"
+#import "PerformanceTestingDataServiceSvc.h"
 
 @interface MatrixTestViewControllerViewController ()
 
@@ -156,6 +159,24 @@
     return nil;
 }
 
+-(void) postResults
+{
+    BasicHttpBinding_IPerformanceTestingDataServiceBinding* binding =
+    [PerformanceTestingDataServiceSvc BasicHttpBinding_IPerformanceTestingDataServiceBinding];
+    binding.logXMLInOut = NO;
+    
+    PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult* params = [[PerformanceTestingDataServiceSvc_AddPerformanceMatrixTestResult alloc]init];
+    params.result = [[tns1_MatrixTestResult alloc]init];
+    
+    params.result.DeviceDatabaseId = [[NSNumber alloc]initWithInt: [DeviceInfo current].databaseId];
+    params.result.CTestResult = [[NSNumber alloc]initWithFloat: self.cOnlyTest.mFlopsPerSecond];
+    params.result.BLASTestResult = [[NSNumber alloc]initWithFloat: self.blasTest.mFlopsPerSecond];
+    params.result.CSTestResult = [[NSNumber alloc]initWithFloat: 1.0];
+    params.result.IsMonoTouch = [[USBoolean alloc]initWithBool:NO];
+    
+    [binding AddPerformanceMatrixTestResultUsingParameters:params];
+}
+
 -(IBAction)touchRunButton:(id)sender
 {
      if([[runButton titleForState:UIControlStateNormal] isEqualToString:@"Running"])
@@ -175,6 +196,8 @@
     self.blasTest = [engine runCTest:YES];
     
     [self performSelectorOnMainThread:@selector(finishRunTestMethod:) withObject:nil waitUntilDone:YES];
+    
+    [self postResults];
 }
 
 -(IBAction)finishRunTestMethod:(id)obj

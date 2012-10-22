@@ -20,7 +20,7 @@
 
 - (NSString *)stringByEscapingXML
 {
-	NSMutableString *escapedString = [self mutableCopy] ;
+	NSMutableString *escapedString = [self mutableCopy];
 	[escapedString replaceOccurrencesOfString:@"\"" withString:@"&quot;" options:0 range:NSMakeRange(0, [escapedString length])];
 	[escapedString replaceOccurrencesOfString:@"'" withString:@"&apos;" options:0 range:NSMakeRange(0, [escapedString length])];
 	[escapedString replaceOccurrencesOfString:@"<" withString:@"&lt;" options:0 range:NSMakeRange(0, [escapedString length])];
@@ -349,7 +349,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 				}
 			}
 		}
-	} else if ([ns isEqualToString:@"http://www.w3.org/2003/05/soap-envelope"]) {
+	} else if ([ns isEqualToString:@"http://schemas.xmlsoap.org/soap/envelope/"]) {
 		// soap 1.2
 				
 		for( cur = cur->children ; cur != NULL ; cur = cur->next ) {
@@ -402,7 +402,6 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
         faultstring = nil;
         faultactor = nil;
         detail = nil;
-       
 }
 
 @end

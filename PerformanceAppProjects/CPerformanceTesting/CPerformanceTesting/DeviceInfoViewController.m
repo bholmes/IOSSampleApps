@@ -49,35 +49,7 @@
 
 -(IBAction)registerButtonClicked:(id)sender
 {
-    BasicHttpBinding_IPerformanceTestingDataServiceBinding* binding = 
-    [PerformanceTestingDataServiceSvc BasicHttpBinding_IPerformanceTestingDataServiceBinding];
-    binding.logXMLInOut = NO;
-    
-    PerformanceTestingDataServiceSvc_AddDevice* params = [[PerformanceTestingDataServiceSvc_AddDevice alloc]init];
-    params.deviceInfo = [[tns1_FullDeviceInfo alloc]init];
-    
-    params.deviceInfo.UniqueId = [DeviceInfo current].uniqueId;
-    params.deviceInfo.OSName = [DeviceInfo current].osName;
-    params.deviceInfo.OSVersion = [DeviceInfo current].osVersion;
-    params.deviceInfo.ModelName = [DeviceInfo current].modelName;
-    params.deviceInfo.SpecificHWVersion = [DeviceInfo current].specificHWVersion;
-    params.deviceInfo.UIIdion = [DeviceInfo current].uiIdion;
-    params.deviceInfo.SystemName = [DeviceInfo current].deviceName;
-    params.deviceInfo.OwnerName = [DeviceInfo current].ownerName;    
-    
-    [binding AddDeviceAsyncUsingParameters:params delegate:self];
-}
-
-- (void) operation:(BasicHttpBinding_IPerformanceTestingDataServiceBindingOperation *)operation completedWithResponse:(BasicHttpBinding_IPerformanceTestingDataServiceBindingResponse *)response;
-{
-    // step 1 fill in the blanks.
-    for (id mine in response.bodyParts)
-    {
-        if ([mine isKindOfClass:[PerformanceTestingDataServiceSvc_AddDeviceResponse class]])
-        {
-            [DeviceInfo current].databaseId = [[mine AddDeviceResult] intValue];
-        }
-    }
+    [[DeviceInfo current] registerWithServer];
 }
 
 #pragma mark - Table view data source
@@ -142,14 +114,15 @@
     else
     {
         TextEditCell* txtCell = [tableView dequeueReusableCellWithIdentifier: @"RootItem2"];
-        ret = txtCell;
-        if (ret == nil) 
+        if (txtCell == nil) 
         {
-            ret = [[TextEditCell alloc]initWithReuseIdentifier:@"RootItem2"];
+            txtCell = [[TextEditCell alloc]initWithReuseIdentifier:@"RootItem2"];
         }	
         
-        ret.textLabel.text = @"Owner Name";
+        txtCell.textLabel.text = @"Owner Name";
+        
         txtCell.textField.text = [DeviceInfo current].ownerName;
+        ret = txtCell;
     }
     
     return ret;

@@ -11,6 +11,8 @@
 #import <GLKit/GLKit.h>
 #import <OpenGLES/EAGL.h>
 #include <sys/time.h>
+#import "PerformanceTestingDataServiceSvc.h"
+#import "DeviceInfo.h"
 
 @interface GLPerformanceCube ()
 {
@@ -108,6 +110,23 @@
 {
     return (YES);
 }
+
+-(void) postResults: (GLCubeResult*) cubeResult
+{
+    BasicHttpBinding_IPerformanceTestingDataServiceBinding* binding =
+    [PerformanceTestingDataServiceSvc BasicHttpBinding_IPerformanceTestingDataServiceBinding];
+    binding.logXMLInOut = NO;
+    
+    PerformanceTestingDataServiceSvc_AddPerformanceCubeResult* params = [[PerformanceTestingDataServiceSvc_AddPerformanceCubeResult alloc]init];
+    params.result = [[tns1_PerformanceCubeResult alloc]init];
+    
+    params.result.DeviceDatabaseId = [[NSNumber alloc]initWithInt: [DeviceInfo current].databaseId];
+    params.result.FramesPerSecond = [[NSNumber alloc]initWithDouble: cubeResult.framesPerSecond];
+    params.result.NumberOfTriangles = [[NSNumber alloc]initWithInt: cubeResult.numberOfTriangles];
+    params.result.IsMonoTouch = [[USBoolean alloc]initWithBool:NO];
+    
+    [binding AddPerformanceCubeResultAsyncUsingParameters:params delegate:nil];
+}
                                    
 -(IBAction)testButtonClicked:(id)sender
 {
@@ -133,8 +152,11 @@
     double fps = ((double)count)/totalTime;
     self.fpLabel.text = [NSString stringWithFormat:@"fps = %.2f", fps];
     
-    [[ResultData results].glCubeResults addResult:[[GLCubeResult alloc]
-                                initWithNumberOfTriangles:_triangles/3 framesPerSecond:fps]];
+    GLCubeResult* glResult = [[GLCubeResult alloc]
+                              initWithNumberOfTriangles:_triangles/3 framesPerSecond:fps];
+    [[ResultData results].glCubeResults addResult:glResult];
+    
+    [self postResults:glResult];
 
 }
      

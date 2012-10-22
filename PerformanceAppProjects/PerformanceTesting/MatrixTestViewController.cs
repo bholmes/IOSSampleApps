@@ -2,6 +2,7 @@ using System;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 using System.Drawing;
+using PerformanceTesting.PerformanceTestingWebService;
 
 namespace PerformanceTesting
 {
@@ -157,12 +158,32 @@ namespace PerformanceTesting
 					_runButton.SetTitle ("Run", UIControlState.Normal);
 					UIApplication.SharedApplication.IdleTimerDisabled = false;
 				});
+
+				postResults ();
 			});
 
 			ts.BeginInvoke (null, null);
+		}
+
+		void postResults ()
+		{
+			PerformanceTestingDataService service = new PerformanceTestingDataService ();
+			service.AddPerformanceMatrixTestResultAsync (new MatrixTestResult () {
+				DeviceDatabaseId = DeviceInfo.CurrentDevice.DatabaseId,
+				DeviceDatabaseIdSpecified = true,
+				IsMonoTouch = true,
+				IsMonoTouchSpecified = true,
+				CSTestResult = _currentTests[0].MFlopsPerSecond,
+				CSTestResultSpecified = true,
+				CTestResult = _currentTests[1].MFlopsPerSecond,
+				CTestResultSpecified = true,
+				BLASTestResult = _currentTests[2].MFlopsPerSecond,
+				BLASTestResultSpecified = true
+			});
 		}
 	}
 }
 
 	
+
 

@@ -10,6 +10,6 @@
 #import "PerformanceTestingDataServiceSvc.h"
 
 
-@interface DeviceInfoViewController : UITableViewController <BasicHttpBinding_IPerformanceTestingDataServiceBindingResponseDelegate>
+@interface DeviceInfoViewController : UITableViewController
 
 @end

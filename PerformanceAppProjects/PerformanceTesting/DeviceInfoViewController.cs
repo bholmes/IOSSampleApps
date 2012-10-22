@@ -25,24 +25,7 @@ namespace PerformanceTesting
 		
 		void registerButtonClicked (object sender, EventArgs e)
 		{
-			FullDeviceInfo deviceInfo = new FullDeviceInfo ();
-			
-			deviceInfo.ModelName = DeviceInfo.ModelName;
-			deviceInfo.UIIdion = DeviceInfo.UIIdion;
-			deviceInfo.SpecificHWVersion = DeviceInfo.SpecificHWVersion;
-			deviceInfo.OSName = DeviceInfo.OSName;
-			deviceInfo.OSVersion = DeviceInfo.OSVersion;
-			deviceInfo.UniqueId = DeviceInfo.UniqueId;
-			deviceInfo.SystemName = DeviceInfo.DeviceName;
-			deviceInfo.OwnerName = DeviceInfo.OwnerName;
-			
-			PerformanceTestingDataService service = new PerformanceTestingDataService ();
-			
-			service.BeginAddDevice (deviceInfo, (result) => {
-				Console.WriteLine ("Done");
-				DeviceInfo.DatabaseId = service.EndAddDevice (result);
-			} , null);
-			
+			DeviceInfo.CurrentDevice.RegisterWithServer ();
 		}
 		
 		[Export ("numberOfSectionsInTableView:")]
@@ -76,27 +59,27 @@ namespace PerformanceTesting
 				{
 				case 0:
 					ret.TextLabel.Text = "Device Name";
-					ret.DetailTextLabel.Text = DeviceInfo.DeviceName;
+					ret.DetailTextLabel.Text = DeviceInfo.CurrentDevice.DeviceName;
 					break;
 				case 1:
 					ret.TextLabel.Text = "OS Name";
-					ret.DetailTextLabel.Text = DeviceInfo.OSName;
+					ret.DetailTextLabel.Text = DeviceInfo.CurrentDevice.OSName;
 					break;
 				case 2:
 					ret.TextLabel.Text = "OS Version";
-					ret.DetailTextLabel.Text = DeviceInfo.OSVersion;
+					ret.DetailTextLabel.Text = DeviceInfo.CurrentDevice.OSVersion;
 					break;
 				case 3:
 					ret.TextLabel.Text = "Model Name";
-					ret.DetailTextLabel.Text = DeviceInfo.ModelName;
+					ret.DetailTextLabel.Text = DeviceInfo.CurrentDevice.ModelName;
 					break;
 				case 4:
 					ret.TextLabel.Text = "Model Id";
-					ret.DetailTextLabel.Text = DeviceInfo.SpecificHWVersion;
+					ret.DetailTextLabel.Text = DeviceInfo.CurrentDevice.SpecificHWVersion;
 					break;
 				case 5:
 					ret.TextLabel.Text = "Owner Name";
-					ret.DetailTextLabel.Text = DeviceInfo.OwnerName;
+					ret.DetailTextLabel.Text = DeviceInfo.CurrentDevice.OwnerName;
 					break;
 					
 				default:
@@ -112,7 +95,7 @@ namespace PerformanceTesting
 		        }	
 				
 				ret.TextLabel.Text = "Owner Name";
-				((TextEditCell)ret).TextField.Text = DeviceInfo.OwnerName;
+				((TextEditCell)ret).TextField.Text = DeviceInfo.CurrentDevice.OwnerName;
 			}
 			
 			return ret;

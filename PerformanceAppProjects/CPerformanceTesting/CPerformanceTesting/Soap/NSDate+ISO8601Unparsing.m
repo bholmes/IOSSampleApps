@@ -38,7 +38,7 @@ static BOOL is_leap_year(unsigned year) {
   [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
   
   NSString *str = [formatter stringForObjectValue:self];
-  formatter = nil;
+    formatter = nil;;
   if(includeTime) {
     // NSDate - all values are UTC
     str = [str stringByAppendingString: @"Z"];
@@ -81,7 +81,7 @@ static BOOL is_leap_year(unsigned year) {
   
   unsigned weekday = ((dayOfYear + Jan1Weekday) - 1U) % 7U;
   
-  gregorian = nil;
+    gregorian = nil;
   
   if((dayOfYear <= (7U - Jan1Weekday)) && (Jan1Weekday > thursday)) {
     week = 52U + ((Jan1Weekday == friday) || ((Jan1Weekday == saturday) && prevYearIsLeapYear));
@@ -102,7 +102,7 @@ static BOOL is_leap_year(unsigned year) {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat: [@"'T'HH:mm:ss'Z'" prepareDateFormatWithTimeSeparator: timeSep]];
     timeString = [formatter stringForObjectValue:self];
-    formatter = nil;
+      formatter = nil;
   } else
     timeString = @"";
   
@@ -116,13 +116,13 @@ static BOOL is_leap_year(unsigned year) {
   unsigned dayOfYear = [gregorian ordinalityOfUnit: NSDayCalendarUnit inUnit: NSYearCalendarUnit forDate: self];
   NSString *timeString;
 
-  gregorian = nil;
+    gregorian = nil;
 
   if(includeTime) {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:[@"'T'HH:mm:ss'Z'" prepareDateFormatWithTimeSeparator:timeSep]];
     timeString = [formatter stringForObjectValue:self];
-    formatter = nil;
+      formatter = nil;
   } else
     timeString = @"";
   
@@ -173,7 +173,7 @@ static BOOL is_leap_year(unsigned year) {
 - (NSString *)prepareDateFormatWithTimeSeparator:(unichar)timeSep {
   NSString *dateFormat = self;
   if(timeSep != ':') {
-    NSMutableString *dateFormatMutable = [dateFormat mutableCopy] ;
+    NSMutableString *dateFormatMutable = [dateFormat mutableCopy];
     [dateFormatMutable replaceOccurrencesOfString:@":"
   withString:[NSString stringWithCharacters:&timeSep length:1U]
   options:NSBackwardsSearch | NSLiteralSearch
