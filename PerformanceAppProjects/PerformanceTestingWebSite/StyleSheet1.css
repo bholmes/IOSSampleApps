@@ -68,7 +68,7 @@
     width: 95%;
 }
 
-#Button1, .post table
+#GLButton, #FLOPSButton, .post table
 {
     margin: 10px;
 }

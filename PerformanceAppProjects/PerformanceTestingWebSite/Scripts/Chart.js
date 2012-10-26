@@ -17,7 +17,7 @@ function drawVisualization(chartName) {
 
 }
 
-function drawWithData(argData, chartName) {
+function drawGLWithData(argData, chartName) {
     var chartdata = google.visualization.arrayToDataTable(argData);
 
     // Create and draw the visualization.
@@ -30,7 +30,8 @@ function drawWithData(argData, chartName) {
         });
 }
 
-function emptyChart(chartName) {
+function emptyGLChart(chartName) {
+ 	//drawChart ();
 
     var chartdata = google.visualization.arrayToDataTable([
         ['x', 'y'],
@@ -43,6 +44,28 @@ function emptyChart(chartName) {
                 backgroundColor: '#F7F6F3',
                 legend : {position: 'none'} });
 }
+
+function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Device', 'C#', 'PInvoke', 'Obj C','MT BLAS', 'Obj C BLAS'],
+          ['Device 1',  1000,      400, 1040, 420,590],
+          ['Device 2',  1170,      460, 1040, 420,590],
+          ['Device 3',  660,       1120, 1040, 420,590],
+          ['Device 4',  1030,      540, 1040, 420,590],
+          ['Device 5',  1000,      400, 1040, 420,590],
+          ['Device 6',  1170,      460, 1040, 420,590],
+          ['Device 7',  660,       1120, 1040, 420,590],
+          ['Device 8',  1030,      540, 1040, 420,590]
+        ]);
+
+        var options = {
+          title: 'FLOP Test',
+          vAxis: {title: 'Device',  titleTextStyle: {color: 'black'}}
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('FLOPResultsChart'));
+        chart.draw(data, options);
+      }
 
 google.load('visualization', '1', { packages: ['corechart'] });
 //google.setOnLoadCallback(drawVisualization);

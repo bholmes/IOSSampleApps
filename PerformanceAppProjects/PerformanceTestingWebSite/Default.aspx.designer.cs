@@ -19,12 +19,22 @@ namespace WebApplication1 {
 		
 		protected System.Web.UI.UpdatePanel UpdatePanel1;
 		
-		protected System.Web.UI.HtmlControls.HtmlGenericControl myIOSChart;
+		protected System.Web.UI.HtmlControls.HtmlGenericControl GLResultsChart;
 		
-		protected System.Web.UI.WebControls.GridView DeviceList;
+		protected System.Web.UI.WebControls.GridView GLDeviceList;
 		
 		protected System.Web.UI.WebControls.CheckBox CheckBox1;
 		
-		protected System.Web.UI.WebControls.Button Button1;
+		protected System.Web.UI.WebControls.Button GLButton;
+		
+		protected System.Web.UI.UpdatePanel UpdatePanel2;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl FLOPResultsChart;
+		
+		protected System.Web.UI.WebControls.GridView FLOPDeviceList;
+		
+		protected System.Web.UI.WebControls.CheckBox CheckBox2;
+		
+		protected System.Web.UI.WebControls.Button FLOPSButton;
 	}
 }

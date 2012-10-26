@@ -21,16 +21,16 @@
                 <div class="post">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
-                            <div id="myIOSChart" style="height: 500px;" runat="server"></div>
+                            <div id="GLResultsChart" style="height: 500px;" runat="server"></div>
                             <br />
                         </ContentTemplate>
                         <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="Button1" />
+                            <asp:AsyncPostBackTrigger ControlID="GLButton" />
                         </Triggers>
                     </asp:UpdatePanel>  
                 </div>
                 <div class="post">
-                     <asp:GridView ID="DeviceList" runat="server" CellPadding="4" 
+                     <asp:GridView ID="GLDeviceList" runat="server" CellPadding="4" 
                         EnableModelValidation="True" ForeColor="#333333" GridLines="None">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                         <Columns>
@@ -48,8 +48,41 @@
                         <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
                     </asp:GridView>
                     <br />
-                    <asp:Button ID="Button1" runat="server" Text="Draw Chart" 
-                        onclick="Button1_Click"></asp:Button>
+                    <asp:Button ID="GLButton" runat="server" Text="Draw Chart" 
+                        onclick="DrawGLButton_Click"></asp:Button>
+                </div>  
+                <div class="post">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <div id="FLOPResultsChart" style="height: 500px;" runat="server"></div>
+                            <br />
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="FLOPSButton" />
+                        </Triggers>
+                    </asp:UpdatePanel>  
+                </div>
+                <div class="post">
+                     <asp:GridView ID="FLOPDeviceList" runat="server" CellPadding="4" 
+                        EnableModelValidation="True" ForeColor="#333333" GridLines="None">
+                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                        <Columns>
+                            <asp:TemplateField HeaderText="Enabled">
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="CheckBox2" runat="server" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <EditRowStyle BackColor="#999999" />
+                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    </asp:GridView>
+                    <br />
+                    <asp:Button ID="FLOPSButton" runat="server" Text="Draw Chart" 
+                        onclick="DrawFLOPSButton_Click"></asp:Button>
                 </div>  
             </div>
             

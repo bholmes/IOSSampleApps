@@ -502,7 +502,7 @@ namespace PerformanceTestingWebSite
         private static System.Data.Odbc.OdbcConnection createSQLConnection()
         {
             System.Data.Odbc.OdbcConnection conn = new System.Data.Odbc.OdbcConnection();
-#error need password
+//#error need password
             conn.ConnectionString = "DRIVER={MySQL ODBC 3.51 Driver}; SERVER=billholmes54.db.9465659.hostedresource.com; PORT=3306; DATABASE=billholmes54; USER=billholmes54; PASSWORD=removed; OPTION=0;";
             return conn;
         }
