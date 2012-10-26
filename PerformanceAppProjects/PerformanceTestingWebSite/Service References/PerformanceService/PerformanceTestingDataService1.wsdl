@@ -67,6 +67,30 @@
   <wsdl:message name="IPerformanceTestingDataService_FindPerformanceCubeResult_OutputMessage">
     <wsdl:part name="parameters" element="tns:FindPerformanceCubeResultResponse" />
   </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_AddPerformanceMatrixTestResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPerformanceMatrixTestResult" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_AddPerformanceMatrixTestResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPerformanceMatrixTestResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceMatrixResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceMatrixResults" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceMatrixResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceMatrixResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceMatrixResultsForMonoTouch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceMatrixResultsForMonoTouch" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceMatrixResultsForMonoTouch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceMatrixResultsForMonoTouchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceMatrixResultsForObjectiveC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceMatrixResultsForObjectiveC" />
+  </wsdl:message>
+  <wsdl:message name="IPerformanceTestingDataService_GetPerformanceMatrixResultsForObjectiveC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceMatrixResultsForObjectiveCResponse" />
+  </wsdl:message>
   <wsdl:portType name="IPerformanceTestingDataService">
     <wsdl:operation name="AddDevice">
       <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddDevice" message="tns:IPerformanceTestingDataService_AddDevice_InputMessage" />
@@ -107,6 +131,22 @@
     <wsdl:operation name="FindPerformanceCubeResult">
       <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResult" message="tns:IPerformanceTestingDataService_FindPerformanceCubeResult_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResultResponse" message="tns:IPerformanceTestingDataService_FindPerformanceCubeResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPerformanceMatrixTestResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceMatrixTestResult" message="tns:IPerformanceTestingDataService_AddPerformanceMatrixTestResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceMatrixTestResultResponse" message="tns:IPerformanceTestingDataService_AddPerformanceMatrixTestResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceMatrixResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResults" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsResponse" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceMatrixResultsForMonoTouch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForMonoTouch" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResultsForMonoTouch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForMonoTouchResponse" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResultsForMonoTouch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceMatrixResultsForObjectiveC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForObjectiveC" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResultsForObjectiveC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForObjectiveCResponse" message="tns:IPerformanceTestingDataService_GetPerformanceMatrixResultsForObjectiveC_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IPerformanceTestingDataService" type="tns:IPerformanceTestingDataService">
@@ -194,6 +234,42 @@
     </wsdl:operation>
     <wsdl:operation name="FindPerformanceCubeResult">
       <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPerformanceMatrixTestResult">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceMatrixTestResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceMatrixResults">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceMatrixResultsForMonoTouch">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForMonoTouch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceMatrixResultsForObjectiveC">
+      <soap:operation soapAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForObjectiveC" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

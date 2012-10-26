@@ -420,6 +420,131 @@ namespace PerformanceTestingWebSite.PerformanceService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MatrixTestResult", Namespace="http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite")]
+    [System.SerializableAttribute()]
+    public partial class MatrixTestResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double BLASTestResultField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CSTestResultField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CTestResultField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DatabaseIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DeviceDatabaseIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsMonoTouchField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double BLASTestResult {
+            get {
+                return this.BLASTestResultField;
+            }
+            set {
+                if ((this.BLASTestResultField.Equals(value) != true)) {
+                    this.BLASTestResultField = value;
+                    this.RaisePropertyChanged("BLASTestResult");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CSTestResult {
+            get {
+                return this.CSTestResultField;
+            }
+            set {
+                if ((this.CSTestResultField.Equals(value) != true)) {
+                    this.CSTestResultField = value;
+                    this.RaisePropertyChanged("CSTestResult");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CTestResult {
+            get {
+                return this.CTestResultField;
+            }
+            set {
+                if ((this.CTestResultField.Equals(value) != true)) {
+                    this.CTestResultField = value;
+                    this.RaisePropertyChanged("CTestResult");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DatabaseId {
+            get {
+                return this.DatabaseIdField;
+            }
+            set {
+                if ((this.DatabaseIdField.Equals(value) != true)) {
+                    this.DatabaseIdField = value;
+                    this.RaisePropertyChanged("DatabaseId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DeviceDatabaseId {
+            get {
+                return this.DeviceDatabaseIdField;
+            }
+            set {
+                if ((this.DeviceDatabaseIdField.Equals(value) != true)) {
+                    this.DeviceDatabaseIdField = value;
+                    this.RaisePropertyChanged("DeviceDatabaseId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsMonoTouch {
+            get {
+                return this.IsMonoTouchField;
+            }
+            set {
+                if ((this.IsMonoTouchField.Equals(value) != true)) {
+                    this.IsMonoTouchField = value;
+                    this.RaisePropertyChanged("IsMonoTouch");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PerformanceService.IPerformanceTestingDataService")]
     public interface IPerformanceTestingDataService {
@@ -461,6 +586,24 @@ namespace PerformanceTestingWebSite.PerformanceService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResult", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/FindPerformanceCubeResultRespon" +
             "se")]
         PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult FindPerformanceCubeResult(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceMatrixTestResult", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/AddPerformanceMatrixTestResultR" +
+            "esponse")]
+        int AddPerformanceMatrixTestResult(PerformanceTestingWebSite.PerformanceService.MatrixTestResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResults", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsResp" +
+            "onse")]
+        System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.MatrixTestResult> GetPerformanceMatrixResults();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForM" +
+            "onoTouch", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForM" +
+            "onoTouchResponse")]
+        System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.MatrixTestResult> GetPerformanceMatrixResultsForMonoTouch();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForO" +
+            "bjectiveC", ReplyAction="http://tempuri.org/IPerformanceTestingDataService/GetPerformanceMatrixResultsForO" +
+            "bjectiveCResponse")]
+        System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.MatrixTestResult> GetPerformanceMatrixResultsForObjectiveC();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -528,6 +671,22 @@ namespace PerformanceTestingWebSite.PerformanceService {
         
         public PerformanceTestingWebSite.PerformanceService.PerformanceCubeResult FindPerformanceCubeResult(int id) {
             return base.Channel.FindPerformanceCubeResult(id);
+        }
+        
+        public int AddPerformanceMatrixTestResult(PerformanceTestingWebSite.PerformanceService.MatrixTestResult result) {
+            return base.Channel.AddPerformanceMatrixTestResult(result);
+        }
+        
+        public System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.MatrixTestResult> GetPerformanceMatrixResults() {
+            return base.Channel.GetPerformanceMatrixResults();
+        }
+        
+        public System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.MatrixTestResult> GetPerformanceMatrixResultsForMonoTouch() {
+            return base.Channel.GetPerformanceMatrixResultsForMonoTouch();
+        }
+        
+        public System.Collections.Generic.List<PerformanceTestingWebSite.PerformanceService.MatrixTestResult> GetPerformanceMatrixResultsForObjectiveC() {
+            return base.Channel.GetPerformanceMatrixResultsForObjectiveC();
         }
     }
 }

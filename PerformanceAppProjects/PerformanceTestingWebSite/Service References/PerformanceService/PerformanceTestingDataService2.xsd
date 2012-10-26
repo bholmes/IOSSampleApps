@@ -47,4 +47,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfPerformanceCubeResult" nillable="true" type="tns:ArrayOfPerformanceCubeResult" />
+  <xs:complexType name="MatrixTestResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BLASTestResult" type="xs:double" />
+      <xs:element minOccurs="0" name="CSTestResult" type="xs:double" />
+      <xs:element minOccurs="0" name="CTestResult" type="xs:double" />
+      <xs:element minOccurs="0" name="DatabaseId" type="xs:int" />
+      <xs:element minOccurs="0" name="DeviceDatabaseId" type="xs:int" />
+      <xs:element minOccurs="0" name="IsMonoTouch" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatrixTestResult" nillable="true" type="tns:MatrixTestResult" />
+  <xs:complexType name="ArrayOfMatrixTestResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatrixTestResult" nillable="true" type="tns:MatrixTestResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatrixTestResult" nillable="true" type="tns:ArrayOfMatrixTestResult" />
 </xs:schema>

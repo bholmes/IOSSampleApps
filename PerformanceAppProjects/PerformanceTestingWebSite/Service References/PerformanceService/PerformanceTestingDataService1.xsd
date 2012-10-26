@@ -131,4 +131,54 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddPerformanceMatrixTestResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite" minOccurs="0" name="result" nillable="true" type="q11:MatrixTestResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPerformanceMatrixTestResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddPerformanceMatrixTestResultResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPerformanceMatrixResults">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPerformanceMatrixResultsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite" minOccurs="0" name="GetPerformanceMatrixResultsResult" nillable="true" type="q12:ArrayOfMatrixTestResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPerformanceMatrixResultsForMonoTouch">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPerformanceMatrixResultsForMonoTouchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite" minOccurs="0" name="GetPerformanceMatrixResultsForMonoTouchResult" nillable="true" type="q13:ArrayOfMatrixTestResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPerformanceMatrixResultsForObjectiveC">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPerformanceMatrixResultsForObjectiveCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/PerformanceTestingWebSite" minOccurs="0" name="GetPerformanceMatrixResultsForObjectiveCResult" nillable="true" type="q14:ArrayOfMatrixTestResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
