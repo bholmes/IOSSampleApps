@@ -97,7 +97,7 @@ namespace WebApplication1
 				flopScriptString = string.Format("emptyFLOPChart('{0}');", _flopChartName);
 			}
 			
-			string finalScriptStatement = string.Format ("{0} {1}", glScriptString, flopScriptString);
+			string finalScriptStatement = string.Format ("{0}\n\n{1}", glScriptString, flopScriptString);
 			
 			ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ReloadChart1", finalScriptStatement, true);
 		}
@@ -135,7 +135,7 @@ namespace WebApplication1
 			}
 			
 			StringBuilder bob = new StringBuilder();
-			resultTable.WriteData(bob);
+			resultTable.WriteData(bob, BLASCheckbox.Checked);
 			            
 			StringBuilder sb = new StringBuilder();
 			sb.Append("drawFLOPChartWithData(");

@@ -28,45 +28,74 @@ namespace WebApplication1
 				HasObjCResults = false;
 			}
 
-			internal void WriteData(StringBuilder sbn, bool showMT, bool showObjC)
+            internal void WriteData(StringBuilder sbn, bool showMT, bool showObjC, bool enableBLAS)
 			{
 				if (HasMTResults && HasObjCResults) {
 					if (showMT && showObjC) {
-						sbn.AppendFormat ("['Device {0}', {1},{2},{3},{4},{5}],\n", 
+                        if (enableBLAS)
+                            sbn.AppendFormat("['Device {0}', {1},{2},{3},{4},{5}],\n", 
 						                  DeviceId, _csResult, _pInvokeResult, 
 						                  _objCResult, _mtBLAS, _objCBLAS);
+                        else
+                            sbn.AppendFormat("['Device {0}', {1},{2},{3}],\n",
+                                          DeviceId, _csResult, _pInvokeResult,
+                                          _objCResult);
 					}
 					else if (showMT) {
-						sbn.AppendFormat ("['Device {0}', {1},{2},{3}],\n", 
-						                  DeviceId, _csResult, _pInvokeResult, 
-						                  _mtBLAS);
+                        if (enableBLAS)
+						    sbn.AppendFormat ("['Device {0}', {1},{2},{3}],\n", 
+						                      DeviceId, _csResult, _pInvokeResult, 
+						                      _mtBLAS);
+                        else
+                            sbn.AppendFormat("['Device {0}', {1},{2}],\n",
+                                              DeviceId, _csResult, _pInvokeResult);
 					}
 					else if (showObjC) {
-						sbn.AppendFormat ("['Device {0}', {1},{2}],\n", 
-						                  DeviceId, _objCResult, _objCBLAS);
+                        if (enableBLAS) 
+                            sbn.AppendFormat("['Device {0}', {1},{2}],\n", 
+						                      DeviceId, _objCResult, _objCBLAS);
+                        else
+                            sbn.AppendFormat("['Device {0}', {1}],\n",
+                                              DeviceId, _objCResult);
 					}
 				}
 				else if (HasMTResults) {
 					if (showMT && showObjC) {
-						sbn.AppendFormat ("['Device {0}', {1},{2},null,{3},null],\n", 
-						                  DeviceId, _csResult, _pInvokeResult, 
-						                  _mtBLAS);
+                        if (enableBLAS) 
+                            sbn.AppendFormat("['Device {0}', {1},{2},null,{3},null],\n", 
+						                      DeviceId, _csResult, _pInvokeResult, 
+						                      _mtBLAS);
+                        else
+                            sbn.AppendFormat("['Device {0}', {1},{2},null],\n",
+                                              DeviceId, _csResult, _pInvokeResult);
 					}
 					else if (showMT) {
-						sbn.AppendFormat ("['Device {0}', {1},{2},{3}],\n", 
-						                  DeviceId, _csResult, _pInvokeResult, 
-						                  _mtBLAS);
+                        if (enableBLAS) 
+                            sbn.AppendFormat("['Device {0}', {1},{2},{3}],\n", 
+						                      DeviceId, _csResult, _pInvokeResult, 
+						                      _mtBLAS);
+                        else
+                            sbn.AppendFormat("['Device {0}', {1},{2}],\n",
+                                              DeviceId, _csResult, _pInvokeResult);
 					}
 				}
 				else if (HasObjCResults) {
 
 					if (showMT && showObjC) {
-						sbn.AppendFormat ("['Device {0}', null,null,{1},null,{2}],\n", 
-						                  DeviceId, _objCResult, _objCBLAS);
+                        if (enableBLAS) 
+                            sbn.AppendFormat("['Device {0}', null,null,{1},null,{2}],\n", 
+						                      DeviceId, _objCResult, _objCBLAS);
+                        else
+                            sbn.AppendFormat("['Device {0}', null,null,{1}],\n",
+                                              DeviceId, _objCResult);
 					}
 					else if (showObjC) {
-						sbn.AppendFormat ("['Device {0}', {1},{2}],\n", 
-						                  DeviceId, _objCResult, _objCBLAS);
+                        if (enableBLAS) 
+                            sbn.AppendFormat("['Device {0}', {1},{2}],\n", 
+						                      DeviceId, _objCResult, _objCBLAS);
+                        else
+                            sbn.AppendFormat("['Device {0}', {1}],\n",
+                                              DeviceId, _objCResult);
 					}
 				}
 			}
@@ -112,7 +141,7 @@ namespace WebApplication1
 
 		internal bool IsEmpty { get { return this._resultRows.Count == 0; } }
 		
-		internal void WriteData(StringBuilder sb)
+		internal void WriteData(StringBuilder sb, bool enableBLAS)
 		{
 			bool haveMT = false;
 			bool haveObjC = false;
@@ -129,18 +158,27 @@ namespace WebApplication1
 			}
 
 			if (haveMT && haveObjC) {
-				sb.Append ("['Device', 'C#', 'PInvoke', 'Obj C','MT BLAS', 'Obj C BLAS'],");
+                if (enableBLAS)
+                    sb.Append("['Device', 'C#', 'PInvoke', 'Obj C','MT BLAS', 'Obj C BLAS'],");
+                else
+                    sb.Append("['Device', 'C#', 'PInvoke', 'Obj C'],");
 			}
 			else if (haveMT) {
-				sb.Append ("['Device', 'C#', 'PInvoke','MT BLAS'],");
+                if (enableBLAS)
+				    sb.Append ("['Device', 'C#', 'PInvoke','MT BLAS'],");
+                else
+                    sb.Append ("['Device', 'C#', 'PInvoke'],");
 			}
 			else if (haveObjC) {
-				sb.Append ("['Device', 'Obj C', 'Obj C BLAS'],");
+                if (enableBLAS) 
+                    sb.Append("['Device', 'Obj C', 'Obj C BLAS'],");
+                else
+                    sb.Append("['Device', 'Obj C'],");
 			}
 
 			foreach (ResultRow resultRow in _resultRows)
 			{
-				resultRow.WriteData(sb, haveMT, haveObjC);
+				resultRow.WriteData(sb, haveMT, haveObjC, enableBLAS);
 			}
 
 			sb.Append ("]");

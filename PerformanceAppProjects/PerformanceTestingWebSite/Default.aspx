@@ -81,8 +81,12 @@
                         <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
                     </asp:GridView>
                     <br />
-                    <asp:Button ID="FLOPSButton" runat="server" Text="Draw Chart" 
-                        onclick="DrawFLOPSButton_Click"></asp:Button>
+                    <div class="checkbox_text_fix">
+                        <asp:Button ID="FLOPSButton" runat="server" Text="Draw Chart" 
+                            onclick="DrawFLOPSButton_Click"></asp:Button>
+                        <asp:CheckBox ID="BLASCheckbox" runat="server" Text="Enable BLAS" 
+                            Checked="True" />
+                    </div>
                 </div>  
             </div>
             

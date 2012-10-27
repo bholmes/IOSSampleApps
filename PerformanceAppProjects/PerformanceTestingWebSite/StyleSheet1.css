@@ -76,7 +76,12 @@
     width: 95%;
 }
 
-#GLButton, #FLOPSButton, .post table
+#GLButton, #FLOPSButton, #BLASCheckbox, .post table
 {
     margin: 10px;
+}
+
+.checkbox_text_fix * 
+{
+    vertical-align: middle;
 }
