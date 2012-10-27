@@ -28,33 +28,33 @@ namespace WebApplication1
 				HasObjCResults = false;
 			}
 
-			internal void WriteData(StringBuilder sbn, int index, bool showMT, bool showObjC)
+			internal void WriteData(StringBuilder sbn, bool showMT, bool showObjC)
 			{
 				if (HasMTResults && HasObjCResults) {
 					if (showMT && showObjC) {
 						sbn.AppendFormat ("['Device {0}', {1},{2},{3},{4},{5}],\n", 
-						                  index, _csResult, _pInvokeResult, 
+						                  DeviceId, _csResult, _pInvokeResult, 
 						                  _objCResult, _mtBLAS, _objCBLAS);
 					}
 					else if (showMT) {
 						sbn.AppendFormat ("['Device {0}', {1},{2},{3}],\n", 
-						                  index, _csResult, _pInvokeResult, 
+						                  DeviceId, _csResult, _pInvokeResult, 
 						                  _mtBLAS);
 					}
 					else if (showObjC) {
 						sbn.AppendFormat ("['Device {0}', {1},{2}],\n", 
-						                  index, _objCResult, _objCBLAS);
+						                  DeviceId, _objCResult, _objCBLAS);
 					}
 				}
 				else if (HasMTResults) {
 					if (showMT && showObjC) {
 						sbn.AppendFormat ("['Device {0}', {1},{2},null,{3},null],\n", 
-						                  index, _csResult, _pInvokeResult, 
+						                  DeviceId, _csResult, _pInvokeResult, 
 						                  _mtBLAS);
 					}
 					else if (showMT) {
 						sbn.AppendFormat ("['Device {0}', {1},{2},{3}],\n", 
-						                  index, _csResult, _pInvokeResult, 
+						                  DeviceId, _csResult, _pInvokeResult, 
 						                  _mtBLAS);
 					}
 				}
@@ -62,11 +62,11 @@ namespace WebApplication1
 
 					if (showMT && showObjC) {
 						sbn.AppendFormat ("['Device {0}', null,null,{1},null,{2}],\n", 
-						                  index, _objCResult, _objCBLAS);
+						                  DeviceId, _objCResult, _objCBLAS);
 					}
 					else if (showObjC) {
 						sbn.AppendFormat ("['Device {0}', {1},{2}],\n", 
-						                  index, _objCResult, _objCBLAS);
+						                  DeviceId, _objCResult, _objCBLAS);
 					}
 				}
 			}
@@ -114,7 +114,6 @@ namespace WebApplication1
 		
 		internal void WriteData(StringBuilder sb)
 		{
-			int deviceIndex = 1;
 			bool haveMT = false;
 			bool haveObjC = false;
 
@@ -141,7 +140,7 @@ namespace WebApplication1
 
 			foreach (ResultRow resultRow in _resultRows)
 			{
-				resultRow.WriteData(sb, deviceIndex++, haveMT, haveObjC);
+				resultRow.WriteData(sb, haveMT, haveObjC);
 			}
 
 			sb.Append ("]");
