@@ -114,6 +114,7 @@
     </Compile>
     <Compile Include="DeviceTable.cs" />
     <Compile Include="GLResultsTable.cs" />
+    <Compile Include="FLOPResultsTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -69,7 +69,7 @@
                         <Columns>
                             <asp:TemplateField HeaderText="Enabled">
                                 <ItemTemplate>
-                                    <asp:CheckBox ID="CheckBox2" runat="server" />
+                                    <asp:CheckBox ID="CheckBox1" runat="server" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>

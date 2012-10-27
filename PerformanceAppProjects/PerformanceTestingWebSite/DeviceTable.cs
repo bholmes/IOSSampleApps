@@ -77,7 +77,7 @@ namespace WebApplication1
 			DeviceInfo di = deviceList.Find(dev => { return dev.DatabaseId == resultDeviceDatabaseId; });
 			
 			DeviceForTable newDevice = new DeviceForTable (resultDeviceDatabaseId,
-			                                               resultIsMonoTouch,
+			                                               ignoreMonoCheck || resultIsMonoTouch,
 			                                               di.SpecificHWVersion);
 			_deviceList.Add (newDevice);
 		}
@@ -91,7 +91,12 @@ namespace WebApplication1
 		}
 		
 		internal int NuberOfDevices {get{return _deviceList.Count;}}
-		
+
+		internal int Find (int databaseId)
+		{
+			return this.Find (databaseId, true);
+		}
+
 		internal int Find (int databaseId, bool isMono)
 		{
 			for (int i=0; i<_deviceList.Count; i++)

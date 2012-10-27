@@ -52,10 +52,10 @@ namespace WebApplication1
 		{
 			foreach (PerformanceCubeResult result in resultsArray)
 			{
-				int indevOfDevice = deviceTable.Find(result.DeviceDatabaseId, result.IsMonoTouch);
-				if (indevOfDevice > -1)
+				int indexOfDevice = deviceTable.Find(result.DeviceDatabaseId, result.IsMonoTouch);
+				if (indexOfDevice > -1)
 				{
-					DeviceTable.DeviceForTable dft = deviceTable[indevOfDevice];
+					DeviceTable.DeviceForTable dft = deviceTable[indexOfDevice];
 					if (dft != null && dft.Checked)
 					{
 						bool insert = true;
@@ -92,7 +92,7 @@ namespace WebApplication1
 						else
 							row = _resultRows[insertIndex];
 						
-						row[indevOfDevice] = result.FramesPerSecond;
+						row[indexOfDevice] = result.FramesPerSecond;
 					}
 				}
 			}
