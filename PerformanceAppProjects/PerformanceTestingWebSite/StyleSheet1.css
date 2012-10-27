@@ -27,9 +27,17 @@
     background-color: #F7F6F3;
 }
 
-#mainPage
+/*#mainPage
 {
     width: 900px;
+    min-height: 800px;  
+    margin-right: auto;
+    margin-left: auto;
+}*/
+
+#mainPage
+{
+    width: 600px;
     min-height: 800px;  
     margin-right: auto;
     margin-left: auto;

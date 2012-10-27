@@ -14,9 +14,9 @@
         <asp:ScriptManager ID="sm" runat="server">
         </asp:ScriptManager>
         <div id="mainPage">
-            <div id="menuPanel">
+            <%--<div id="menuPanel">
                 <h2>Menu</h2>
-            </div>
+            </div>--%>
             <div id="postPanel">
                 <div class="post">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
