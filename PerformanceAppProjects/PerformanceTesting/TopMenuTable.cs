@@ -21,7 +21,7 @@ namespace PerformanceTesting
 		[Export ("numberOfSectionsInTableView:")]
 		public virtual int NumberOfSections (UITableView tableView)
 		{
-			return 3;
+			return 4;
 		}
 
 		
@@ -35,6 +35,8 @@ namespace PerformanceTesting
 			case 1:
 				return 1;
 			case 2:
+				return 1;
+			case 3:
 				return 1;
 			default:
 				return 0;
@@ -81,6 +83,10 @@ namespace PerformanceTesting
 			{
 				ret.TextLabel.Text = "View Device Info";	
 			}
+			else if (indexPath.Section == 3)
+			{
+				ret.TextLabel.Text = "Result Charts";	
+			}
 			return ret;
 		}
 
@@ -113,6 +119,10 @@ namespace PerformanceTesting
 			else if (indexPath.Section == 2)
 			{
 				this.NavigationController.PushViewController (new DeviceInfoViewController (), true);	
+			}
+			else if (indexPath.Section == 3)
+			{
+				this.NavigationController.PushViewController (new ResultCharts (), true);	
 			}
 		}
 		

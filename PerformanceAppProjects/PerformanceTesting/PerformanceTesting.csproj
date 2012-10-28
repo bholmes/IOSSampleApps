@@ -42,6 +42,7 @@
     <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
     <MtouchI18n />
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <MtouchUseLlvm>True</MtouchUseLlvm>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>True</DebugSymbols>
@@ -79,6 +80,7 @@
     <MtouchI18n />
     <MtouchUseLlvm>True</MtouchUseLlvm>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <IpaPackageName />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -155,6 +157,7 @@
     <Compile Include="Web References\PerformanceTestingWebService\Reference.cs">
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="ResultCharts.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

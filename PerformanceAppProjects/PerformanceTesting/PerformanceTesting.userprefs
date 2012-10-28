@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DeviceInfo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AppDelegate.cs">
     <Files>
       <File FileName="MatrixTestEngine.cs" Line="90" Column="25" />
-      <File FileName="MatrixTestEngine.cs" Line="83" Column="1" />
-      <File FileName="MatrixTestEngine.cs" Line="90" Column="25" />
-      <File FileName="MatrixTestEngine.cs" Line="90" Column="25" />
       <File FileName="DeviceInfo.cs" Line="5" Column="54" />
+      <File FileName="AppDelegate.cs" Line="24" Column="91" />
+      <File FileName="TopMenuTable.cs" Line="128" Column="3" />
+      <File FileName="ResultCharts.cs" Line="14" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
