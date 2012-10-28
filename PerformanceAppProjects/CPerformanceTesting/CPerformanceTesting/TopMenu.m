@@ -12,6 +12,7 @@
 #import "GLCubeResultViewController.h"
 #import "ResultData.h"
 #import "MatrixTestViewControllerViewController.h"
+#import "ResultCharts.h"
 
 @interface TopMenu ()
 
@@ -58,7 +59,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -72,6 +73,10 @@
         return 1;
     }
     else if (section == 2)
+    {
+        return 1;
+    }
+    else if (section == 3)
     {
         return 1;
     }
@@ -113,6 +118,10 @@
     else if (indexPath.section == 2)
     {
         cell.textLabel.text = @"View Device Info";	
+    }
+    else if (indexPath.section == 3)
+    {
+        cell.textLabel.text = @"Result Charts";
     }
     
     return cell;
@@ -204,6 +213,14 @@
         //this.NavigationController.PushViewController (new DeviceInfoViewController (), true);
         
         DeviceInfoViewController* newCtrl = [[DeviceInfoViewController alloc]init];
+        [self.navigationController pushViewController:newCtrl animated: YES];
+    }
+    
+    else if (indexPath.section == 3)
+    {
+        //this.NavigationController.PushViewController (new DeviceInfoViewController (), true);
+        
+        ResultCharts* newCtrl = [[ResultCharts alloc]init];
         [self.navigationController pushViewController:newCtrl animated: YES];
     }
 }

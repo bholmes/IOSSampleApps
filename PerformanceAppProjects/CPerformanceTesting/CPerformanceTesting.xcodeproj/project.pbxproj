@@ -13,6 +13,8 @@
 		790BFE07158CE09C00759C84 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 790BFE06158CE09C00759C84 /* Default@2x.png */; };
 		790BFE0E158D26C600759C84 /* M-Icon 3 72.png in Resources */ = {isa = PBXBuildFile; fileRef = 790BFE0D158D26C600759C84 /* M-Icon 3 72.png */; };
 		790BFE10158D26D200759C84 /* M-Icon 3 144.png in Resources */ = {isa = PBXBuildFile; fileRef = 790BFE0F158D26D200759C84 /* M-Icon 3 144.png */; };
+		79139662163CC5BF00F61064 /* ResultCharts.m in Sources */ = {isa = PBXBuildFile; fileRef = 79139661163CC5BF00F61064 /* ResultCharts.m */; };
+		79139669163CD48500F61064 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79139668163CD48500F61064 /* libTestFlight.a */; };
 		7919A941158AB99400D6C660 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A940158AB99400D6C660 /* UIKit.framework */; };
 		7919A943158AB99400D6C660 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A942158AB99400D6C660 /* Foundation.framework */; };
 		7919A945158AB99400D6C660 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A944158AB99400D6C660 /* CoreGraphics.framework */; };
@@ -24,7 +26,6 @@
 		7919A95E158AC6F000D6C660 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A95D158AC6F000D6C660 /* GLKit.framework */; };
 		7919A960158AD17800D6C660 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A95F158AD17800D6C660 /* OpenGLES.framework */; };
 		7919A965158B8C7B00D6C660 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A964158B8C7B00D6C660 /* libz.dylib */; };
-		7919A967158BA0B500D6C660 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919A966158BA0B500D6C660 /* libTestFlight.a */; };
 		792AA29215B735180032957D /* MatrixTestViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792AA29115B735180032957D /* MatrixTestViewControllerViewController.m */; };
 		792AA29615B737750032957D /* MatrixTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 792AA29515B737750032957D /* MatrixTest.m */; };
 		792AA29915B74CDB0032957D /* MatrixTestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 792AA29815B74CDB0032957D /* MatrixTestEngine.m */; };
@@ -56,6 +57,9 @@
 		790BFE06158CE09C00759C84 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		790BFE0D158D26C600759C84 /* M-Icon 3 72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "M-Icon 3 72.png"; sourceTree = "<group>"; };
 		790BFE0F158D26D200759C84 /* M-Icon 3 144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "M-Icon 3 144.png"; sourceTree = "<group>"; };
+		79139660163CC5BF00F61064 /* ResultCharts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultCharts.h; sourceTree = "<group>"; };
+		79139661163CC5BF00F61064 /* ResultCharts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultCharts.m; sourceTree = "<group>"; };
+		79139668163CD48500F61064 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = "../../../../Downloads/TestFlightSDK1-1/libTestFlight.a"; sourceTree = "<group>"; };
 		7919A93C158AB99400D6C660 /* CPerformanceTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPerformanceTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7919A940158AB99400D6C660 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7919A942158AB99400D6C660 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -124,10 +128,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79139669163CD48500F61064 /* libTestFlight.a in Frameworks */,
 				792AA2A215B83A880032957D /* libPerformanceAppLib.a in Frameworks */,
 				792AA29D15B7679F0032957D /* Accelerate.framework in Frameworks */,
 				7933C93F15961AA800195C19 /* SystemConfiguration.framework in Frameworks */,
-				7919A967158BA0B500D6C660 /* libTestFlight.a in Frameworks */,
 				7919A965158B8C7B00D6C660 /* libz.dylib in Frameworks */,
 				7919A960158AD17800D6C660 /* OpenGLES.framework in Frameworks */,
 				7919A95E158AC6F000D6C660 /* GLKit.framework in Frameworks */,
@@ -156,6 +160,7 @@
 		7919A931158AB99400D6C660 = {
 			isa = PBXGroup;
 			children = (
+				79139668163CD48500F61064 /* libTestFlight.a */,
 				792AA2A115B83A880032957D /* libPerformanceAppLib.a */,
 				7919A946158AB99400D6C660 /* CPerformanceTesting */,
 				7919A93F158AB99400D6C660 /* Frameworks */,
@@ -221,6 +226,8 @@
 				792AA29515B737750032957D /* MatrixTest.m */,
 				792AA29715B74CDB0032957D /* MatrixTestEngine.h */,
 				792AA29815B74CDB0032957D /* MatrixTestEngine.m */,
+				79139660163CC5BF00F61064 /* ResultCharts.h */,
+				79139661163CC5BF00F61064 /* ResultCharts.m */,
 			);
 			path = CPerformanceTesting;
 			sourceTree = "<group>";
@@ -352,6 +359,7 @@
 				792AA29215B735180032957D /* MatrixTestViewControllerViewController.m in Sources */,
 				792AA29615B737750032957D /* MatrixTest.m in Sources */,
 				792AA29915B74CDB0032957D /* MatrixTestEngine.m in Sources */,
+				79139662163CC5BF00F61064 /* ResultCharts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +438,7 @@
 					"\"$(SRCROOT)/CPerformanceTesting\"",
 					"\"$(SRCROOT)/../PerformanceTesting\"",
 					"\"$(SRCROOT)/../PerformanceAppLib\"",
+					"\"$(SRCROOT)/../../../../Downloads/TestFlightSDK1-1\"",
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,6 +460,7 @@
 					"\"$(SRCROOT)/CPerformanceTesting\"",
 					"\"$(SRCROOT)/../PerformanceTesting\"",
 					"\"$(SRCROOT)/../PerformanceAppLib\"",
+					"\"$(SRCROOT)/../../../../Downloads/TestFlightSDK1-1\"",
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,17 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ResultCharts.cs">
     <Files>
       <File FileName="MatrixTestEngine.cs" Line="90" Column="25" />
       <File FileName="DeviceInfo.cs" Line="5" Column="54" />
-      <File FileName="AppDelegate.cs" Line="24" Column="91" />
-      <File FileName="TopMenuTable.cs" Line="128" Column="3" />
-      <File FileName="ResultCharts.cs" Line="14" Column="3" />
+      <File FileName="AppDelegate.cs" Line="18" Column="1" />
+      <File FileName="TopMenuTable.cs" Line="91" Column="4" />
+      <File FileName="ResultCharts.cs" Line="19" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="PerformanceTesting" expanded="True" selected="True" />
+          <Node name="PerformanceTesting" expanded="True">
+            <Node name="ResultCharts.cs" selected="True" />
+          </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">
@@ -28,4 +30,7 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.PerformanceTesting>
+    <IPhoneTestFlightSettings_27CRelease ApiToken="fa702e61a0015f6bcd73b7e94f353ead_NDI5NjQxMjAxMi0wNS0wNyAwOTozMjo1My41MjU3NzY" TeamToken="41ed955304b5ce69144bdab79c928401_ODc4MzUyMDEyLTA1LTA3IDA5OjM0OjU1LjIzNjA5OQ" ReleaseNotes="&#xA;Rebuild of the PerformanceAppLib in new XCode" NotifyTeamMembers="False" ReplaceBinaries="False" DistributionLists="" />
+  </MonoDevelop.Ide.ItemProperties.PerformanceTesting>
 </Properties>

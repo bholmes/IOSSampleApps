@@ -16,7 +16,7 @@ namespace PerformanceTesting
 		{
 			base.ViewDidLoad ();
 
-			_webView = new UIWebView (UIScreen.MainScreen.Bounds);
+			_webView = new UIWebView (this.View.Bounds);
 			_webView.LoadRequest (new NSUrlRequest (new NSUrl ("http://apps.slapholmesproductions.com/apps/PerformanceApp/default.aspx")));
 			_webView.AutoresizingMask = UIViewAutoresizing.All;
 			_webView.ScalesPageToFit = true;
