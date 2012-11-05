@@ -56,13 +56,12 @@
     <CodesignKey>iPhone Developer: William Holmes (7NLBGWH956)</CodesignKey>
     <MtouchDebug>True</MtouchDebug>
     <MtouchProfiling>True</MtouchProfiling>
-    <CodesignProvision>01705AA0-611D-43FC-BDA6-58B31F5035D0</CodesignProvision>
+    <CodesignProvision>A1D19396-3FB3-4E70-919E-14ACD45B27FA</CodesignProvision>
     <IpaPackageName />
     <MtouchI18n />
     <MtouchArch>ARMv7</MtouchArch>
     <CrashReportingApiKey />
-    <additionalargs>-lAccelerate</additionalargs>
-    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>
+    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a  -framework Accelerate"</MtouchExtraArgs>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -73,7 +72,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Developer: William Holmes (7NLBGWH956)</CodesignKey>
-    <CodesignProvision>01705AA0-611D-43FC-BDA6-58B31F5035D0</CodesignProvision>
+    <CodesignProvision>A1D19396-3FB3-4E70-919E-14ACD45B27FA</CodesignProvision>
     <BuildIpa>True</BuildIpa>
     <MtouchArch>ARMv7</MtouchArch>
     <MtouchExtraArgs>-gcc_flags "-L${ProjectDir}/../PerformanceAppLib -lPerformanceAppLib -force_load ${ProjectDir}/../PerformanceAppLib/libPerformanceAppLib.a -framework Accelerate"</MtouchExtraArgs>

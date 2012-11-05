@@ -87,7 +87,16 @@ namespace PerformanceTesting
 		private void fetchInfoFromServer ()
 		{
 			PerformanceTestingDataService service = new PerformanceTestingDataService ();
-			FullDeviceInfo di = service.FindFullDeviceInfo (this.UniqueId);
+			FullDeviceInfo di = null;
+
+			try
+			{
+				di = service.FindFullDeviceInfo (this.UniqueId);
+			}
+			catch
+			{
+				// I have an iPad that fails here.
+			}
 			if (di == null)
 			{
 				this.RegisterWithServer ();
