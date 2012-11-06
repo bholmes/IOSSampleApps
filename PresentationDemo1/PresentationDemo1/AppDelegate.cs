@@ -19,21 +19,12 @@ namespace PresentationDemo1
 			get;
 			set;
 		}
-
-		//
-		// This method is invoked when the application has loaded and is ready to run. In this 
-		// method you should instantiate the window, load the UI into it and then make the window
-		// visible.
-		//
-		// You have 17 seconds to return from this method, or iOS will terminate your application.
-		//
-		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
-		{
-			return true;
-		}
 		
+		//
 		// This method is invoked when the application is about to move from active to inactive state.
+		//
 		// OpenGL applications should use this method to pause.
+		//
 		public override void OnResignActivation (UIApplication application)
 		{
 		}
@@ -45,12 +36,12 @@ namespace PresentationDemo1
 		{
 		}
 		
-		/// This method is called as part of the transiton from background to active state.
+		// This method is called as part of the transiton from background to active state.
 		public override void WillEnterForeground (UIApplication application)
 		{
 		}
 		
-		/// This method is called when the application is about to terminate. Save data, if needed. 
+		// This method is called when the application is about to terminate. Save data, if needed. 
 		public override void WillTerminate (UIApplication application)
 		{
 		}

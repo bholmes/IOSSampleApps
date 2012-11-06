@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D37489D5-327E-43C3-8A87-43D7FE88AFD2}</ProjectGuid>
+    <ProjectGuid>{256DF01F-2A1D-4607-A98E-A47C815E79FC}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>PresentationDemo1</RootNamespace>
@@ -87,17 +87,13 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="PresentationDemo1ViewController.cs" />
-    <Compile Include="PresentationDemo1ViewController.designer.cs">
-      <DependentUpon>PresentationDemo1ViewController.cs</DependentUpon>
+    <Compile Include="RootViewController.cs" />
+    <Compile Include="RootViewController.designer.cs">
+      <DependentUpon>RootViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyController1.cs" />
-    <Compile Include="MyController1.designer.cs">
-      <DependentUpon>MyController1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyController2.cs" />
-    <Compile Include="MyController2.designer.cs">
-      <DependentUpon>MyController2.cs</DependentUpon>
+    <Compile Include="DetailViewController.cs" />
+    <Compile Include="DetailViewController.designer.cs">
+      <DependentUpon>DetailViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
