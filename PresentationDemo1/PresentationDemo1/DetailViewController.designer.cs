@@ -12,16 +12,27 @@ namespace PresentationDemo1
 	partial class DetailViewController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UILabel detailDescriptionLabel { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIToolbar toolbar { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel theLabel { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton theButton { get; set; }
 
 		[Action ("OnTouch:")]
 		partial void OnTouch (MonoTouch.Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (detailDescriptionLabel != null) {
+				detailDescriptionLabel.Dispose ();
+				detailDescriptionLabel = null;
+			}
+
 			if (toolbar != null) {
 				toolbar.Dispose ();
 				toolbar = null;
@@ -30,6 +41,11 @@ namespace PresentationDemo1
 			if (theLabel != null) {
 				theLabel.Dispose ();
 				theLabel = null;
+			}
+
+			if (theButton != null) {
+				theButton.Dispose ();
+				theButton = null;
 			}
 		}
 	}

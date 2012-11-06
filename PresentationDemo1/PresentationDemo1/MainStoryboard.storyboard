@@ -48,7 +48,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="21" kind="push" id="9gM-d8-O0L"/>
+                                            <segue destination="21" kind="push" id="ZnG-Ln-HTb"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -74,15 +74,23 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Some Better Text" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="27">
-                                <rect key="frame" x="20" y="164" width="280" height="18"/>
+                                <rect key="frame" x="20" y="161" width="280" height="18"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rDr-DM-JxJ">
-                                <rect key="frame" x="131" y="225" width="60" height="44"/>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Some Better Text" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Zjj-LT-Es6">
+                                <rect key="frame" x="20" y="199" width="280" height="18"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kip-2C-ypf">
+                                <rect key="frame" x="131" y="234" width="60" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Click">
@@ -93,7 +101,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="OnTouch:" destination="21" eventType="touchUpInside" id="xPi-dy-roy"/>
+                                    <action selector="OnTouch:" destination="21" eventType="touchUpInside" id="gUx-hy-pog"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -101,7 +109,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Item 1" id="26"/>
                     <connections>
-                        <outlet property="theLabel" destination="27" id="bdG-0N-nWw"/>
+                        <outlet property="detailDescriptionLabel" destination="27" id="28"/>
+                        <outlet property="theButton" destination="Kip-2C-ypf" id="xww-Qb-Dry"/>
+                        <outlet property="theLabel" destination="Zjj-LT-Es6" id="yHr-BG-KAf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
@@ -114,6 +124,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="OnTouch:"/>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="theButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="theLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>

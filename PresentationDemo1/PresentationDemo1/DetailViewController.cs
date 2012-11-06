@@ -30,7 +30,7 @@ namespace PresentationDemo1
 		{
 			// Update the user interface for the detail item
 			if (DetailItem != null)
-				this.theLabel.Text = DetailItem.ToString ();
+				this.detailDescriptionLabel.Text = DetailItem.ToString ();
 		}
 		
 		public override void DidReceiveMemoryWarning ()
@@ -39,6 +39,13 @@ namespace PresentationDemo1
 			base.DidReceiveMemoryWarning ();
 			
 			// Release any cached data, images, etc that aren't in use.
+		}
+
+		int count = 1;
+
+		partial void OnTouch (NSObject sender)
+		{
+			detailDescriptionLabel.Text = string.Format ("Clicked {0}", count++);
 		}
 		
 		#region View lifecycle
@@ -49,6 +56,11 @@ namespace PresentationDemo1
 			
 			// Perform any additional setup after loading the view, typically from a nib.
 			ConfigureView ();
+
+			int testCount = 1;
+			theButton.TouchUpInside += delegate {
+				theLabel.Text = string.Format ("Clicked {0}", testCount++);
+			};
 		}
 		
 		public override void ViewDidUnload ()
@@ -89,13 +101,6 @@ namespace PresentationDemo1
 		{
 			// Return true for supported orientations
 			return (toInterfaceOrientation != UIInterfaceOrientation.PortraitUpsideDown);
-		}
-
-		int count = 1;
-
-		partial void OnTouch (NSObject sender)
-		{
-			theLabel.Text  = string.Format ("Clicked {0} times", count++);
 		}
 	}
 }
