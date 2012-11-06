@@ -1,3 +1,4 @@
+// WARNING
 //
 // This file has been generated automatically by MonoDevelop to store outlets and
 // actions made in the Xcode designer. If it is removed, they will be lost.
@@ -11,23 +12,25 @@ namespace PresentationDemo1
 	partial class DetailViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UILabel detailDescriptionLabel { get; set; }
-		
-		[Outlet]
 		MonoTouch.UIKit.UIToolbar toolbar { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel theLabel { get; set; }
+
+		[Action ("OnTouch:")]
+		partial void OnTouch (MonoTouch.Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (detailDescriptionLabel != null) {
-				detailDescriptionLabel.Dispose ();
-				detailDescriptionLabel = null;
-			}
-			
 			if (toolbar != null) {
 				toolbar.Dispose ();
 				toolbar = null;
 			}
+
+			if (theLabel != null) {
+				theLabel.Dispose ();
+				theLabel = null;
+			}
 		}
 	}
 }
-

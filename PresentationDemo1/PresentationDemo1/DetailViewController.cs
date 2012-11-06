@@ -30,7 +30,7 @@ namespace PresentationDemo1
 		{
 			// Update the user interface for the detail item
 			if (DetailItem != null)
-				this.detailDescriptionLabel.Text = DetailItem.ToString ();
+				this.theLabel.Text = DetailItem.ToString ();
 		}
 		
 		public override void DidReceiveMemoryWarning ()
@@ -89,6 +89,13 @@ namespace PresentationDemo1
 		{
 			// Return true for supported orientations
 			return (toInterfaceOrientation != UIInterfaceOrientation.PortraitUpsideDown);
+		}
+
+		int count = 1;
+
+		partial void OnTouch (NSObject sender)
+		{
+			theLabel.Text  = string.Format ("Clicked {0} times", count++);
 		}
 	}
 }
